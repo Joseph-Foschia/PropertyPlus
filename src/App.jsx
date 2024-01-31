@@ -9,6 +9,7 @@ import Nav from "./pages/components/Navbar/nav";
 import Property from "./pages/property";
 import Login from "./pages";
 import Tenant from "./pages/tenant";
+import NewProperty from "./pages/new";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/property" element={<Property />}/>
 
       <Route path="/tenant" element={<Tenant />}/>
+      <Route path="/new" element={<NewProperty/>}/>
 
     </Routes>
    </Router>
