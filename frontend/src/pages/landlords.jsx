@@ -1,8 +1,9 @@
+import AddPropertyItem from './components/Landlords/AddPropertyItem';
 
 function Landlords() {
   return (
     <div >
-      <p>This is for landlords to view all their properties!!!!</p>
+      <AddPropertyItem/>
     </div>
   );
 }
