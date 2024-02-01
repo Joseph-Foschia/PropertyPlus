@@ -1,8 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Landlords from "./pages/landlords";
 import Nav from "./pages/components/Navbar/nav";
@@ -13,19 +9,16 @@ import NewProperty from "./pages/new";
 
 function App() {
   return (
-   <Router>
-      <Nav />
-    <Routes>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/landlord" element={<Landlords />} />
+        <Route path="/property" element={<Property />} />
 
-      <Route path="/login" element={<Login />}/>  
-      <Route path="/landlord" element={<Landlords />}/>
-      <Route path="/property" element={<Property />}/>
-
-      <Route path="/tenant" element={<Tenant />}/>
-      <Route path="/new" element={<NewProperty/>}/>
-
-    </Routes>
-   </Router>
+        <Route path="/tenant" element={<Tenant />} />
+        <Route path="/new" element={<NewProperty />} />
+      </Routes>
+    </Router>
   );
 }
 

@@ -1,7 +1,8 @@
+import Background from "./components/index/Background";
 function Login() {
   return (
     <div>
-      <p>This is to login</p>
+      <Background />
     </div>
   );
 }
