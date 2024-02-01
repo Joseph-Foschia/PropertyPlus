@@ -18,11 +18,11 @@ app.use(cors());
 
 app.use('/api/login', loginRoute)
 app.use('/api/landlordproperties', landlordAllPropertiesRoute);
-app.use('/api/newproperty,', landlordNewPropertyRoute)
+app.use('/api/newproperty', landlordNewPropertyRoute)
 app.use('/api/margins,', landlordProfitLossRoute)
 app.use('/api/margins,', landlordProfitLossRoute)
 app.use('/api/logout', logoutRoute)
-app.use('api/property', landlordIndivPropertyRoute)
+app.use('/api/property', landlordIndivPropertyRoute)
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
