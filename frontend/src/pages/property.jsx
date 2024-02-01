@@ -1,6 +1,7 @@
 import PropertyDetials from "./components/Landlords/PropertyDetails";
 import LeaseDetails from "./components/Landlords/LeaseDetails";
 import ProfitLoss from "./components/Landlords/ProfitLoss";
+import './components/Landlords/PropertyDetails.css'
 import { useState, useEffect } from "react";
 import { Routes, Route, useParams } from 'react-router-dom';
 
@@ -19,12 +20,14 @@ function Property() {
       .catch(error => console.error('Error fetching property data', error));
   }, []);
 
+  const prop = property && property[0];
+
   return (
     <div >
-      <h2>Property Details</h2>
-     <PropertyDetials property={property} />
-     <LeaseDetails property={property}/>
-     <ProfitLoss property={property}/>
+      <h1>{prop?.address}</h1>
+      <div className="property-details-cards"><PropertyDetials property={property} /> </div>
+      <div className="property-details-cards"><LeaseDetails property={property}/> </div>
+      <div className="property-details-cards"><ProfitLoss property={property}/> </div>
     </div>
   );
 }
