@@ -1,5 +1,6 @@
 import PropertyDetials from "./components/Landlords/PropertyDetails";
 import LeaseDetails from "./components/Landlords/LeaseDetails";
+import ProfitLoss from "./components/Landlords/ProfitLoss";
 import { useState, useEffect } from "react";
 import { Routes, Route, useParams } from 'react-router-dom';
 
@@ -23,6 +24,7 @@ function Property() {
       <h2>Property Details</h2>
      <PropertyDetials property={property} />
      <LeaseDetails property={property}/>
+     <ProfitLoss property={property}/>
     </div>
   );
 }
