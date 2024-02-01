@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+
 import Landlords from "./pages/landlords";
 import Nav from "./pages/components/Navbar/nav";
 import Property from "./pages/property";
@@ -8,6 +9,7 @@ import Tenant from "./pages/tenant";
 import NewProperty from "./pages/new";
 
 function App() {
+
   return (
     <Router>
       <Routes>
