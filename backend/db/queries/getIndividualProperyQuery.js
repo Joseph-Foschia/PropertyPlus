@@ -3,7 +3,11 @@ const db = require('../connection');
 const getIndividualProperty =  (id) => {
  
   return db
-  .query('SELECT * FROM units WHERE id = $1', [id])
+  .query(`SELECT units.*, leases.*, tenants.* 
+  FROM units 
+  JOIN leases ON units.id = leases.unit_id 
+  JOIN tenants ON leases.tenant_id = tenants.id 
+  WHERE units.id = $1`, [id])
   .then((res) => {
     return res.rows;
   })
@@ -17,3 +21,5 @@ const getIndividualProperty =  (id) => {
 module.exports = {
   getIndividualProperty
 };
+
+//
