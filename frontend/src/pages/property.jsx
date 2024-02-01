@@ -6,7 +6,7 @@ function Property() {
 
   //testing to view all landlords
   useEffect(() => {
-    fetch('http://localhost:3001/api/landlords/all')
+    fetch('http://localhost:3001/api/landlordproperties/all')
       .then(response => response.json())
       .then(data => {console.log('Fetched data:', data); setData(data)})
       .catch(error => console.error('Error fetching data', error));

@@ -7,6 +7,7 @@ import Property from "./pages/property";
 import Login from "./pages";
 import Tenant from "./pages/tenant";
 import NewProperty from "./pages/new";
+import ProfitAndLoss from "./pages/profit";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
 
         <Route path="/tenant" element={<Tenant />} />
         <Route path="/new" element={<NewProperty />} />
+        <Route path="/profit" element={<ProfitAndLoss />} />
       </Routes>
     </Router>
   );
