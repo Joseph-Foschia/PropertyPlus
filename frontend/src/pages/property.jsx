@@ -1,7 +1,7 @@
-import PropertyDetials from "./components/Landlords/PropertyDetails";
-import LeaseDetails from "./components/Landlords/LeaseDetails";
-import ProfitLoss from "./components/Landlords/ProfitLoss";
-import './components/Landlords/PropertyDetails.css'
+import PropertyDetials from "./components/PropertyDetails/PropertyDetails";
+import LeaseDetails from "./components/PropertyDetails/LeaseDetails";
+import ProfitLoss from "./components/PropertyDetails/ProfitLoss";
+import './components/PropertyDetails/PropertyDetails.css'
 import { useState, useEffect } from "react";
 import { Routes, Route, useParams } from 'react-router-dom';
 
