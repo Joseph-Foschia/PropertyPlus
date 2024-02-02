@@ -1,7 +1,7 @@
 function Announcements() {
   return (
     <div>
-      Announcements
+      Announcements 
     </div>
   )
 };
