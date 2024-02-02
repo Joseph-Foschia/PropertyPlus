@@ -6,10 +6,6 @@ export default function PropertyList() {
     <div className="property-list">
       <h3 className="my-p">My Properties</h3>
       <PropertyListItem />
-      <PropertyListItem />
-      <PropertyListItem />
-      <PropertyListItem />
-      <PropertyListItem />
     </div>
   );
 }
