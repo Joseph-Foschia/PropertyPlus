@@ -1,0 +1,30 @@
+.propertyListItem {
+  display: flex;
+  margin-bottom: 30px;
+}
+.profile-pic {
+  top: 323px;
+  left: 248px;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  background-color: red;
+}
+.p-name {
+  color: #030303;
+  font-size: 16px;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: 22px;
+  margin-left: 18px;
+}
+
+.icon {
+  color: #030303;
+  fill: #030303;
+  font-size: 18px;
+  top: 336px;
+  left: 1374px;
+  width: 18px;
+  height: 18px;
+}
