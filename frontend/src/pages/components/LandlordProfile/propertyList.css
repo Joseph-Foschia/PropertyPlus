@@ -1,0 +1,13 @@
+.my-p {
+  color: #030303;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: 22px;
+}
+.property-list {
+  display: flex;
+  flex-direction: column;
+  margin-left: 265px;
+  margin-top: 50px;
+}
