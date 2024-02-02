@@ -1,7 +1,7 @@
 function Notifications() {
   return (
     <div >
-      Notifications
+      Notifications 
     </div>
   );
 }
