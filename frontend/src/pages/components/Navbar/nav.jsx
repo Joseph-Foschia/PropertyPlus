@@ -1,10 +1,11 @@
+import "./nav.css";
 function Nav() {
   
   return (
-    <div >
-      <h2>Nav Bar</h2>
+    <div>
+      <div className="nav-container"></div>
     </div>
-  )
-};
+  );
+}
 
 export default Nav;

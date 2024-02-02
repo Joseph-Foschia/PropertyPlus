@@ -1,0 +1,48 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f8f8;
+  margin-left: 265px;
+}
+.blue-box {
+  top: 48px;
+  left: 248px;
+  width: 152px;
+  height: 152px;
+  border-radius: 24px;
+  background-color: blue;
+}
+.user-welcome {
+  display: flex;
+  align-items: baseline;
+  margin-left: 15px;
+  margin-bottom: 40px;
+}
+.user-welcome h3 {
+  color: #030303;
+  font-size: 24px;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.user-welcome button {
+  cursor: pointer;
+  top: 84px;
+  left: 628px;
+  width: 115px;
+  height: 44px;
+  padding: 0px 8px;
+  border: 1px solid #17b890;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #17b890;
+  font-size: 14px;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: 18px;
+  outline: none;
+  margin-left: 15px;
+}
