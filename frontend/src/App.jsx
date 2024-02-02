@@ -7,12 +7,9 @@ import Login from "./pages";
 import Tenant from "./pages/tenant";
 import NewProperty from "./pages/new";
 import ProfitAndLoss from "./pages/profit";
-<<<<<<< HEAD
 import Welcome from "./pages/propertyDetails";
 import PropertyDetails from "./pages/propertyDetails";
-=======
 import LandlordProfile from "./pages/LandlordProfile";
->>>>>>> feature/propertyList
 
 function App() {
   return (
@@ -25,7 +22,7 @@ function App() {
         <Route path="/tenant" element={<Tenant />} />
         <Route path="/new" element={<NewProperty />} />
         <Route path="/profit" element={<ProfitAndLoss />} />
-        <Route path="/propertydetails" element={<PropertyDetails/>} />
+        <Route path="/propertydetails" element={<PropertyDetails />} />
       </Routes>
     </Router>
   );
