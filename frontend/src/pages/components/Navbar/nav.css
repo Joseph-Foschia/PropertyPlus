@@ -1,0 +1,9 @@
+.nav-container {
+  position: fixed;
+  top: 0px;
+  left: -20px;
+  width: 245px;
+  height: 915px;
+  background-color: #17b890;
+  border-radius: 24px;
+}
