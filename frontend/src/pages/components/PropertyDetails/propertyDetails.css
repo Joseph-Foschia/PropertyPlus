@@ -1,0 +1,65 @@
+/* Styles for the parent container */
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styles for the header */
+.welcome header {
+  width: 100%;
+  background-color: #333; /* Example color for header background */
+  color: #fff; /* Example color for header text */
+  padding: 20px;
+}
+
+/* Styles for the main content */
+.welcome main {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Styles for the left side of the main content */
+.welcome-left-side {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styles for the right side of the main content */
+.welcome-right-side {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styles for the individual blocks */
+.property-details-section,
+.notifications,
+.welcome-right-side-bottom-half {
+  background-color: #f0f0f0; /* Light grey background color */
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Styles for the image containers */
+.image-container,
+.property-details-section img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .welcome-left-side {
+    width: 100%;
+  }
+  
+  .welcome-right-side {
+    width: 100%;
+    margin-top: 20px;
+  }
+}

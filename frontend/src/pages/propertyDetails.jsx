@@ -2,6 +2,7 @@ import PriceGraphIndividual from "./components/PropertyDetails/priceGraphIndivid
 import LeaseDetails from "./components/PropertyDetails/leaseDetails";
 import Notifications from "./components/PropertyDetails/notifications";
 import TenantInfo from "./components/PropertyDetails/tenantInfo";
+import './components/PropertyDetails/propertyDetails.css';
 
 function PropertyDetails() {
   return (
