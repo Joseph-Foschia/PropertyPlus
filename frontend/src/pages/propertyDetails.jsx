@@ -35,3 +35,4 @@ function PropertyDetails() {
 }
 
 export default PropertyDetails;
+
