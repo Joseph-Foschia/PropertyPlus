@@ -1,9 +1,11 @@
 import AddPropertyItem from './components/PropertyDetails/AddPropertyItem';
 
-function Landlords() {
+function Landlords({token}) {
+  
   return (
     <div >
-      <AddPropertyItem/>
+      
+      <AddPropertyItem token={token}/>
     </div>
   );
 }

@@ -23,12 +23,12 @@ function App() {
     <Router>
       <Routes>
         {/* <Route path="/login" element={<Login />} /> */}
-        <Route path="/landlord" element={<Landlords />} />
-        <Route path="/property/:id" element={<Property />} />
-        <Route path="/" element={<LandlordProfile />} />
-        <Route path="/tenant" element={<Tenant />} />
-        <Route path="/new" element={<NewProperty />} />
-        <Route path="/profit" element={<ProfitAndLoss />} />
+        <Route path="/landlord" element={<Landlords token={token}/>} />
+        <Route path="/property/:id" element={<Property token={token}/>} />
+        <Route path="/" element={<LandlordProfile token={token} />} />
+        <Route path="/tenant" element={<Tenant token={token}/>} />
+        <Route path="/new" element={<NewProperty token={token}/>} />
+        <Route path="/profit" element={<ProfitAndLoss token={token}/>} />
       </Routes>
     </Router>
   );
