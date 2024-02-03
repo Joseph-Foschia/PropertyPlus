@@ -6,6 +6,7 @@ import {
   faFolder,
   faScrewdriverWrench,
   faPersonThroughWindow,
+  faHouseMedical,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
@@ -15,23 +16,27 @@ function Nav() {
       <div className="nav-bg">
         <div className="nav-container">
           <span className="logo">PropertyPro</span>
-          <Link to="/" className="dashboard">
+          <Link to="/">
             <FontAwesomeIcon icon={faHouse} className="house-icon" />
             <span className="dash-span">Dashbaord</span>
           </Link>
-          <Link to="/" className="p-and-l">
+          <Link to="/">
             <FontAwesomeIcon icon={faMoneyBill} className="money" />
             <span className="pl-span">Profit & Loss</span>
           </Link>
-          <Link to="/" className="maintenance">
+          <Link to="/">
             <FontAwesomeIcon icon={faScrewdriverWrench} className="tools" />
             <span className="m-span">Maintenance</span>
           </Link>
-          <Link to="" className="documents">
+          <Link to="/">
+            <FontAwesomeIcon icon={faHouseMedical} className="add"/>
+            <span className="add-p-span">Add Property</span>
+          </Link>
+          <Link to="">
             <FontAwesomeIcon icon={faFolder} className="folder" />
             <span className="d-span">Documents</span>
           </Link>
-          <Link to="/" className="exit">
+          <Link to="/">
             <FontAwesomeIcon icon={faPersonThroughWindow} className="quit" />
             <span className="logout-span">Logout</span>
           </Link>
