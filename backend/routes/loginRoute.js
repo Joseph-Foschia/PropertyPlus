@@ -9,9 +9,9 @@ router.post('/login', (req, res) => {
   const { email, password } = req.body;
 
   authenticateUser(email, password)
-    .then(user => {
-      if(user) {
-        res.json({ message: 'Authentication successful', user })
+    .then(auth => {
+      if(auth) {
+        res.json({ message: 'Authentication successful', user: auth.user, token: auth.token });
       } else {
         res.status(401).json({message: "Invalid credentials", })
       }
