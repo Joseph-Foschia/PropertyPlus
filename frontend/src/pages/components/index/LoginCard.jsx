@@ -55,7 +55,7 @@ export default function LoginCard({ setToken }) {
               />
             </div>
             <div className="form-buttons">
-              <button type="submit">Login</button>
+              <button className="login-btn" type="submit">Login</button>
             </div>
           </form>
         </div>
