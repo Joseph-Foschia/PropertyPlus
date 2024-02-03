@@ -8,7 +8,7 @@ export default function TopNav() {
           <img src={l.image} alt="profilepic" class="blue-box" />
           <div class="user-welcome">
             <h3>Welcome {l.name}</h3>
-            <button>Add Property</button>
+            <button className="add-p-btn">Add Property</button>
           </div>
         </div>
       ))}
