@@ -27,7 +27,7 @@ const AddPropertyItem = (props) => {
         <label htmlFor="unit_cost">Unit Cost</label>
         <input type="text" id="unit_cost" name="unitCost"/>
 
-        <button type="submit">Add Property</button>
+        <button className="add-prop"type="submit">Add Property</button>
       </form>
 
     </div>

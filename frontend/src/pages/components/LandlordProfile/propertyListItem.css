@@ -43,9 +43,11 @@
   font-size: 12px;
 }
 .occupied {
-  background-color: red;
+  background-color: #e65131;
+  opacity: 70%;
 }
 
 .available {
-  background-color: green;
+  background-color: #50db15;
+  opacity: 70%;
 }
