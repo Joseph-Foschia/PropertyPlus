@@ -12,15 +12,15 @@ export default function LoginCard({ setToken }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const tokenData = await loginUser({
+      const {user, token} = await loginUser({
         email,
         password
       });
 
-      if (tokenData) {
-        setToken(tokenData.user.email);
+      if (token) {
+        setToken(token);
       } else {
-        console.log(tokenData.user.email)
+        console.log(token)
         console.error('Invalid credentials');
       }
     } catch (error) {

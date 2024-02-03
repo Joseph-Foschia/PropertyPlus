@@ -2,7 +2,8 @@ import React, { useCallback, useState } from 'react';
 import './LandLords.css';
 
 const AddPropertyItem = (props) => {
-
+  const token = props.token
+  console.log(token)
   const submitForm = (e) => {
     e.preventDefault();
 
