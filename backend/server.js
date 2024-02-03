@@ -1,5 +1,5 @@
 const express = require("express");
-
+const bodyParser = require('body-parser');
 const cors = require("cors");
 
 //Calls the routes
@@ -9,13 +9,15 @@ const landlordNewPropertyRoute = require("./routes/landlordNewPropertyRoute");
 const landlordProfitLossRoute = require("./routes/landlordProfitAndLossRoute");
 const loginRoute = require("./routes/loginRoute");
 const logoutRoute = require("./routes/logoutRoute");
+const {authenticateUser} = require("./db/queries/authenticateUserQuery")
 
 const app = express();
 const port = 3001;
 
 app.use(cors());
+app.use(bodyParser.json()); 
 
-app.use("/api/login", loginRoute);
+app.use(loginRoute);
 app.use("/api/landlordproperties", landlordAllPropertiesRoute);
 app.use("/api/newproperty", landlordNewPropertyRoute);
 app.use("/api/margins,", landlordProfitLossRoute);

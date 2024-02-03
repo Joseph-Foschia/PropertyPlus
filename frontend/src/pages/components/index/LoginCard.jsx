@@ -1,48 +1,33 @@
-import React from "react";
+import React, {useState} from 'react';
+import PropTypes from 'prop-types';
 import "./LoginCard.css";
+import loginUser from "../../../helpers/loginUserHelper"
 
-export default function LoginCard() {
-  const [formData, setFormData] = React.useState({
-    email: "",
-    password: "",
-  });
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-  };
+export default function LoginCard({ setToken }) {
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    // API call to the server to verify the user
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      const response = await fetch("/api/login", {
-        method: "POST",
-        body: JSON.stringify({
-          email: formData.email,
-          password: formData.password,
-        }),
+      const tokenData = await loginUser({
+        email,
+        password
       });
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      // Perform actions on successful login
-      if (data.userExists) {
-        console.log("User exists! Proceed to next step.");
-        // Handle user not existing
+
+      if (tokenData) {
+        setToken(tokenData.user.email);
       } else {
-        console.log("User does not exist.");
+        console.log(tokenData.user.email)
+        console.error('Invalid credentials');
       }
-      // Handle error
     } catch (error) {
-      console.error("Login error:", error);
+      console.error('Login error:', error);
     }
   };
-
+ 
   return (
     <div className="background-login">
       <div className="login-container">
@@ -56,8 +41,7 @@ export default function LoginCard() {
                 id="email"
                 name="email"
                 placeholder="Enter your email"
-                value={formData.email}
-                onChange={handleChange}
+                onChange={e => setEmail(e.target.value)}
               />
             </div>
             <div className="form-group">
@@ -67,8 +51,7 @@ export default function LoginCard() {
                 id="password"
                 name="password"
                 placeholder="Enter your password"
-                value={formData.password}
-                onChange={handleChange}
+                onChange={e => setPassword(e.target.value)}
               />
             </div>
             <div className="form-buttons">

@@ -1,8 +1,8 @@
 import Background from "./components/index/Background";
-function Login() {
+function Login({setToken}) {
   return (
     <div>
-      <Background />
+      <Background setToken={setToken}/>
     </div>
   );
 }
