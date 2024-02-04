@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {jwtDecode} from 'jwt-decode';
 
 export default function useToken() {
 
@@ -16,9 +17,17 @@ export default function useToken() {
     setToken(userToken);
   };
 
+  const getUser = () => {
+    if(token) {
+      const decodedToken = jwtDecode(token)
+      return decodedToken
+    }
+  }
+
   return {
     setToken: saveToken,
-    token
+    token,
+    getUser
   }
 
 }

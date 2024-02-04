@@ -18,7 +18,7 @@ app.use(cors());
 app.use(bodyParser.json()); 
 
 app.use(loginRoute);
-app.use("/api/landlordproperties", landlordAllPropertiesRoute);
+app.use("/api/landlord", landlordAllPropertiesRoute);
 app.use("/api/newproperty", landlordNewPropertyRoute);
 app.use("/api/margins,", landlordProfitLossRoute);
 app.use("/api/margins,", landlordProfitLossRoute);
