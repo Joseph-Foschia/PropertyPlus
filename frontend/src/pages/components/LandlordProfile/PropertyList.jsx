@@ -15,15 +15,12 @@ export default function PropertyList({userData}) {
       .then((response) => response.json())
       .then((data) => {
         setProperties(data);
-        console.log(data)
       })
       .catch((error) => console.error("Error fetching property data", error));
   }, []); 
 
   const displayProperties = (properties) => {
-   
     return properties.map((property) => (
-     
       <PropertyListItem key={property.id} userData={userData} address={property.address} status={property.status}/>
     ))
 }
