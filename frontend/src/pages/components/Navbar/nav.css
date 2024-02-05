@@ -4,15 +4,14 @@
   top: 0px;
   left: -20px;
   width: 255px;
-  height: 915px;
   background-color: #17b890;
   border-radius: 24px;
   height: 100vh;
+  overflow: hidden; /**/
+  box-sizing: border-box;
+  overflow-y: auto;
 }
-.nav-container {
-  display: flex;
-  flex-direction: column;
-}
+
 .logo {
   position: fixed;
   z-index: 2;
