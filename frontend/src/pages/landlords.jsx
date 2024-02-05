@@ -1,4 +1,4 @@
-import AddPropertyItem from './components/PropertyDetails/AddPropertyItem';
+import AddPropertyItem from './AddPropertyItem';
 
 function Landlords({token}) {
   

@@ -5,7 +5,7 @@ import Nav from "./pages/components/Navbar/nav";
 import Property from "./pages/property";
 import Login from "./pages/index";
 import Tenant from "./pages/tenant";
-import NewProperty from "./pages/new";
+import NewProperty from "./pages/AddPropertyItem";
 import Profits from "./pages/profit";
 import LandlordProfile from "./pages/LandlordProfile";
 import useToken from "./CustomHooks/useToken";

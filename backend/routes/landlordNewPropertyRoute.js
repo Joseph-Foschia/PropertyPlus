@@ -1,14 +1,24 @@
 
 const express = require('express');
+const { addNewProperty } = require('../db/queries/addNewPropertyQuery')
 
 
 const router = express.Router();
 
+  
+  
+  router.post('/new',(req, res) => { 
+    const { landlord_id, address, status, image, unit_cost } = req.body;
+    
+    addNewProperty(landlord_id, address, status, image, unit_cost)
+    .then((landlord) => {
+      return res.json(landlord)
+    })
+    .catch((error) => {
+      console.error('Error executing property query', error);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    })
 
-  //change /details to best describe what your api call is
-  router.get('/details',(req, res) => { //when trying to grab json data make sure to put an /api fist. Ex: http://localhost:3000/api/landlords/<route name>
-
-    //logic for returning api data goes here
 
   });
 

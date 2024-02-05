@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 app.use(loginRoute);
 app.use("/api/landlord", landlordAllPropertiesRoute);
-app.use("/api/newproperty", landlordNewPropertyRoute);
+app.use("/api", landlordNewPropertyRoute);
 app.use("/api/margins", profit);
 app.use("/api/logout", logoutRoute);
 app.use("/api/property", landlordIndivPropertyRoute);
