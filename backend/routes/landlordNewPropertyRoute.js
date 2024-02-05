@@ -6,8 +6,8 @@ const { addNewProperty } = require('../db/queries/addNewPropertyQuery')
 const router = express.Router();
 
   
-  
   router.post('/new',(req, res) => { 
+
     const { landlord_id, address, status, image, unit_cost } = req.body;
     
     addNewProperty(landlord_id, address, status, image, unit_cost)

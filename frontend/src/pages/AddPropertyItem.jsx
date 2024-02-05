@@ -1,28 +1,27 @@
 import React, { useCallback, useState } from 'react';
 import addNewPropertyItem from '../helpers/addNewPropertyHelper';
-//import "./components/NewProperty/Landlords.css"
+import "./components/NewProperty/LandLords.css"
 
 const NewProperty = ({userData}) => {
 
+  //Form to handle adding new property
   const submitForm = async (e) => {
     e.preventDefault();
+    //Grabs the form id of propertyForm
     const formElement = document.getElementById('propertyForm');
 
-
-    if (!formElement) {
-      console.error("Form element with id 'propertyForm' not found");
-      return;
-    }
-
+    //variable FormData grabs all inputs from the form
     const formData = new FormData(formElement)
+
+    //Payload turns those tinto key value pairs
     const payload = Object.fromEntries(formData)
 
+    //Calls the afunction to add new property
     try {
       await addNewPropertyItem(payload)
       console.log('Yay')
-      return false;
+      
     } catch (err) {
-      console.log(payload)
       console.log('NOOO', err.message)
     }
   }

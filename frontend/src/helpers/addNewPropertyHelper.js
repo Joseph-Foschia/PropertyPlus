@@ -7,9 +7,6 @@ function addNewPropertyItem(credentials) {
   })
     .then(response => {
       if(!response.ok) {
-        console.log('Response status:', response.status);
-        console.log('Response message:', response.statusText);
-        console.log('Credentials:', credentials);
       throw new Error('Invalid credentials');
     }
     return response.json();
