@@ -1,8 +1,6 @@
-import Graph from "./Graph";
+// import Graph from "./Graph";
 
 function ProfitLoss(props) {
-  
-
   const property = props.property && props.property[0];
 
   const margin = property?.unit_cost - property?.rent;
@@ -12,19 +10,19 @@ function ProfitLoss(props) {
       name: "Rent",
       mortgage: property?.unit_cost,
       rent: property?.rent,
-      margin: margin
+      margin: margin,
     },
   ];
-  
+
   return (
-    <div >
+    <div>
       <h2>P&L</h2>
       <h4>Mortgage: ${property?.unit_cost}</h4>
       <h4>Rent: ${property?.rent}</h4>
       <h4>Over/Under: ${margin}</h4>
-      <Graph data={data}/>
+      {/* <Graph data={data}/> */}
     </div>
-  )
-};
+  );
+}
 
 export default ProfitLoss;
