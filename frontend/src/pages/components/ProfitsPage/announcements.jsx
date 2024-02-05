@@ -1,7 +1,8 @@
 function Announcements() {
   return (
-    <div>
-      Announcements 
+    <div className="announcements round">
+      <h3>Announcements
+      </h3>
     </div>
   )
 };

@@ -1,6 +1,6 @@
 function RecentActivity() {
   return (
-    <div>
+    <div className="recent-activity round">
       Recent Activity
     </div>
   )

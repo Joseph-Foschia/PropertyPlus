@@ -6,7 +6,7 @@ import Property from "./pages/property";
 import Login from "./pages";
 import Tenant from "./pages/tenant";
 import NewProperty from "./pages/new";
-import ProfitAndLoss from "./pages/profit";
+import Profits from "./pages/profit";
 import LandlordProfile from "./pages/LandlordProfile";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         <Route path="/landlord/dashboard" element={<LandlordProfile />} />
         <Route path="/tenant" element={<Tenant />} />
         <Route path="/new" element={<NewProperty />} />
-        <Route path="/profit" element={<ProfitAndLoss />} />
+        <Route path="/profit" element={<Profits />} />
       </Routes>
     </Router>
   );
