@@ -1,7 +1,7 @@
 import LoginCard from "./LoginCard";
 import backgroundImage from "./photos/background-login.png";
 
-export default function Background() {
+export default function Background({setToken}) {
   return (
     <div className="background">
       <img
@@ -17,7 +17,7 @@ export default function Background() {
           filter: "blur(2px)",
         }}
       />
-      <LoginCard />
+      <LoginCard setToken={setToken}/>
     </div>
   );
 }

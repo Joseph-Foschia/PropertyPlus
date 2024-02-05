@@ -1,12 +1,29 @@
 import "./propertyListItem.css";
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from 'react-router-dom';
 
-export default function PropertyListItem() {
+
+
+export default function PropertyListItem({userData, address, status, imageName, id}) {
+
+  const image = require(`./data/${imageName}`);
+ 
   return (
-    <div className="propertyListItem">
-      <div className="profile-pic"></div>
-      <div className="p-name">[Address of Property]</div>
-     {/* // <FontAwesomeIcon className="icon" icon="fa-solid fa-angle-right" /> */}
+    <Link to={`/property/${id}`}>
+    <div>
+        <div className="propertyListItem" >
+          <img className="profile-pic" alt="property" src={image}/>
+          <div className="name-status">
+            <div className="p-name">{address}</div>
+            <div
+              className={`status ${
+                status === "Occupied" ? "occupied" : "available"
+              }`}
+            >
+              {status === "Occupied" ? "Occupied" : "Available"}
+            </div>
+          </div>
+        </div> 
     </div>
+    </Link>
   );
 }

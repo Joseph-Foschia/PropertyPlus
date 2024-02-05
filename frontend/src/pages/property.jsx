@@ -4,6 +4,8 @@ import ProfitLoss from "./components/PropertyDetails/ProfitLoss";
 import "./components/PropertyDetails/PropertyDetails.css";
 import { useState, useEffect } from "react";
 import { Routes, Route, useParams } from "react-router-dom";
+import Nav from "./components/Navbar/nav";
+import PropertyTopNav from "./components/PropertyDetails/PropertyTopNav";
 
 function Property() {
   const [property, setProperty] = useState([]);
@@ -23,16 +25,17 @@ function Property() {
 
   return (
     <div>
-      <h1>{prop?.address}</h1>
-      <div className="property-details-cards">
-        <PropertyDetials property={property} />{" "}
+      <Nav />
+      <div className="property-top-nav">
+        <PropertyTopNav />
       </div>
-      <div className="property-details-cards">
+      <PropertyDetials property={property} />{" "}
+      {/* <div className="property-details-cards">
         <LeaseDetails property={property} />{" "}
       </div>
       <div className="property-details-cards">
         <ProfitLoss property={property} />{" "}
-      </div>
+      </div> */}
     </div>
   );
 }

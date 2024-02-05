@@ -2,7 +2,8 @@ import React, { useCallback, useState } from 'react';
 import './LandLords.css';
 
 const AddPropertyItem = (props) => {
-
+  const token = props.token
+  console.log(token)
   const submitForm = (e) => {
     e.preventDefault();
 
@@ -27,7 +28,7 @@ const AddPropertyItem = (props) => {
         <label htmlFor="unit_cost">Unit Cost</label>
         <input type="text" id="unit_cost" name="unitCost"/>
 
-        <button type="submit">Add Property</button>
+        <button className="add-prop"type="submit">Add Property</button>
       </form>
 
     </div>

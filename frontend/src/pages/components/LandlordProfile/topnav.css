@@ -2,8 +2,8 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: #f8f8f8;
   margin-left: 265px;
+  margin-top: 30px;
 }
 .blue-box {
   top: 48px;
@@ -11,7 +11,7 @@
   width: 152px;
   height: 152px;
   border-radius: 24px;
-  background-color: blue;
+  object-fit: cover;
 }
 .user-welcome {
   display: flex;
@@ -27,7 +27,7 @@
   line-height: 32px;
 }
 
-.user-welcome button {
+.add-p-btn {
   cursor: pointer;
   top: 84px;
   left: 628px;

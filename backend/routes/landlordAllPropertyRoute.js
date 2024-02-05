@@ -1,6 +1,7 @@
 
 const express = require('express');
 const {getLandlords} = require('../db/queries/getAllLandlordsQuery');
+const {getProperties} = require('../db/queries/getLandlordsPropertiesQuery');
 
 const router = express.Router();
 
@@ -19,6 +20,19 @@ const router = express.Router();
       })
   });
 
+  router.get('/properties/:id', (req, res) => {
+    const id = req.params.id
+
+    getProperties(id)
+      .then((properties) => {
+        return res.json(properties)
+      })
+      .catch((error) => {
+        console.error('Error executing landlord query', error);
+        return res.status(500).json({ error: 'Internal Server Error' });
+      })
+
+  });
 
 
 
