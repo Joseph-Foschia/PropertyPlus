@@ -1,0 +1,38 @@
+.profits{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.round{
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
+  padding: 15px;
+  margin: 10px;
+}
+
+.container div {
+  width: 40%;
+}
+
+.profits-container{
+  display: flex;
+}
+
+.dashboard-left-side{
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.container{
+  display: flex;
+}
+.property-overview{
+ margin: 10px;
+}
+.dashboard-right-side{
+}

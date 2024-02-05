@@ -1,7 +1,8 @@
-function TotalIncome() {
+function TotalIncome(props) {
   return (
-    <div>
-      Total Income
+    <div className="total-income round">
+      <h2>Total Income</h2>
+      <p>${props.totalRevenue}</p>
     </div>
   )
 };

@@ -6,7 +6,7 @@ import Property from "./pages/property";
 import Login from "./pages/index";
 import Tenant from "./pages/tenant";
 import NewProperty from "./pages/new";
-import ProfitAndLoss from "./pages/profit";
+import Profits from "./pages/profit";
 import LandlordProfile from "./pages/LandlordProfile";
 import useToken from "./CustomHooks/useToken";
 
@@ -30,7 +30,7 @@ function App() {
         <Route path="/:id" element={<LandlordProfile token={token} userData={userData}/>} />
         <Route path="/tenant" element={<Tenant token={token} userData={userData}/>} />
         <Route path="/new" element={<NewProperty token={token} userData={userData}/>} />
-        <Route path="/profit" element={<ProfitAndLoss token={token} userData={userData}/>} />
+        <Route path="/profit" element={<Profits token={token} userData={userData}/>} />
       </Routes>
     </Router>
   );
