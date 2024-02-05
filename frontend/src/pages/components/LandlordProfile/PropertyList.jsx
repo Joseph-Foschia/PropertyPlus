@@ -21,7 +21,7 @@ export default function PropertyList({userData}) {
 
   const displayProperties = (properties) => {
     return properties.map((property) => (
-      <PropertyListItem key={property.id} userData={userData} address={property.address} status={property.status}/>
+      <PropertyListItem key={property.id} userData={userData} address={property.address} status={property.status} imageName={property.image}/>
     ))
 }
   return (

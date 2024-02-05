@@ -1,13 +1,17 @@
 import "./propertyListItem.css";
 import propertyList from "./data/propertyLists";
 
-export default function PropertyListItem({userData, address, status}) {
+
+
+export default function PropertyListItem({userData, address, status, imageName}) {
+  const image = require(`./data/${imageName}`);
+  console.log(image)
   return (
     <div>
       
         <div className="propertyListItem" >
           
-          <img className="profile-pic" alt="property" />
+          <img className="profile-pic" alt="property" src={image}/>
           <div className="name-status">
             <div className="p-name">{address}</div>
             <div
@@ -19,7 +23,7 @@ export default function PropertyListItem({userData, address, status}) {
             </div>
           </div>
         </div>
-      
+     
     </div>
 
         // <div>
