@@ -13,22 +13,23 @@ import useToken from "./CustomHooks/useToken";
 
 function App() {
   
-   const { token, setToken } = useToken();
+   const { token, setToken, getUser } = useToken();
 
   if(!token) {
     return <Login setToken={setToken} />
   }
 
+  const userData = getUser();
   return (
     <Router>
       <Routes>
         {/* <Route path="/login" element={<Login />} /> */}
-        <Route path="/landlord" element={<Landlords token={token}/>} />
-        <Route path="/property/:id" element={<Property token={token}/>} />
-        <Route path="/" element={<LandlordProfile token={token} />} />
-        <Route path="/tenant" element={<Tenant token={token}/>} />
-        <Route path="/new" element={<NewProperty token={token}/>} />
-        <Route path="/profit" element={<ProfitAndLoss token={token}/>} />
+        <Route path="/landlord" element={<Landlords token={token} userData={userData}/>} />
+        <Route path="/property/:id" element={<Property token={token} userData={userData}/>} />
+        <Route path="/:id" element={<LandlordProfile token={token} userData={userData}/>} />
+        <Route path="/tenant" element={<Tenant token={token} userData={userData}/>} />
+        <Route path="/new" element={<NewProperty token={token} userData={userData}/>} />
+        <Route path="/profit" element={<ProfitAndLoss token={token} userData={userData}/>} />
       </Routes>
     </Router>
   );

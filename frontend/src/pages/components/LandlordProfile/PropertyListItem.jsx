@@ -1,25 +1,44 @@
 import "./propertyListItem.css";
 import propertyList from "./data/propertyLists";
 
-export default function PropertyListItem() {
+export default function PropertyListItem({userData, address, status}) {
   return (
     <div>
-      {propertyList.map((property, index) => (
-        <div className="propertyListItem" key={index}>
-          {" "}
-          <img className="profile-pic" src={property.image} alt="property" />
+      
+        <div className="propertyListItem" >
+          
+          <img className="profile-pic" alt="property" />
           <div className="name-status">
-            <div className="p-name">{property.address}</div>
+            <div className="p-name">{address}</div>
             <div
               className={`status ${
-                property.isOccupied ? "occupied" : "available"
+                status === "Occupied" ? "occupied" : "available"
               }`}
             >
-              {property.isOccupied ? "Occupied" : "Available"}
+              {status === "Occupied" ? "Occupied" : "Available"}
             </div>
           </div>
         </div>
-      ))}
+      
     </div>
+
+        // <div>
+    //   {propertyList.map((property, index) => (
+    //     <div className="propertyListItem" key={index}>
+    //       {" "}
+    //       <img className="profile-pic" src={property.image} alt="property" />
+    //       <div className="name-status">
+    //         <div className="p-name">{property.address}</div>
+    //         <div
+    //           className={`status ${
+    //             property.isOccupied ? "occupied" : "available"
+    //           }`}
+    //         >
+    //           {property.isOccupied ? "Occupied" : "Available"}
+    //         </div>
+    //       </div>
+    //     </div>
+    //   ))}
+    // </div>
   );
 }
