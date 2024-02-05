@@ -7,7 +7,7 @@ export default function PropertyTopNav() {
           <h1 className="welcome">Welcome [User]</h1>
           <p className="p-pro">Welcome to ProperyPro</p>
         </div>
-        <div className="profile-pic"></div>
+        <div className="profile-pic-detail"></div>
       </div>
     </div>
   );
