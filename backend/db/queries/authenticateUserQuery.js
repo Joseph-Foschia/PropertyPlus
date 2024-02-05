@@ -1,5 +1,6 @@
 const db = require('../connection');
 // const jwt = require('jsonwebtoken');
+//import Test from '../../../frontend/src/pages/components/LandlordProfile/data/photos/test';
 
 // const secretKey = 'password'; 
 
