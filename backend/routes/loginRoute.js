@@ -11,6 +11,7 @@ router.post('/login', (req, res) => {
   authenticateUser(email, password)
     .then(auth => {
       if(auth) {
+        console.log(auth)
         res.json({ message: 'Authentication successful', user: auth.user, token: auth.token });
       } else {
         res.status(401).json({message: "Invalid credentials", })

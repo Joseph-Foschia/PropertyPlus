@@ -16,13 +16,14 @@ const authenticateUser =  (email, password) => {
       //   email: user.email,
       //   name: user.name,
       //   profile: user.profile_img
-      const token = user.email
-      
+      const token = user.id
+      const userID = user.id
       // const token = jwt.sign(tokenData, secretKey, { expiresIn: '1h' });
       console.log('Auth Success')
-      return {user, token}
+      return {user: userID, token}
     } else {
-      console.log("Invalid")
+      //console.log(user)
+      console.log(" Test Invalid")
       return null
     }
   })

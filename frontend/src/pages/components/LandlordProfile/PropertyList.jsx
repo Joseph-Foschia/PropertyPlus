@@ -6,7 +6,7 @@ import { Routes, Route, useParams } from "react-router-dom";
 
 
 export default function PropertyList({userData}) {
-
+  
   const [properties, setProperties] = useState([]);
 
   const { id } = useParams();
