@@ -1,16 +1,16 @@
 import "./propertyListItem.css";
-import propertyList from "./data/propertyLists";
+import { Link } from 'react-router-dom';
 
 
 
-export default function PropertyListItem({userData, address, status, imageName}) {
+export default function PropertyListItem({userData, address, status, imageName, id}) {
+
   const image = require(`./data/${imageName}`);
-  console.log(image)
+ 
   return (
+    <Link to={`/property/${id}`}>
     <div>
-      
         <div className="propertyListItem" >
-          
           <img className="profile-pic" alt="property" src={image}/>
           <div className="name-status">
             <div className="p-name">{address}</div>
@@ -22,26 +22,8 @@ export default function PropertyListItem({userData, address, status, imageName})
               {status === "Occupied" ? "Occupied" : "Available"}
             </div>
           </div>
-        </div>
-     
+        </div> 
     </div>
-    // <div>
-    //   {propertyList.map((property, index) => (
-    //     <div className="propertyListItem" key={index}>
-    //       {" "}
-    //       <img className="profile-pic" src={property.image} alt="property" />
-    //       <div className="name-status">
-    //         <div className="p-name">{property.address}</div>
-    //         <div
-    //           className={`status ${
-    //             property.isOccupied ? "occupied" : "available"
-    //           }`}
-    //         >
-    //           {property.isOccupied ? "Occupied" : "Available"}
-    //         </div>
-    //       </div>
-    //     </div>
-    //   ))}
-    // </div>
+    </Link>
   );
 }

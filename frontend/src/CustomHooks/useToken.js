@@ -6,13 +6,16 @@ export default function useToken() {
   const getToken = () => {
     
     const email = localStorage.getItem('token');
-    return email;
+   return email;
+
+
   };
 
   const [token, setToken] = useState( getToken());
 
+
   const saveToken = userToken => {
-  
+    
     localStorage.setItem('token', userToken);
     setToken(userToken);
   };
@@ -23,6 +26,7 @@ export default function useToken() {
     //   return decodedToken
     // }
     return token;
+ 
   }
 
   return {

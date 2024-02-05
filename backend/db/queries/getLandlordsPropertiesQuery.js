@@ -4,7 +4,7 @@ const db = require('../connection');
 const getProperties =  (id) => {
  
   return db
-  .query('SELECT * FROM units WHERE landlord_id = $1', [id])
+  .query('SELECT units.*, landlords.name FROM units JOIN landlords ON landlords.id = units.landlord_id WHERE units.landlord_id = $1', [id])
   .then((res) => {
     return res.rows;
   })

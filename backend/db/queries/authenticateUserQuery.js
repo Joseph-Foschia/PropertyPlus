@@ -1,8 +1,4 @@
 const db = require('../connection');
-// const jwt = require('jsonwebtoken');
-//import Test from '../../../frontend/src/pages/components/LandlordProfile/data/photos/test';
-
-// const secretKey = 'password'; 
 
 const authenticateUser =  (email, password) => {
  
@@ -12,19 +8,15 @@ const authenticateUser =  (email, password) => {
     const user = res.rows[0]
     
     if(user && user.password === password) {
-      // const tokenData = {
-      //   userId: user.id,
-      //   email: user.email,
-      //   name: user.name,
-      //   profile: user.profile_img
+    
       const token = user.id
-      const userID = user.id
-      // const token = jwt.sign(tokenData, secretKey, { expiresIn: '1h' });
+      const userData = { id: user.id, name: user.name, email: user.email };
+      
       console.log('Auth Success')
-      return {user: userID, token}
+      return {user: userData, token}
     } else {
-      //console.log(user)
-      console.log(" Test Invalid")
+     
+      console.log("Invalid")
       return null
     }
   })

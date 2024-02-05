@@ -1,17 +1,17 @@
 import "./topnav.css";
 import landlord from "./data/landlord";
-export default function TopNav() {
+import image from "./data/photos/profilePic.png"
+
+export default function TopNav({name}) {
+
   return (
-    <>
-      {landlord.map((l, index) => (
-        <div class="top-bar" key={index}>
-          <img src={l.image} alt="profilepic" class="blue-box" />
+ 
+    <div class="top-bar" >
+        <img src={image} alt="profilepic" class="blue-box" />
           <div class="user-welcome">
-            <h3>Welcome {l.name}</h3>
+            <h3>Welcome {name}</h3>
             <button className="add-p-btn">Add Property</button>
           </div>
-        </div>
-      ))}
-    </>
+    </div>
   );
 }
