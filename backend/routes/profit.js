@@ -1,5 +1,5 @@
 const express = require('express');
-const { getTotalRevenue } = require('../db/queries/getTotalRenevue');
+const { getTotalRevenue } = require('../db/queries/getTotalRevenue');
 const { getAverageRent } = require('../db/queries/getAverageRent');
 
 

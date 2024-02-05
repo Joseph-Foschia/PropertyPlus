@@ -1,7 +1,7 @@
 import PropertyDetials from "./components/PropertyDetails/PropertyDetails";
 import LeaseDetails from "./components/PropertyDetails/leaseDetails";
 import ProfitLoss from "./components/PropertyDetails/ProfitLoss";
-import "./components/PropertyDetails/PropertyDetails.css";
+import "./components/PropertyDetails/propertyDetails.css";
 import { useState, useEffect } from "react";
 import { Routes, Route, useParams } from "react-router-dom";
 import Nav from "./components/Navbar/nav";
