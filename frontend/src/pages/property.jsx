@@ -27,13 +27,13 @@ function Property() {
 
   const prop = property && property[0];
 
-  const margin = prop?.unit_cost - prop?.rent;
+  const margin = prop?.unit_cost - prop?.lease_rent;
 
   const data = [
     {
       name: "Rent",
       mortgage: prop?.unit_cost,
-      rent: prop?.rent,
+      rent: prop?.lease_rent,
       margin: margin,
     },
   ];

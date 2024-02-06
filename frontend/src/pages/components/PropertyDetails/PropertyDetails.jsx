@@ -4,15 +4,16 @@ function PropertyDetails(props) {
   const property = props.property && props.property[0];
 
 
-  const dateString = property?.start_date
+  const dateString = property?.start
   const date = new Date(dateString)
   const formattedDate = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-  
+  console.log(property)
   return (
     <div className="address-details">
       <h2 className="address">{property && property.address}</h2>
       <div className="details-card">
         <h2 className="title">Details</h2>
+  
         <div className="detail-item">
           <h4>Status: {property && property.status}</h4>
         </div>
@@ -29,7 +30,7 @@ function PropertyDetails(props) {
         <h4>Term Start : {formattedDate ? formattedDate : "N/A"}</h4>
         </div>
         <div className="detail-item">
-          <h4>Rent: ${property && property.rent}</h4>
+          <h4>Rent: ${property && property.lease_rent}</h4>
         </div>
       </div>
     </div>

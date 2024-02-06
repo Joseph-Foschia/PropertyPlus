@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function PropertyListItem({userData, address, status, imageName, id}) {
 
   const image = require(`./data/${imageName}`);
- 
+  console.log(address, id)
   return (
     <Link to={`/property/${id}`}>
     <div>
