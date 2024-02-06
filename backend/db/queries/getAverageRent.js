@@ -8,7 +8,8 @@ const getAverageRent = (id) => {
       AVG(l.rent) AS average_rent_per_unit
 FROM leases l
 JOIN units u ON l.unit_id = u.id WHERE landlord_id = $1
-GROUP BY u.landlord_id, u.id;`,
+GROUP BY u.landlord_id, u.id
+ORDER BY u.id ASC;`,
       [id]
     )
     .then((res) => {

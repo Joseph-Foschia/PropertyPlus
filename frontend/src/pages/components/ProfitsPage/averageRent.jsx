@@ -1,13 +1,3 @@
-// import {
-//   LineChart,
-//   Line,
-//   XAxis,
-//   YAxis,
-//   CartesianGrid,
-//   Tooltip,
-//   Legend,
-//   ResponsiveContainer,
-// } from "recharts";
 import React, { PureComponent } from "react";
 import {
   BarChart,
@@ -25,7 +15,6 @@ function AverageRent(props) {
   return (
     <div className="tenants-by-property round">
       <h3>Average Rent per Unit</h3>
-
       <BarChart
         width={500}
         height={300}
