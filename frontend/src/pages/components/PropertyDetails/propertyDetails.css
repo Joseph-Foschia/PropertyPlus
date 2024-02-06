@@ -1,65 +1,46 @@
-/* Styles for the parent container */
-.welcome {
+.property-top-nav {
+  display: flex;
+}
+.address-details {
+  display: flex;
+}
+.pp-card {
+  margin-right: 40px;
+  width: 380px;
+  margin-left: 300px;
+  margin-top: 130px;
+  height: 238px;
+  background-color: #f0f0f0;
+  border-radius: 24px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.details-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 350px;
+  height: 300px;
+  margin-top: 80px;
+  background-color: #f0f0f0;
+  border-radius: 24px;
+  margin-left: 300px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-/* Styles for the header */
-.welcome header {
-  width: 100%;
-  background-color: #333; /* Example color for header background */
-  color: #fff; /* Example color for header text */
-  padding: 20px;
+.title {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 500px;
+  margin-top: 20px;
 }
-
-/* Styles for the main content */
-.welcome main {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding: 20px;
+.address {
+  position: fixed;
+  z-index: 2;
+  margin-top: 20px;
+  margin-left: 320px;
+  font-family: "Poppins";
 }
-
-/* Styles for the left side of the main content */
-.welcome-left-side {
-  width: 65%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Styles for the right side of the main content */
-.welcome-right-side {
-  width: 35%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Styles for the individual blocks */
-.property-details-section,
-.notifications,
-.welcome-right-side-bottom-half {
-  background-color: #f0f0f0; /* Light grey background color */
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-/* Styles for the image containers */
-.image-container,
-.property-details-section img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-}
-
-/* Adjustments for smaller screens */
-@media (max-width: 768px) {
-  .welcome-left-side {
-    width: 100%;
-  }
-  
-  .welcome-right-side {
-    width: 100%;
-    margin-top: 20px;
-  }
+.detail-item {
+  margin-left: 60px;
+  font-family: "Poppins";
+  font-size: 19px;
+  margin-bottom: 10px;
 }

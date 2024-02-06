@@ -1,0 +1,62 @@
+.some-component {
+  width: 300px;
+  height: 300px;
+  background-color: #f0f0f0;
+  border-radius: 24px;
+  margin-top: 80px;
+  margin-left: -40px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.mr-title {
+  position: absolute;
+  color: #030303;
+  font-size: 20px;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: 28px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.mr-list {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  margin-top: 60px;
+  font-size: 16px;
+  font-family: "Poppins";
+  line-height: 22px;
+  margin-left: 30px;
+}
+.mr-item1 {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.mr-item2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.mr-item3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.mr-status1 {
+  margin-left: 70px;
+  color: #ffc300;
+}
+.mr-status2 {
+  color: #ffc300;
+}
+.mr-status3 {
+  color: #32de84;
+}
+.hr2 {
+  border-top: 1px solid black;
+}
