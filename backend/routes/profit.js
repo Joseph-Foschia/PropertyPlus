@@ -1,5 +1,5 @@
 const express = require('express');
-const { getTotalRevenue } = require('../db/queries/getTotalRenevue');
+const { getTotalRevenue } = require('../db/queries/getTotalRevenue');
 const { getAverageRent } = require('../db/queries/getAverageRent');
 
 
@@ -18,9 +18,9 @@ router.get('/details/:id',(req, res) => { //when trying to grab json data make s
     })
 });
 
-router.get('/rent/',(req, res) => { //when trying to grab json data make sure to put an /api fist. Ex: http://localhost:3000/api/landlords/<route name>
-  // const id = req.params.id
-  getAverageRent()
+router.get('/rent/:id',(req, res) => { //when trying to grab json data make sure to put an /api fist. Ex: http://localhost:3000/api/landlords/<route name>
+  const id = req.params.id
+  getAverageRent(id)
     .then((averageRent) => {
       return res.json(averageRent)
     })

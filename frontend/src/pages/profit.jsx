@@ -23,7 +23,7 @@ function Profits() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/margins/rent/")
+    fetch("http://localhost:3001/api/margins/rent/1")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -48,7 +48,7 @@ function Profits() {
               <h3>Paid on Time</h3>
             </div>
           </div>
-          <AverageRent />
+          <AverageRent averageRent={averageRent}/>
           <TotalIncome totalRevenue={totalRevenue} />
           <ServiceProviderPerformance />
         </div>

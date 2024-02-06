@@ -57,7 +57,7 @@ function ServiceProviderPerformance() {
   ];
   return (
     <div className="service-provider-performance round">
-      Service Provider Performance
+      Maintenance Costs
       <LineChart width={500} height={300} data={data}>
         <XAxis dataKey="name" />
         <YAxis />
