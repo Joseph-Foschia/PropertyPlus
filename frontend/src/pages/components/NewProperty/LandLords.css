@@ -1,36 +1,199 @@
-.add-property-item {
-  width: 300px;
-  margin: 0 auto;
+.property-form {
+  position: absolute;
+  margin-left: 500px;
+  margin-top: 200px;
 }
 
+.add-new-prop {
+  position: absolute;
+  color: #222222;
+  font-size: 28px;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: 42px;
+  margin-top: 130px;
+  margin-left: 320px;
+}
 .property-form {
+  position: absolute;
   display: flex;
   flex-direction: column;
+  margin-left: 320px;
 }
-
-label {
+.streetAddress {
+  width: 400px;
+  height: 60px;
+  padding: 0px 15px;
+  border: 1px solid #e2e2e2;
+  box-sizing: border-box;
+  border-radius: 24px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  color: #262626;
+  font-size: 22px;
+  font-family: "Poppins";
+  line-height: 26px;
+  outline: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.city {
+  width: 400px;
+  margin-bottom: 10px;
+  height: 60px;
+  padding: 0px 15px;
+  border: 1px solid #e2e2e2;
+  box-sizing: border-box;
+  border-radius: 24px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  color: #262626;
+  font-size: 22px;
+  font-family: "Poppins";
+  line-height: 26px;
+  outline: none;
   margin-top: 10px;
 }
+.province {
+  width: 400px;
+  height: 60px;
+  margin-bottom: 10px;
+  padding: 0px 15px;
+  border: 1px solid #e2e2e2;
+  box-sizing: border-box;
+  border-radius: 24px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  color: #262626;
+  font-size: 22px;
+  font-family: "Poppins";
+  line-height: 26px;
+  outline: none;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+.postal {
+  width: 400px;
+  height: 60px;
+  padding: 0px 15px;
+  border: 1px solid #e2e2e2;
+  box-sizing: border-box;
+  border-radius: 24px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  color: #262626;
+  font-size: 22px;
+  font-family: "Poppins";
+  line-height: 26px;
+  outline: none;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+#status {
+  width: 400px;
+  height: 60px;
+  padding: 0px 15px;
+  margin-bottom: 10px;
+  border: 1px solid #e2e2e2;
+  box-sizing: border-box;
+  border-radius: 24px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  color: #262626;
+  font-size: 22px;
+  font-family: "Poppins";
+  line-height: 26px;
+  outline: none;
+  margin-top: 10px;
+}
+.unit-cost {
+  width: 400px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 60px;
+  padding: 0px 15px;
+  border: 1px solid #e2e2e2;
+  box-sizing: border-box;
+  border-radius: 24px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  color: #262626;
+  font-size: 22px;
+  font-family: "Poppins";
+  line-height: 26px;
+  outline: none;
+}
+label {
+  color: #222222;
+  font-size: 24px;
+  font-family: "Poppins";
+  font-weight: 400;
+  line-height: 29px;
+}
+.left-side-addp {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+.right-side-addp {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-left: 500px;
+}
+.file-upload-container {
+  position: absolute;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 400px;
+  width: 600px;
+}
 
-input[type="text"] {
+.file-label {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.file-input {
+  font-size: 14px;
   padding: 8px;
-  margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 16px;
-}
-
-.add-prop {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
   cursor: pointer;
+  /* Styling for file input might be limited due to browser security restrictions */
 }
-
 .add-prop {
-  background-color: #0056b3;
+  position: absolute;
+  margin-top: 420px;
+  margin-left: 640px;
+  border: black;
+  cursor: pointer;
+  width: 220px;
+  height: 60px;
+  padding: 0px 8px;
+  border: 0;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background-color: #17b890;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: 26px;
+  outline: none;
+}
+.up-img {
+  position: absolute;
+  margin-top: 350px;
+  color: #222222;
+  font-size: 24px;
+  font-family: "Poppins";
+  font-weight: 400;
+  width: 200px;
+  line-height: 29px;
 }
