@@ -30,17 +30,48 @@ const NewProperty = ({userData}) => {
   return (
     <div className='add-property-item'>
       <form id="propertyForm"className="property-form" action="POST" >
-        <label htmlFor="address">Address</label>
+        <label htmlFor="address">Street Address</label>
+        <input type="text" id="address" name="address"/>
+{/* 
+        <label htmlFor="address">City</label>
         <input type="text" id="address" name="address"/>
 
-        <label htmlFor="status">Status</label>
-        <input type="text" id="status" name="status"/>
+        <label htmlFor="address">Province</label>
+        <select name="status" id="status">
+            <option value="ON">Ontario</option> 
+            <option value="QC">Quebec</option> 
+            <option value="BC">British Columbia</option> 
+            <option value="AB">Alberta</option> 
+            <option value="SK">Saskatchewan</option> 
+            <option value="MB">Manitoba</option> 
+            <option value="NB">New Brunswick</option> 
+            <option value="NS">Nova Scotia</option> 
+            <option value="PEI">Prince Edward Island</option> 
+            <option value="NL">Newfoundland and Labrador</option> 
+            <option value="NT">Northwest Territories</option> 
+            <option value="NU">Nunavut</option> 
+            <option value="YT">Yukon</option> 
+            
+          </select>
+
+        <label htmlFor="address">Postal Code</label>
+        <input type="text" id="address" name="address"/> */}
+
+        {/* <label htmlFor="status">Status</label>
+        <input type="text" id="status" name="status"/> */}
 
         {/* <label htmlFor="image">Image Url</label>
         <input type="text" id="image" name="imageUrl"/> */}
 
         <label htmlFor="unit_cost">Unit Cost</label>
         <input type="text" id="unit_cost" name="unitCost"/>
+
+        <label htmlFor="status">Status</label>
+          <select name="status" id="status">
+            <option value="Available">Available</option> 
+            <option value="Occupied">Occupied</option> 
+          </select>
+       
 
         <input type="hidden" name="landlord_id" defaultValue={userData} />
 
