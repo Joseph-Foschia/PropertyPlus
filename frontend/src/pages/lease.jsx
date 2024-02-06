@@ -1,14 +1,56 @@
+import React, { useCallback, useState } from "react";
+import findTenant from "../helpers/addNewLease";
 
 function NewLease({userData}) {
+
+  const submitForm = async (e) => {
+    // e.preventDefault();
+    // //Grabs the form id of propertyForm
+    // // const formElement = document.getElementById("leaseForm");
+
+    // //variable FormData grabs all inputs from the form
+    // const formData = new FormData(formElement);
+
+    // //Payload turns those tinto key value pairs
+    // const payload = Object.fromEntries(formData);
+    // console.log(payload);
+    // // //Creates full address from all the inputs
+    // // const date = `${payload.year}-${payload.month}-${payload.day}`;
+    // // delete payload.year;
+    // // delete payload.month;
+    // // delete payload.day;
+    
+    // // payload.start_date = date;
+    // //Calls the a function to add new property
+
+    // console.log(payload)
+    // try {
+    //   await findTenant(payload);
+    //   console.log("Yay");
+    // } catch (err) {
+    //   console.log("NOOO", err.message);
+    // }
+
+    const tenantEmail = document.getElementById("tenant_email").value;
+   
+    try {
+      const tenant = await findTenant({ email: tenantEmail });
+      console.log("Tenant found:", tenant);
+      // Proceed with other actions based on the retrieved tenant data
+    } catch (err) {
+      console.log("Error finding tenant:", err.message);
+    }
+  };
+
+
   return (
     <div>
       <h1> New Lease Form</h1>
 
-      <form id="propertyForm"className="property-form" action="POST" >
+      <form id="leaseForm"className="lease-form" action="POST" >
 
 
-        <label htmlFor="rent">Rent</label>
-        <input type="text" id="rent" name="rent"/>
+      {/* <input type="hidden" name="unit-id" defaultValue="4" />
 
   
 
@@ -30,20 +72,20 @@ function NewLease({userData}) {
             <option value="11">DEC</option>         
           </select>
        
-        
-        <input type="text" id="day" name="day" placeholder="day"/>
+        <label htmlFor="tenant_email">Day</label>
+        <input type="text" id="day" name="day" placeholder="day"/> */}
 
 
         <label htmlFor="tenant_email">Tenant Email</label>
         <input type="text" id="tenant_email" name="tenant_email"/>
 
-        <input type="hidden" name="landlord_id" defaultValue={userData} />
+        {/* <input type="hidden" name="landlord_id" defaultValue={userData} />
 
         <input type="hidden" name="lease-docs" defaultValue="" />
 
-        <input type="hidden" name="unit-id" defaultValue="" />
+        <input type="hidden" name="unit-id" defaultValue="" /> */}
 
-        <button className="add-prop" type="button" >Add Property</button>
+        <button className="add-prop" type="button" onClick={submitForm}>Add Property</button>
 
       </form>
 
