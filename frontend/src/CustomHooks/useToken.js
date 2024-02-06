@@ -20,6 +20,11 @@ export default function useToken() {
     setToken(userToken);
   };
 
+  // const logout = () => {
+  //   localStorage.removeItem('token');
+  //   setToken(null)
+  // }
+
   const getUser = () => {
     // if(token) {
     //   const decodedToken = jwtDecode(token)

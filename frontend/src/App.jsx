@@ -34,7 +34,7 @@ function App() {
           element={<Property token={token} userData={userData} />}
         />
         <Route
-          path="/:id"
+          path="/"
           element={<LandlordProfile token={token} userData={userData} />}
         />
         <Route
@@ -49,6 +49,7 @@ function App() {
           path="/profit"
           element={<Profits token={token} userData={userData} />}
         />
+   
            <Route
           path="/lease"
           element={<NewLease token={token} userData={userData} />}
