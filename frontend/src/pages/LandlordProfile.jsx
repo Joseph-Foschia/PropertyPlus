@@ -9,11 +9,11 @@ export default function LandlordProfile({token, userData}) {
   const [properties, setProperties] = useState([]);
 
   //TODO: Id needs to be the logged in landlord instead of the id param
-  const { id } = useParams();
+  //const { id } = useParams();
 
   //Makes api call for logged in landlord properties
   useEffect(() => {
-    fetch(`http://localhost:3001/api/landlord/properties/${id}`)
+    fetch(`http://localhost:3001/api/landlord/properties/${userData}`)
       .then((response) => response.json())
       .then((data) => {
         setProperties(data);

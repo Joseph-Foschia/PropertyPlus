@@ -54,3 +54,16 @@ CREATE TABLE payments (
   date_paid TIMESTAMP NOT NULL,
   status VARCHAR NOT NULL
 );
+
+-- Create maintenance table
+CREATE TABLE maintenance (
+  id SERIAL PRIMARY KEY,
+  lease_id INTEGER,
+  unit_id INTEGER,
+  description VARCHAR,
+  cost INTEGER,
+  date_started TIMESTAMP,
+  date_completed TIMESTAMP,
+  FOREIGN KEY (lease_id) REFERENCES leases(id),
+  FOREIGN KEY (unit_id) REFERENCES units(id)
+);
