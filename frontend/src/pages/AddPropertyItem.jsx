@@ -15,7 +15,14 @@ const NewProperty = ({userData}) => {
 
     //Payload turns those tinto key value pairs
     const payload = Object.fromEntries(formData)
-
+    console.log(payload)
+    //Creates full address from all the inputs
+    const address = `${payload.streetAddress}, ${payload.city}, ${payload.province}, ${payload.postal}`
+    delete payload.streetAddress;
+    delete payload.city;
+    delete payload.province;
+    delete payload.postal;
+    payload.address = address;
     //Calls the afunction to add new property
     try {
       await addNewPropertyItem(payload)
@@ -30,14 +37,14 @@ const NewProperty = ({userData}) => {
   return (
     <div className='add-property-item'>
       <form id="propertyForm"className="property-form" action="POST" >
-        <label htmlFor="address">Street Address</label>
-        <input type="text" id="address" name="address"/>
-{/* 
-        <label htmlFor="address">City</label>
-        <input type="text" id="address" name="address"/>
+        <label htmlFor="streetAddress">Street Address</label>
+        <input type="text" id="streetAddress" name="streetAddress"/>
 
-        <label htmlFor="address">Province</label>
-        <select name="status" id="status">
+        <label htmlFor="city">City</label>
+        <input type="text" id="city" name="city"/>
+
+        <label htmlFor="province">Province</label>
+        <select name="province" id="province">
             <option value="ON">Ontario</option> 
             <option value="QC">Quebec</option> 
             <option value="BC">British Columbia</option> 
@@ -54,14 +61,12 @@ const NewProperty = ({userData}) => {
             
           </select>
 
-        <label htmlFor="address">Postal Code</label>
-        <input type="text" id="address" name="address"/> */}
+        <label htmlFor="postal">Postal Code</label>
+        <input type="text" id="postal" name="postal"/>
 
-        {/* <label htmlFor="status">Status</label>
-        <input type="text" id="status" name="status"/> */}
-
-        {/* <label htmlFor="image">Image Url</label>
-        <input type="text" id="image" name="imageUrl"/> */}
+        {/* TODO: This does not submit anything for now */}
+        <label htmlFor="test">Image Url</label>
+        <input type="text" id="test" name="imageUrl"/>
 
         <label htmlFor="unit_cost">Unit Cost</label>
         <input type="text" id="unit_cost" name="unitCost"/>
