@@ -13,9 +13,11 @@ function PropertyDetails(props) {
       <h2 className="address">{property && property.address}</h2>
       <div className="details-card">
         <h2 className="title">Details</h2>
-  
+        {property && property.lease_rent ? (
+           <>
         <div className="detail-item">
           <h4>Status: {property && property.status}</h4>
+         
         </div>
         <div className="detail-item">
           <h4>Tenant Name: {property && property.tenant_name} </h4>
@@ -32,6 +34,13 @@ function PropertyDetails(props) {
         <div className="detail-item">
           <h4>Rent: ${property && property.lease_rent}</h4>
         </div>
+        </>
+         ) : (
+       
+        <div className="detail-item">
+          <h4>No active lease.</h4>
+        </div> 
+         )}
       </div>
     </div>
   );
