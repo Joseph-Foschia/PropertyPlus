@@ -1,9 +1,13 @@
 import "./PropertyDetails.css";
 function PropertyDetails(props) {
-  console.log(props);
 
   const property = props.property && props.property[0];
 
+
+  const dateString = property?.start_date
+  const date = new Date(dateString)
+  const formattedDate = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  
   return (
     <div className="address-details">
       <h2 className="address">{property && property.address}</h2>
@@ -13,16 +17,19 @@ function PropertyDetails(props) {
           <h4>Status: {property && property.status}</h4>
         </div>
         <div className="detail-item">
-          <h4>Tenant Name: [NAME]</h4>
+          <h4>Tenant Name: {property && property.tenant_name} </h4>
         </div>
         <div className="detail-item">
-          <h4>Term: 4 year</h4>
+          <h4>Tenant Phone #: {property && property.tenant_phone} </h4>
         </div>
         <div className="detail-item">
-          <h4>Term Start : Jan 1st 2022</h4>
+          <h4>Term: 1 year</h4>
         </div>
         <div className="detail-item">
-          <h4>Rent: 1400$</h4>
+        <h4>Term Start : {formattedDate ? formattedDate : "N/A"}</h4>
+        </div>
+        <div className="detail-item">
+          <h4>Rent: ${property && property.rent}</h4>
         </div>
       </div>
     </div>

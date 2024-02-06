@@ -37,15 +37,17 @@ function Property() {
       margin: margin,
     },
   ];
+
+  
   return (
     <div>
       <Nav />
       <div className="property-top-nav">
-        <PropertyTopNav />
+        <PropertyTopNav prop={prop} />
       </div>
       <div className="history-pic">
-        <ProfilePic />
-        <PaymentHistory />
+        <ProfilePic property={prop} />
+        <PaymentHistory property={property} />
       </div>
       <div className="details-graph">
         <PropertyDetials property={property} />
