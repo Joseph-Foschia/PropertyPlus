@@ -35,3 +35,13 @@ INSERT INTO payments (lease_id, amount, date_paid, status)
 VALUES
   (1, 1500, '2024-02-15', 'Paid'),
   (2, 1200, '2024-03-15', 'Paid');
+
+
+-- Test data for maintenance table
+INSERT INTO maintenance (lease_id, unit_id, description, cost, date_started, date_completed)
+VALUES
+  (1, 1, 'Repaired leaking faucet in the kitchen', 50, '2024-02-05 10:00:00', '2024-02-05 11:30:00'),
+  (2, 2, 'Fixed broken window latch in the living room', 30, '2024-03-02 14:30:00', '2024-03-02 15:15:00'),
+  (3, 3, 'Performed routine HVAC maintenance for unit', 100, '2024-02-28 09:00:00', '2024-02-28 11:00:00'),
+  (4, 4, 'Replaced faulty thermostat in the bedroom', 80, '2024-02-20 13:00:00', '2024-02-20 14:30:00'),
+  (5, 5, 'Fixed plumbing issue in the bathroom', 120, '2024-03-10 08:00:00', '2024-03-10 11:30:00');
