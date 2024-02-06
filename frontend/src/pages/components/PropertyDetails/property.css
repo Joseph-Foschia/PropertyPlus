@@ -1,0 +1,10 @@
+.history-pic {
+  display: flex;
+  align-items: baseline;
+}
+.list {
+  align-items: center;
+}
+.details-graph {
+  display: flex;
+}
