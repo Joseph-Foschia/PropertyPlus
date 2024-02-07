@@ -34,6 +34,7 @@ export default function StripeCheckout() {
 
   return (
     <div>
+      
       {clientSecret && (
         <Elements options={options} stripe={stripePromise}>
           <CheckoutForm />
