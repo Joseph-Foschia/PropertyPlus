@@ -44,3 +44,26 @@
   font-size: 19px;
   margin-bottom: 10px;
 }
+
+/* added by jill*/
+.add-new-lease{
+
+  position: absolute;
+  margin-left: 20px;
+  border: black;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  padding: 0px 8px;
+  border: 0;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background-color: #17b890;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: 26px;
+  outline: none;
+
+}

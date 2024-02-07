@@ -47,7 +47,7 @@ function PropertyDetails(props) {
           <h4>No active lease.</h4>
         </div>
         <Link to='/lease'state={dataToPass}>
-          <button>Add New Lease</button>
+          <button class="add-new-lease">Add New Lease</button>
         </Link>
         </>
          )}
