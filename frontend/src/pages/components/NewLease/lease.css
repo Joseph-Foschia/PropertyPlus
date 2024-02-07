@@ -1,0 +1,48 @@
+.add-lease-item {
+  display: flex;
+  flex-direction: column;
+  padding-left: 350px;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-size: 45px;
+}
+
+
+.lease-form input,
+.lease-form select,
+.lease-form button {
+  margin-bottom: 25px;
+  display: block; 
+}
+
+.lease-start-date {
+  margin-top: 20px;
+}
+
+.lease-form select#month {
+ 
+  font-size: 24px; /* Increase the font size */
+}
+
+.add-lease {
+  position: absolute;
+  margin-top: 20px;
+  border: black;
+  cursor: pointer;
+  width: 220px;
+  height: 60px;
+  padding: 0px 8px;
+  border: 0;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background-color: #17b890;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: 26px;
+  outline: none;
+}

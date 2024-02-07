@@ -1,6 +1,8 @@
 import React, { useCallback, useState } from "react";
 import { findTenant, addNewLease } from "../helpers/addNewLease";
 import { useLocation } from "react-router-dom";
+import Nav from "./components/Navbar/nav";
+import "./components/NewLease/lease.css"
 
 
 //import addNewLease from "../helpers/addNewLease";
@@ -57,16 +59,22 @@ function NewLease(props) {
 
 
   return (
+    <div className="add-lease-item">
+      <Nav></Nav>
+      <h3> Add New Lease</h3>
     <div>
-      <h1> New Lease Form</h1>
-
       <form id="leaseForm"className="lease-form" action="POST" >
 
-
+   
       <label htmlFor="rent">Rent</label>
         <input type="text" id="rent" name="rent" placeholder="rent"/>
 
-        <label htmlFor="start_date">Lease Start Date</label>
+        <label htmlFor="tenant_email">Tenant Email</label>
+        <input type="text" id="tenant_email" name="tenant_email"/>
+     
+        <label htmlFor="start_date">Lease Start Date:</label>
+        <div className="lease-start-date">
+        <label htmlFor="start_date">Year</label>
         <input type="text" id="year" name="year" placeholder="year"/>
 
         <select name="month" id="month">
@@ -86,10 +94,8 @@ function NewLease(props) {
        
         <label htmlFor="tenant_email">Day</label>
         <input type="text" id="day" name="day" placeholder="day"/>
+        </div>
 
-
-        <label htmlFor="tenant_email">Tenant Email</label>
-        <input type="text" id="tenant_email" name="tenant_email"/>
 
         <input type="hidden" name="landlord_id" defaultValue={props.userData} />
 
@@ -99,10 +105,10 @@ function NewLease(props) {
 
         <input type="hidden" name="end_date" defaultValue="2025-01-01" />
 
-        <button className="add-prop" type="button" onClick={submitForm}>Add Property</button>
+        <button className="add-lease" type="button" onClick={submitForm}>Add Lease</button>
 
       </form>
-
+      </div>
     </div>
   );
 }
