@@ -11,7 +11,6 @@ import LandlordProfile from "./pages/LandlordProfile";
 import useToken from "./CustomHooks/useToken";
 import NewLease from "./pages/lease";
 
-
 function App() {
   const { token, setToken, getUser } = useToken();
 
@@ -49,8 +48,8 @@ function App() {
           path="/profit"
           element={<Profits token={token} userData={userData} />}
         />
-   
-           <Route
+
+        <Route
           path="/lease"
           element={<NewLease token={token} userData={userData} />}
         />

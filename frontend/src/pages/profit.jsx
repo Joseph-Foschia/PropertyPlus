@@ -8,6 +8,8 @@ import "./components/ProfitsPage/profits.css";
 import AverageRent from "./components/ProfitsPage/averageRent";
 import OccupancyRate from "./components/ProfitsPage/occupancyRate";
 import TotalMaintenanceCost from "./components/ProfitsPage/totalMaintenanceCost";
+import Nav from "./components/Navbar/nav";
+import PropertyTopNav from "./components/PropertyDetails/PropertyTopNav";
 
 function Profits() {
   const [totalRevenue, setTotalRevenue] = useState([]);
@@ -43,7 +45,7 @@ function Profits() {
     fetch("http://localhost:3001/api/margins/occupancy/1")
       .then((response) => response.json())
       .then((data) => {
-        console.log("We are in profit.jsx: ", data[0].occupancy_rate)
+        console.log("We are in profit.jsx: ", data[0].occupancy_rate);
         setOccupancyRate(data[0].occupancy_rate);
       })
       .catch((error) => {
@@ -51,8 +53,9 @@ function Profits() {
       });
   }, []);
   return (
-    <div className="profits">
-      <h1>Dashboard</h1>
+    <div>
+      <Nav />
+      <PropertyTopNav />
       <div className="profits-container">
         <div className="dashboard-left-side">
           <div className="container">
@@ -66,12 +69,12 @@ function Profits() {
           <TotalIncome totalRevenue={totalRevenue} />
         </div>
         <div className="dashboard-right-side">
+          <TotalMaintenanceCost />
+          <MaintenanceCosts />
           <div className="container">
             <Announcements />
             <RecentActivity />
           </div>
-          <MaintenanceCosts />
-          <TotalMaintenanceCost />
         </div>
       </div>
     </div>

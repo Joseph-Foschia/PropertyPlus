@@ -1,39 +1,40 @@
-.profits{
+.profits {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
 }
-.round{
+.round {
   border: 1px solid black;
   border-radius: 5px;
-  box-shadow: 2px 2px 2px black;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 2);
   padding: 15px;
   margin: 10px;
 }
 
 .container div {
-  width: 40%;
+  width: 50%;
 }
 
-.profits-container{
+.profits-container {
   display: flex;
+  position: absolute;
+  margin-top: 130px;
+  margin-left: 200px;
 }
 
-.dashboard-left-side{
+.dashboard-left-side {
   margin-left: 50px;
   margin-right: 50px;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.container{
+.container {
   display: flex;
   justify-content: space-around;
 }
-.property-overview{
- margin: 10px;
-}
-.dashboard-right-side{
+.property-overview {
+  margin: 10px;
 }
