@@ -1,42 +1,55 @@
 import React, { useCallback, useState } from "react";
-import findTenant from "../helpers/addNewLease";
+import { findTenant, addNewLease } from "../helpers/addNewLease";
+import { useLocation } from "react-router-dom";
 
-function NewLease({userData}) {
 
+//import addNewLease from "../helpers/addNewLease";
+function NewLease(props) {
+  
+  //Gets the unit number
+  const location = useLocation();
+  const { unit } = location.state || {};
+  
+  
   const submitForm = async (e) => {
-    // e.preventDefault();
-    // //Grabs the form id of propertyForm
-    // // const formElement = document.getElementById("leaseForm");
+    e.preventDefault();
 
-    // //variable FormData grabs all inputs from the form
-    // const formData = new FormData(formElement);
+    //Grabs the form id of propertyForm
+    const formElement = document.getElementById("leaseForm");
+
+    //variable FormData grabs all inputs from the form
+    const formData = new FormData(formElement);
 
     // //Payload turns those tinto key value pairs
-    // const payload = Object.fromEntries(formData);
-    // console.log(payload);
-    // // //Creates full address from all the inputs
-    // // const date = `${payload.year}-${payload.month}-${payload.day}`;
-    // // delete payload.year;
-    // // delete payload.month;
-    // // delete payload.day;
+    const payload = Object.fromEntries(formData);
     
-    // // payload.start_date = date;
+    //Creates full address from all the inputs
+    const date = `${payload.year}-${payload.month}-${payload.day}`;
+    delete payload.year;
+    delete payload.month;
+    delete payload.day;
+    
+    payload.start_date = date;
     // //Calls the a function to add new property
 
-    // console.log(payload)
-    // try {
-    //   await findTenant(payload);
-    //   console.log("Yay");
-    // } catch (err) {
-    //   console.log("NOOO", err.message);
-    // }
-
+    //Gets tenants email
     const tenantEmail = document.getElementById("tenant_email").value;
    
     try {
+      //First search database for active tenant and then return their ID
       const tenant = await findTenant({ email: tenantEmail });
-      console.log("Tenant found:", tenant);
+      payload.tenant_id = tenant[0].id
+      console.log("After find tenant:", payload);
+
       // Proceed with other actions based on the retrieved tenant data
+    try {
+      //Add Data to add new lease
+        await addNewLease(payload);
+        console.log("New lease added successfully");
+
+    } catch (addLeaseError) {
+      console.log("Error adding new lease:", addLeaseError.message);
+    }
     } catch (err) {
       console.log("Error finding tenant:", err.message);
     }
@@ -50,9 +63,8 @@ function NewLease({userData}) {
       <form id="leaseForm"className="lease-form" action="POST" >
 
 
-      {/* <input type="hidden" name="unit-id" defaultValue="4" />
-
-  
+      <label htmlFor="rent">Rent</label>
+        <input type="text" id="rent" name="rent" placeholder="rent"/>
 
         <label htmlFor="start_date">Lease Start Date</label>
         <input type="text" id="year" name="year" placeholder="year"/>
@@ -73,17 +85,19 @@ function NewLease({userData}) {
           </select>
        
         <label htmlFor="tenant_email">Day</label>
-        <input type="text" id="day" name="day" placeholder="day"/> */}
+        <input type="text" id="day" name="day" placeholder="day"/>
 
 
         <label htmlFor="tenant_email">Tenant Email</label>
         <input type="text" id="tenant_email" name="tenant_email"/>
 
-        {/* <input type="hidden" name="landlord_id" defaultValue={userData} />
+        <input type="hidden" name="landlord_id" defaultValue={props.userData} />
 
-        <input type="hidden" name="lease-docs" defaultValue="" />
+        <input type="hidden" name="lease_docs" defaultValue="test" />
 
-        <input type="hidden" name="unit-id" defaultValue="" /> */}
+        <input type="hidden" name="unit_id" defaultValue={unit} />
+
+        <input type="hidden" name="end_date" defaultValue="2025-01-01" />
 
         <button className="add-prop" type="button" onClick={submitForm}>Add Property</button>
 

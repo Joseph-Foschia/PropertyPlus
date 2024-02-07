@@ -21,7 +21,7 @@ function findTenant(credentials) {
 
 function addNewLease(credentials) {
   return new Promise((resolve, reject) => {
-    fetch('http://localhost:3001/api/new', {
+    fetch('http://localhost:3001/api/post', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(credentials)
@@ -37,4 +37,4 @@ function addNewLease(credentials) {
     });
   }
 
-  export default findTenant;
+  export { findTenant, addNewLease };

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import React, { useState } from "react";
 import Landlords from "./pages/landlords";
 import Nav from "./pages/components/Navbar/nav";
@@ -13,6 +13,7 @@ import NewLease from "./pages/lease";
 
 
 function App() {
+ 
   const { token, setToken, getUser } = useToken();
 
   if (!token) {

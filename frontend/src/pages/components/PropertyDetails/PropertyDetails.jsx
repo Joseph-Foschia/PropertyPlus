@@ -1,13 +1,19 @@
 import "./PropertyDetails.css";
+import { Link } from "react-router-dom";
+
 function PropertyDetails(props) {
 
   const property = props.property && props.property[0];
 
-
+  //Turns PSQL date into readbale date
   const dateString = property?.start
   const date = new Date(dateString)
   const formattedDate = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-  console.log(property)
+  
+  //Gets the unit number to pass down to add new lease
+  const dataToPass = { unit: property && property.id };
+  
+
   return (
     <div className="address-details">
       <h2 className="address">{property && property.address}</h2>
@@ -36,10 +42,14 @@ function PropertyDetails(props) {
         </div>
         </>
          ) : (
-       
+          <>
         <div className="detail-item">
           <h4>No active lease.</h4>
-        </div> 
+        </div>
+        <Link to='/lease'state={dataToPass}>
+          <button>Add New Lease</button>
+        </Link>
+        </>
          )}
       </div>
     </div>
