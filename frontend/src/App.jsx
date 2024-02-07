@@ -10,6 +10,7 @@ import Profits from "./pages/profit";
 import LandlordProfile from "./pages/LandlordProfile";
 import useToken from "./CustomHooks/useToken";
 import NewLease from "./pages/lease";
+import Stripe from "./pages/stripe";
 
 function App() {
  
@@ -54,6 +55,11 @@ function App() {
           path="/lease"
           element={<NewLease token={token} userData={userData} />}
         />
+
+        <Route 
+          path="/pay"
+          element={<Stripe token={token} userData={userData} />}
+        /> 
       </Routes>
     </Router>
   );
