@@ -10,6 +10,7 @@ import Profits from "./pages/profit";
 import LandlordProfile from "./pages/LandlordProfile";
 import useToken from "./CustomHooks/useToken";
 import NewLease from "./pages/lease";
+import TenantDashboard from "./pages/TenantDashboard";
 
 function App() {
  
@@ -24,7 +25,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route path="/login" element={<Login />} /> */}
+        {/* <Route path="/login" element={<Login setToken={setToken} />} /> */}
         <Route
           path="/landlord"
           element={<Landlords token={token} userData={userData} />}
@@ -54,6 +55,7 @@ function App() {
           path="/lease"
           element={<NewLease token={token} userData={userData} />}
         />
+        <Route path="tenant/dash" element={<TenantDashboard />} />
       </Routes>
     </Router>
   );

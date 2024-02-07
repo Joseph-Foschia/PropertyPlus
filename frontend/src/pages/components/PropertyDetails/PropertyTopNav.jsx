@@ -1,7 +1,5 @@
 import "./propertyTopNav.css";
-export default function PropertyTopNav({prop}) {
-
-
+export default function PropertyTopNav({ prop }) {
   return (
     <div className="top-p-nav">
       <div className="nav-container">
