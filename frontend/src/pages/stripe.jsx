@@ -47,7 +47,7 @@ const Stripe = () => {
       </form>
      
       </div>
-         <div className='bg-white rounded-md p-12 bg-opacity-70'>
+         <div className='stripe-checkout-container bg-white rounded-md p-12 bg-opacity-70'>
           
           <StripeCheckout/>
           </div>  
