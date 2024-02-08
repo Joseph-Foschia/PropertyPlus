@@ -61,7 +61,7 @@ function NewLease(props) {
   return (
     <div className="add-lease-item">
       <Nav></Nav>
-      <h3> Add New Lease</h3>
+      <h3 className='head'> Add New Lease</h3>
     <div>
       <form id="leaseForm"className="lease-form" action="POST" >
 
