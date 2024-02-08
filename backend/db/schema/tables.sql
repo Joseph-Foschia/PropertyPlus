@@ -64,6 +64,6 @@ CREATE TABLE maintenance (
   cost INTEGER,
   date_started TIMESTAMP,
   date_completed TIMESTAMP,
-  FOREIGN KEY (lease_id) REFERENCES leases(id),
-  FOREIGN KEY (unit_id) REFERENCES units(id)
+  FOREIGN KEY (lease_id) REFERENCES leases(id) ON DELETE CASCADE,
+  FOREIGN KEY (unit_id) REFERENCES units(id) ON DELETE CASCADE
 );
