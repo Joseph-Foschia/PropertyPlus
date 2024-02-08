@@ -2,7 +2,7 @@
 const express = require('express');
 const {findTenantByEmail} = require('../db/queries/findTenantByEmailQuery')
 const {addNewLease} = require('../db/queries/addNewLeaseQuery')
-
+const {changeStatus} = require('../db/queries/changeStatusQuery')
 
 const router = express.Router();
 
@@ -28,6 +28,23 @@ const router = express.Router();
     const { unit_id, tenant_id, start_date, end_date, rent, lease_docs} = req.body;
     
     addNewLease(unit_id, tenant_id, start_date, end_date, rent, lease_docs)
+    .then((lease) => {
+      return res.json(lease)
+    })
+    .catch((error) => {
+      console.error('Error executing property query', error);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    })
+
+
+  });
+
+
+  router.post('/update',(req, res) => { 
+
+    const { id } = req.body;
+    
+    changeStatus(id)
     .then((lease) => {
       return res.json(lease)
     })

@@ -3,8 +3,11 @@ import addNewPropertyItem from "../helpers/addNewPropertyHelper";
 import "./components/NewProperty/LandLords.css";
 import Nav from "./components/Navbar/nav";
 import PropertyTopNav from "./components/PropertyDetails/PropertyTopNav";
+import { useNavigate } from "react-router-dom";
 
 const NewProperty = ({ userData }) => {
+  const navigate = useNavigate();
+
   //Form to handle adding new property
   const submitForm = async (e) => {
     e.preventDefault();
@@ -28,6 +31,7 @@ const NewProperty = ({ userData }) => {
     try {
       await addNewPropertyItem(payload);
       console.log("Yay");
+      navigate('/')
     } catch (err) {
       console.log("NOOO", err.message);
     }
