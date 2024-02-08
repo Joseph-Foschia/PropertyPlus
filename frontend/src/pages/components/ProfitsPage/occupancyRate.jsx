@@ -2,7 +2,7 @@ function OccupancyRate(props) {
   console.log("Occupancy Rate", props.occupancyRate)
   return (
     <div className="occupancy-rate round">
-      <h3>Occupancy Rate</h3>
+      <h2>Occupancy Rate</h2>
       <p>{parseFloat(props.occupancyRate)}%</p>
     </div>
   )

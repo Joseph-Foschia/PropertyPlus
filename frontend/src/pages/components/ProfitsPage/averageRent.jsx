@@ -11,7 +11,7 @@ import {
 } from "recharts";
 
 function AverageRent(props) {
-
+  console.log("Average Rent: ", props.averageRent);
   return (
     <div className="tenants-by-property round">
       <h3>Average Rent per Unit</h3>
