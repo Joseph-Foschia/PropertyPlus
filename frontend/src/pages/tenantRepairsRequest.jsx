@@ -2,15 +2,48 @@ import React, { useState, useEffect } from "react";
 import "./components/TenantRepairs/repairs.css";
 
 const TenantRepairsRequest = () => {
-  const [unitAddress, setUnitAddress] = useState([]);
+  const [unitAddressList, setUnitAddressList] = useState([]);
   const [description, setDescription] = useState("");
-  const data = {};
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Here you can handle the form submission, such as sending the data to a server
-    console.log("Unit Address:", unitAddress);
-    console.log("Description:", description);
-    // Reset the form fields after submission
+  
+  const handleSubmit =  async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target)
+    const payload = Object.fromEntries(formData)
+
+    console.log("payload", payload);
+
+
+    try {
+      const response = await fetch('/api/landlord/properties', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+      if (response.ok) {
+        console.log('Form data submitted successfully!');
+      } else {
+        console.error('Failed to submit form data.');
+      }
+    } catch (error) {
+      console.error('Error submitting form data:', error);
+    }
+
+    // useEffect(() => {
+    //   fetch("http://localhost:3001/api/landlord/properties/1")
+    //     .then((response) => response.json())
+    //     .then((data) => {
+    //       //This is just for inserting the data to the maintenance table
+    //     })
+    //     .catch((error) => {
+    //       console.error("Error fetching inserting maintenance data:", error);
+    //     });
+    // }, []);
+
+    // Tomorrow look up how to submit stuff to the database, it's supposed to come from the parameters
+    
     setDescription("");
   };
 
@@ -18,10 +51,10 @@ const TenantRepairsRequest = () => {
     fetch("http://localhost:3001/api/landlord/properties/1")
       .then((response) => response.json())
       .then((data) => {
-        setUnitAddress(data);
+        setUnitAddressList(data);
       })
       .catch((error) => {
-        console.error("Error fetching total revenue data:", error);
+        console.error("Error fetching Landlord's Unit Addresses data:", error);
       });
   }, []);
 
@@ -32,15 +65,17 @@ const TenantRepairsRequest = () => {
     //   [name]: value
     // });
   };
-  console.log(unitAddress);
 
-  const arrayOfUnits = unitAddress.map((unit, idx) => {
+  console.log(unitAddressList);
+
+  const arrayOfUnits = unitAddressList.map((unit, idx) => {
     if (unit && unit.address) {
-      return <option key={idx} value={unit.address}>{unit.address}</option>;
+      return <option key={idx} value={unit.id}>{unit.address}</option>;
     } else {
       return null; // Skip rendering if unit or unit.address is undefined
     }
   });
+
   return (
     <div className="repairs-container">
       <h2>Request Repair</h2>
@@ -50,15 +85,14 @@ const TenantRepairsRequest = () => {
           <select
             id="unit_id"
             name="unit_id"
-            value={unitAddress.unit_id}
+            value={unitAddressList.unit_id}
             onChange={handleChange}
             required
           >
             <option value="">Select Unit ID</option>
-            {/* <option value="1">Unit 1</option>
-              <option value="2">Unit 2</option> */}
+
             {arrayOfUnits}
-            {/* Add more options as needed */}
+
           </select>
         </div>
         <div>
