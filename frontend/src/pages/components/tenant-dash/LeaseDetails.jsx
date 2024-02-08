@@ -1,15 +1,22 @@
 import "./leaseDetails.css";
 
-export default function LeaseDetails() {
+export default function LeaseDetails({tenantDetails}) {
+  
+
+
+  //Turns PSQL date into readbale date
+  const dateString = tenantDetails?.start
+  const date = new Date(dateString)
+  const formattedDate = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   return (
     <div className="lease-details-box">
       <div className="t-lease-detail-box">
         <p className="t-detail-title">Lease Details</p>
-        <p className="t-start-date">Start Date: Januray 5th 2023</p>
-        <p className="t-end-date">End Date: Januray 5th 2025</p>
-        <p className="t-rent">Rent: 1500$</p>
-        <p className="t-ll-name">Landlord Name: John Doe</p>
-        <p className="t-ll-number">Phone number: 123-456-7890</p>
+        <p className="t-rent">Rent: ${tenantDetails && tenantDetails.lease_rent}</p>
+        <p className="t-start-date">Start Date: {formattedDate}</p>
+        <p className="t-end-date">Term: 1 year</p>
+        <p className="t-ll-name">Landlord Name: {tenantDetails && tenantDetails.landlords_name}</p>
+        <p className="t-ll-number">Phone number: {tenantDetails && tenantDetails.landlord_phone}</p>
       </div>
     </div>
   );
