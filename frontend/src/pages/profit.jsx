@@ -15,7 +15,7 @@ import PropertyTopNav from "./components/PropertyDetails/PropertyTopNav";
 function Profits() {
   const [totalRevenue, setTotalRevenue] = useState([]);
   const [averageRent, setAverageRent] = useState([]);
-  const [occupancyRate, setOccupancyRate] = useState([]);
+  const [occupancyRate, setOccupancyRate] = useState(0);
   const [maintenanceCosts, setMaintenanceCosts] = useState([]);
   const [totalMaintenanceCost, setTotalMaintenanceCost] = useState([]);
 
@@ -49,7 +49,7 @@ function Profits() {
       .then((response) => response.json())
       .then((data) => {
         console.log("We are in profit.jsx: ", data[0].occupancy_rate)
-        setOccupancyRate(data[0].occupancy_rate);
+        setOccupancyRate(data.occupancy_rate);
       })
       .catch((error) => {
         console.error("Error fetching maintenance data:", error);
@@ -85,9 +85,7 @@ function Profits() {
           <AverageRent averageRent={averageRent} />
         </div>
         <div className="dashboard-right-side">
-          <TotalMaintenanceCost />
-          <MaintenanceCosts />
-          <div className="container">
+        <div className="container">
             <OccupancyRate occupancyRate={occupancyRate} />
             {/* <div className="rent-payment round">
               <p>Outstanding Rent</p>
@@ -96,7 +94,6 @@ function Profits() {
             <TotalMaintenanceCost totalMaintenanceCost={totalMaintenanceCost}/>
           </div>
           <MaintenanceCosts />
-          <TotalMaintenanceCost />
         </div>
       </div>
     </div>

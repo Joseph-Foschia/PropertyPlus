@@ -11,7 +11,6 @@ import {
 } from "recharts";
 
 function MaintenanceCosts(props) {
-  console.log("Maintenence Costs: ", props.maintenanceCosts[0]);
   const data = [
     {
       name: "October",
@@ -39,11 +38,11 @@ function MaintenanceCosts(props) {
     },
   ];
 
-  const arrayOfLines = props.maintenanceCosts.map((maintenanceData, idx) => {
-    return (
-      <Line key={idx} type="monotone" dataKey={"yo"} stroke="#8884d8"/>
-    );
-  });
+  // const arrayOfLines = props.maintenanceCosts.map((maintenanceData, idx) => {
+  //   return (
+  //     <Line key={idx} type="monotone" dataKey={"yo"} stroke="#8884d8"/>
+  //   );
+  // });
 
   const test = [
     <Line type="monotone" dataKey="pv test" stroke="#8884d8" />,
@@ -69,8 +68,8 @@ function MaintenanceCosts(props) {
         <Tooltip />
         <Legend />
 
-        {/* <Line type="monotone" dataKey="pv test" stroke="#8884d8" />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
+        <Line type="monotone" dataKey="pv test" stroke="#8884d8" />
+          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
         {/* If the maintenance data is not empty it will fill the LineChart with the parameters from the maintenance table */}
         {props.maintenanceCosts &&
           props.maintenanceCosts.length > 0 && test }
