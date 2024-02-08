@@ -1,0 +1,94 @@
+.payment-history-card {
+  width: 760px;
+  height: 238px;
+  background-color: #f0f0f0;
+  border-radius: 24px;
+  margin-left: 30px;
+  margin-right: 30px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.payment-history {
+  position: absolute;
+  color: #030303;
+  margin-top: 20px;
+  margin-left: 30px;
+  font-size: 22px;
+  font-family: "Poppins";
+  font-weight: 700;
+  line-height: 28px;
+}
+.payment-history-list {
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 30px;
+}
+
+.phl-item1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: #030303;
+  font-size: 16px;
+  font-family: "Poppins";
+  line-height: 22px;
+}
+.phl-status1 {
+  margin-left: 350px;
+  color: #ffc300;
+  font-size: 16px;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: 22px;
+  text-align: right;
+}
+.hr1 {
+  border-top: 1px solid black;
+}
+.phl-item2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: #030303;
+  font-size: 16px;
+  font-family: "Poppins";
+  line-height: 22px;
+}
+.phl-status2 {
+  margin-left: 350px;
+  color: #de3232;
+  font-size: 16px;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: 22px;
+  text-align: right;
+}
+.hr2 {
+  border-top: 1px solid black;
+}
+.phl-item3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: #030303;
+  font-size: 16px;
+  font-family: "Poppins";
+  line-height: 22px;
+}
+.phl-status3 {
+  margin-left: 350px;
+  color: #32de84;
+  font-size: 16px;
+  font-family: "Poppins";
+  font-weight: 600;
+  line-height: 22px;
+  text-align: right;
+}
+.hr3 {
+  border-top: 1px solid black;
+}

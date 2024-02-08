@@ -63,7 +63,7 @@ function App() {
           path="/pay"
           element={<Stripe token={token} userData={userData} />}
         /> 
-        <Route path="tenant/dash" element={<TenantDashboard />} />
+        <Route path="tenant/dash" element={<TenantDashboard token={token} userData={userData} />} />
       </Routes>
     </Router>
   );
@@ -78,7 +78,7 @@ function App() {
             path="/pay"
             element={<Stripe token={token} userData={userData} />}
           /> 
-          <Route path="tenant/dash" element={<TenantDashboard />} />
+          <Route path="tenant/dash" element={<TenantDashboard token={token} userData={userData}/>} />
         </Routes>
       </Router>
     );
