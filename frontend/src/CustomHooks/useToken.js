@@ -14,30 +14,31 @@ export default function useToken() {
   const [token, setToken] = useState( getToken());
 
 
-  const saveToken = userToken => {
+  const saveToken = (userToken, user) => {
     
     localStorage.setItem('token', userToken);
+    localStorage.setItem('user', JSON.stringify(user));
+    
     setToken(userToken);
   };
 
-  // const logout = () => {
-  //   localStorage.removeItem('token');
-  //   setToken(null)
-  // }
+
 
   const getUser = () => {
-    // if(token) {
-    //   const decodedToken = jwtDecode(token)
-    //   return decodedToken
-    // }
     return token;
- 
+  }
+
+  const getUserType = () => {
+    const userDataString = localStorage.getItem('user');
+  const userData = userDataString ? JSON.parse(userDataString) : null;
+  return userData ? userData.type : null;
   }
 
   return {
     setToken: saveToken,
     token,
-    getUser
+    getUser,
+    getUserType
   }
 
 }

@@ -15,14 +15,16 @@ import Stripe from "./pages/stripe";
 
 function App() {
  
-  const { token, setToken, getUser } = useToken();
+  const { token, setToken, getUser, getUserType } = useToken();
 
   if (!token) {
     return <Login setToken={setToken} />;
   }
 
   const userData = getUser();
-
+  const type = getUserType();
+  
+  if(type === "landlord") {
   return (
     <Router>
       <Routes>
@@ -65,6 +67,23 @@ function App() {
       </Routes>
     </Router>
   );
+  }
+
+  if(type === "tenant") {
+    return (
+      <Router>
+        <Routes>
+          
+          <Route 
+            path="/pay"
+            element={<Stripe token={token} userData={userData} />}
+          /> 
+          <Route path="tenant/dash" element={<TenantDashboard />} />
+        </Routes>
+      </Router>
+    );
+  }
+
 }
 
 export default App;

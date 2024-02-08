@@ -18,7 +18,7 @@ export default function LoginCard({ setToken }) {
       });
 
       if (token) {
-        setToken(token);
+        setToken(token, user);
       } else {
         console.log(token)
         console.error('Invalid credentials');
