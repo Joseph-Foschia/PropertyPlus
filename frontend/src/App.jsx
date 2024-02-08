@@ -11,6 +11,7 @@ import LandlordProfile from "./pages/LandlordProfile";
 import useToken from "./CustomHooks/useToken";
 import NewLease from "./pages/lease";
 import TenantDashboard from "./pages/TenantDashboard";
+import TenantRepairsRequest from "./pages/tenantRepairsRequest";
 import Stripe from "./pages/stripe";
 
 function App() {
@@ -42,6 +43,10 @@ function App() {
         <Route
           path="/tenant"
           element={<Tenant token={token} userData={userData} />}
+        />
+        <Route
+          path="/repairs"
+          element={<TenantRepairsRequest token={token} userData={userData} />}
         />
         <Route
           path="/new"
