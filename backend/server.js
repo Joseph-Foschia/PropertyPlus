@@ -10,6 +10,7 @@ const profit = require("./routes/profit");
 const loginRoute = require("./routes/loginRoute");
 const logoutRoute = require("./routes/logoutRoute");
 const landlordNewLeaseRoute = require("./routes/landlordNewLeaseRoute")
+const getTenantProperty = require("./routes/tenantDetailsRoute")
 const {authenticateUser} = require("./db/queries/authenticateUserQuery")
 
 const app = express();
@@ -28,7 +29,7 @@ app.use("/api/margins", profit);
 app.use("/api/logout", logoutRoute);
 app.use("/api/property", landlordIndivPropertyRoute);
 app.use("/api", landlordNewLeaseRoute);
-
+app.use("/api", getTenantProperty);
 
 
 const calculateOrderAmount = (items) => {

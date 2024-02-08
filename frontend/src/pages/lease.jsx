@@ -1,13 +1,12 @@
 import React, { useCallback, useState } from "react";
-import { findTenant, addNewLease } from "../helpers/addNewLease";
-import { useLocation } from "react-router-dom";
+import { findTenant, addNewLease, changeUnitStatus } from "../helpers/addNewLease";
+import { useLocation, useNavigate } from "react-router-dom";
 import Nav from "./components/Navbar/nav";
 import "./components/NewLease/lease.css"
 
 
-//import addNewLease from "../helpers/addNewLease";
 function NewLease(props) {
-  
+  const navigate = useNavigate();
   //Gets the unit number
   const location = useLocation();
   const { unit } = location.state || {};
@@ -48,7 +47,8 @@ function NewLease(props) {
       //Add Data to add new lease
         await addNewLease(payload);
         console.log("New lease added successfully");
-
+        await changeUnitStatus({id: unit})
+        navigate(`/property/${unit}`)
     } catch (addLeaseError) {
       console.log("Error adding new lease:", addLeaseError.message);
     }
