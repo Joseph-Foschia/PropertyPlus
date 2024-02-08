@@ -2,6 +2,7 @@ const express = require('express');
 const { getTotalRevenue } = require('../db/queries/getTotalRevenue');
 const { getAverageRent } = require('../db/queries/getAverageRent');
 const { getOccupancyRate } = require('../db/queries/getOccupancyRate');
+const { getMaintenanceData, getTotalMaintenanceCost } = require('../db/queries/getMaintenanceData');
 
 const router = express.Router();
 
@@ -35,7 +36,35 @@ router.get('/occupancy/:id',(req, res) => {
   const id = req.params.id;
   getOccupancyRate(id)
     .then((occupancyRate) => {
+      console.log("We are in profit.js", occupancyRate);
       return res.json(occupancyRate)
+    })
+    .catch((error) => {
+      console.error('Error executing property query', error);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    })
+
+});
+
+router.get('/maintenance/:id',(req, res) => {
+  const id = req.params.id;
+  getMaintenanceData(id)
+    .then((maintenanceData) => {
+      console.log("We are in profit.js", maintenanceData);
+      return res.json(maintenanceData)
+    })
+    .catch((error) => {
+      console.error('Error executing property query', error);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    })
+
+});
+
+router.get('/maintenancetotal/:id',(req, res) => {
+  const id = req.params.id;
+  getTotalMaintenanceCost(id)
+    .then((maintenanceData) => {
+      return res.json(maintenanceData)
     })
     .catch((error) => {
       console.error('Error executing property query', error);
