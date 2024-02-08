@@ -4,7 +4,7 @@ import Landlords from "./pages/landlords";
 import Nav from "./pages/components/Navbar/nav";
 import Property from "./pages/property";
 import Login from "./pages/index";
-import Tenant from "./pages/tenant";
+import PaymentSuccess from "./pages/payment";
 import NewProperty from "./pages/AddPropertyItem";
 import Profits from "./pages/profit";
 import LandlordProfile from "./pages/LandlordProfile";
@@ -42,8 +42,8 @@ function App() {
           element={<LandlordProfile token={token} userData={userData} />}
         />
         <Route
-          path="/tenant"
-          element={<Tenant token={token} userData={userData} />}
+          path="/approved"
+          element={<PaymentSuccess token={token} userData={userData} />}
         />
         <Route
           path="/new"
