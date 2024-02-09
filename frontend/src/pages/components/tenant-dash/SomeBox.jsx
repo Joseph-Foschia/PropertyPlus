@@ -1,9 +1,9 @@
 import "./somebox.css";
+import { formatDate } from "../../../helpers/dateHelper";
+
 
 export default function SomeBox({tenantDetails, maintenance}) {
-  const dateString = maintenance?.date_started
-  const date = new Date(dateString)
-  const formattedDate = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  
 
   return (
     <div>
@@ -12,12 +12,7 @@ export default function SomeBox({tenantDetails, maintenance}) {
         <ul>
           {maintenance.map((request, index) => {
             const dateString = request.date_started;
-            const date = new Date(dateString);
-            const formattedDate = date.toLocaleDateString("en-US", {
-              month: "long",
-              day: "numeric",
-              year: "numeric"
-            });
+            const formattedDate = formatDate(dateString)
 
             return (
               <li key={index}>
@@ -26,8 +21,8 @@ export default function SomeBox({tenantDetails, maintenance}) {
                     <p className="description">{request.description}</p>
                     <p className="date-started">{formattedDate}</p>
                   </div>
-                  <p className="status-request">{request.status}</p>
-                </div>
+                    <p className="status-request">{request.status}</p>
+                  </div>
               </li>
             );
           })}

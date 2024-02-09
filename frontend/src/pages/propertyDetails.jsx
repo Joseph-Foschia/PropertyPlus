@@ -4,7 +4,9 @@ import Notifications from "./components/PropertyDetails/notifications";
 import TenantInfo from "./components/PropertyDetails/tenantInfo";
 import './components/PropertyDetails/propertyDetails.css';
 
+
 function PropertyDetails() {
+
   return (
     <div className="welcome">
       <header>
