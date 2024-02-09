@@ -36,8 +36,8 @@ export default function TenantDashboard({ token, userData }) {
         <PaymentDetails />
       </div>
       <div className="bottom-ten-dash">
-        <LeaseDetails tenantDetails={tenantDetails} />
-        <SomeBox />
+        <LeaseDetails tenantDetails={tenantDetails}/>
+        <SomeBox tenantDetails={tenantDetails}/>
         <div className="t-buttons">
           <button className="t-m-req">Maintenace Request</button>
           <Link to="/pay">

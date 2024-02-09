@@ -12,14 +12,14 @@ VALUES
 -- Test data for units table
 INSERT INTO units (landlord_id, address, status, image, unit_cost)
 VALUES
-  (1, '123 Main Street, Anytown, AN 12345', 'Available', 'photos/1.png', 1400),
+  (1, '123 Main Street, Anytown, AN 12345', 'Occupied', 'photos/1.png', 1400),
   (2, '456 Maple Avenue, Sometown, SM 67890', 'Occupied', 'photos/1.png', 1200),
   (1, '456 Oak Ave, Sometown, SM 67890', 'Available', 'photos/2.png', 1800),
-  (2, '789 Oak Street, Oldtown, OT 13579', 'Occupied', 'photos/2.png', 1500),
-  (2, '101 Pine Road, Newcity, NC 24680, OT 13579', 'Occupied', 'photos/3.png', 1800),
-  (1, '202 Birch Lane, Lakeview, LV 86420', 'Occupied', 'photos/3.png', 1600),
+  (2, '789 Oak Street, Oldtown, OT 13579', 'Available', 'photos/2.png', 1500),
+  (2, '101 Pine Road, Newcity, NC 24680, OT 13579', 'Available', 'photos/3.png', 1800),
+  (1, '202 Birch Lane, Lakeview, LV 86420', 'Available', 'photos/3.png', 1600),
   (2, '303 Cedar Path, Rivertown, RT 97531', 'Available', 'photos/4.png', 1700),
-  (1, '404 Elm Street, Mountville, MV 75382', 'Occupied', 'photos/4.png', 1700);
+  (1, '404 Elm Street, Mountville, MV 75382', 'Available', 'photos/4.png', 1700);
 
  
 
