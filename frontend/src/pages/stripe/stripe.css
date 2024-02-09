@@ -51,7 +51,7 @@
   margin-top: -10px;
   width: 650px; 
   height: 290px;
-  border: solid rgb(48, 48, 48) 1px;
+  border: solid rgb(193, 193, 193) 1px;
   display: grid;
   place-items: center;
   background-color: #f0f0f0;
@@ -68,7 +68,7 @@
   width: 650px; 
   height: 610px; 
   font-size: 26px; 
-  border: solid rgb(48, 48, 48) 1px;
+  border: solid rgb(193, 193, 193) 1px;
   display: grid;
   place-items: center;
   background-color: #f0f0f0;
