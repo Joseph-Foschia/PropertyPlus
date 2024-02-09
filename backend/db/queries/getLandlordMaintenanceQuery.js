@@ -8,7 +8,8 @@ const getLandlordsMaintenanceRequests =  (id) => {
   FROM maintenance 
   JOIN units ON units.id = maintenance.unit_id 
   JOIN landlords ON units.landlord_id = landlords.id
-  WHERE units.landlord_id = $1`, [id])
+  WHERE units.landlord_id = $1
+  ORDER BY (maintenance.status = 'In Progress') DESC;`, [id])
   .then((res) => {
     return res.rows;
   })
