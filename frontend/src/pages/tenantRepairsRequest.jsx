@@ -1,49 +1,51 @@
 import React, { useState, useEffect } from "react";
 import "./components/TenantRepairs/repairs.css";
 
-const TenantRepairsRequest = () => {
+const TenantRepairsRequest = (props) => {
   const [unitAddressList, setUnitAddressList] = useState([]);
   const [description, setDescription] = useState("");
-  
-  const handleSubmit =  async (e) => {
-    e.preventDefault();
 
-    const formData = new FormData(e.target)
-    const payload = Object.fromEntries(formData)
+
+  // Handles the submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // New objective, try to login
+
+    const formData = new FormData(e.target);
+    const payload = Object.fromEntries(formData);
 
     console.log("payload", payload);
+    console.log("unitAddressList", unitAddressList);
+    let copy = {};
+    for (const unit of unitAddressList) {
+      console.log("unit: ", unit.id);
+      console.log("payload:", payload.unit_id);
+      if (unit.id == payload.unit_id) {
 
-
+        copy = {...unit, description: description}
+        console.log("copy baybeeeee", copy);
+      }
+    }
+    console.log("Token: ", props.token);
+    console.log("User Data: ", props.userData);
     try {
-      const response = await fetch('/api/landlord/properties', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3001/api/new-repair", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(copy),
       });
       if (response.ok) {
-        console.log('Form data submitted successfully!');
+        console.log("Form data submitted successfully!");
       } else {
-        console.error('Failed to submit form data.');
+        console.error("Failed to submit form data.");
       }
     } catch (error) {
-      console.error('Error submitting form data:', error);
+      console.error("Error submitting form data:", error);
     }
 
-    // useEffect(() => {
-    //   fetch("http://localhost:3001/api/landlord/properties/1")
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //       //This is just for inserting the data to the maintenance table
-    //     })
-    //     .catch((error) => {
-    //       console.error("Error fetching inserting maintenance data:", error);
-    //     });
-    // }, []);
-
-    // Tomorrow look up how to submit stuff to the database, it's supposed to come from the parameters
-    
     setDescription("");
   };
 
@@ -70,7 +72,11 @@ const TenantRepairsRequest = () => {
 
   const arrayOfUnits = unitAddressList.map((unit, idx) => {
     if (unit && unit.address) {
-      return <option key={idx} value={unit.id}>{unit.address}</option>;
+      return (
+        <option key={idx} value={unit.id}>
+          {unit.address}
+        </option>
+      );
     } else {
       return null; // Skip rendering if unit or unit.address is undefined
     }
@@ -92,7 +98,6 @@ const TenantRepairsRequest = () => {
             <option value="">Select Unit ID</option>
 
             {arrayOfUnits}
-
           </select>
         </div>
         <div>

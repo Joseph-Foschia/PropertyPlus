@@ -5,11 +5,13 @@ const {addNewMaintenance} = require('../db/queries/addNewMaintenance');
 
 const router = express.Router();
 
-  router.post('/maintenance',(req, res) => { 
+  router.post('/new-repair',(req, res) => { 
     console.log("IT WORKED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-    const { lease_id, unit_id, description} = req.body;
-    
-    addNewMaintenance(unit_id, tenant_id, start_date, end_date, rent, lease_docs)
+    console.log(req.body);
+    console.log("params: ", req.params);
+    // const { lease_id, id, description} = req.body;
+    console.log(lease_id);
+    addNewMaintenance(lease_id, id, description )
     .then((request) => {
       return res.json(request)
     })

@@ -7,6 +7,7 @@ const landlordAllPropertiesRoute = require("./routes/landlordAllPropertyRoute");
 const landlordIndivPropertyRoute = require("./routes/landlordIndividualPropertyRoute");
 const landlordNewPropertyRoute = require("./routes/landlordNewPropertyRoute");
 const profit = require("./routes/profit");
+const repairs = require("./routes/addNewMaintenanceRequest");
 const loginRoute = require("./routes/loginRoute");
 const logoutRoute = require("./routes/logoutRoute");
 const landlordNewLeaseRoute = require("./routes/landlordNewLeaseRoute")
@@ -26,6 +27,7 @@ app.use(loginRoute);
 app.use("/api/landlord", landlordAllPropertiesRoute);
 app.use("/api", landlordNewPropertyRoute);
 app.use("/api/margins", profit);
+app.use("/api", repairs)
 app.use("/api/logout", logoutRoute);
 app.use("/api/property", landlordIndivPropertyRoute);
 app.use("/api", landlordNewLeaseRoute);
