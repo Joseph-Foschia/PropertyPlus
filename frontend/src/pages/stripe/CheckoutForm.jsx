@@ -38,7 +38,7 @@ export default function CheckoutForm() {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: "http://localhost:3000",
+        return_url: "http://localhost:3000/approved",
       }
     });
 
@@ -47,6 +47,7 @@ export default function CheckoutForm() {
     }
 
     setIsLoading(false);
+    
   };
 
   return (

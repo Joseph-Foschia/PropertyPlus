@@ -1,10 +1,9 @@
 -- Drop tables if they exist
-DROP TABLE IF EXISTS payments CASCADE;
-DROP TABLE IF EXISTS maintenance CASCADE;
-DROP TABLE IF EXISTS leases CASCADE;
-DROP TABLE IF EXISTS units CASCADE;
-DROP TABLE IF EXISTS tenants CASCADE;
-DROP TABLE IF EXISTS landlords CASCADE;
+DROP TABLE IF EXISTS payments;
+DROP TABLE IF EXISTS leases;
+DROP TABLE IF EXISTS units;
+DROP TABLE IF EXISTS tenants;
+DROP TABLE IF EXISTS landlords;
 
 -- Create landlords table
 CREATE TABLE landlords (
@@ -65,6 +64,8 @@ CREATE TABLE maintenance (
   cost INTEGER,
   date_started TIMESTAMP,
   date_completed TIMESTAMP,
-  FOREIGN KEY (lease_id) REFERENCES leases(id) ON DELETE CASCADE,
-  FOREIGN KEY (unit_id) REFERENCES units(id) ON DELETE CASCADE
+  service VARCHAR,
+  FOREIGN KEY (lease_id) REFERENCES leases(id),
+  FOREIGN KEY (unit_id) REFERENCES units(id),
+  status VARCHAR
 );

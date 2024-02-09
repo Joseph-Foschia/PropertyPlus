@@ -12,7 +12,7 @@ export default function PaymentDetails() {
         <hr className="hr1" />
         <div className="phl-item2">
           <li>January 31st 2024</li>
-          <span className="phl-status2">Overdue</span>
+          <span className="phl-status5">Overdue</span>
         </div>
         <hr className="hr2" />
         <div className="phl-item3">

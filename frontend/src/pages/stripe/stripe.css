@@ -1,0 +1,78 @@
+.pay {
+  color: black;
+  margin-left: 270px;
+  font-size: 38px;
+  margin-top: 15px;
+  font-family: "Poppins";
+}
+.date {
+  color: black;
+  font-family: "Poppins";
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.total {
+  color: black;
+  font-family: "Poppins";
+  font-size: 24px;
+  margin-top: 40px;
+}
+
+.rent {
+  color: black;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; 
+}
+
+.checkbox-label label {
+  width: 100%;
+  margin: 10px;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 20px; /* Adjust the width as needed */
+  height: 20px; /* Adjust the height as needed */
+  margin-right: 5px;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.payment-details {
+  margin-right: 110px;
+  margin-top: -10px;
+  width: 650px; 
+  height: 290px;
+  border: solid rgb(48, 48, 48) 1px;
+  display: grid;
+  place-items: center;
+  background-color: #f0f0f0;
+  border-radius: 24px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Poppins";
+}
+
+.payment-container {
+  margin-top: -110px;
+  margin-left: 180px;
+}
+.stripe-checkout-container {
+  width: 650px; 
+  height: 610px; 
+  font-size: 26px; 
+  border: solid rgb(48, 48, 48) 1px;
+  display: grid;
+  place-items: center;
+  background-color: #f0f0f0;
+  border-radius: 24px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Poppins";
+}

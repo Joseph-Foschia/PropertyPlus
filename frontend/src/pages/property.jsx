@@ -26,7 +26,7 @@ function Property() {
 
   const prop = property && property[0];
 
-  const margin = prop?.unit_cost - prop?.lease_rent;
+  const margin = prop?.lease_rent - prop?.unit_cost;
 
   const data = [
     {
