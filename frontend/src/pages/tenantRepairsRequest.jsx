@@ -2,31 +2,25 @@ import React, { useState, useEffect } from "react";
 import "./components/TenantRepairs/repairs.css";
 
 const TenantRepairsRequest = (props) => {
-  const [unitAddressList, setUnitAddressList] = useState([]);
+  const [unitDetails, setUnitDetails] = useState([]);
   const [description, setDescription] = useState("");
-
 
   // Handles the submit
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // New objective, try to login
 
     const formData = new FormData(e.target);
     const payload = Object.fromEntries(formData);
 
     console.log("payload", payload);
-    console.log("unitAddressList", unitAddressList);
-    let copy = {};
-    for (const unit of unitAddressList) {
-      console.log("unit: ", unit.id);
-      console.log("payload:", payload.unit_id);
-      if (unit.id == payload.unit_id) {
+    console.log("unitDetails", unitDetails);
 
-        copy = {...unit, description: description}
-        console.log("copy baybeeeee", copy);
-      }
-    }
+    const copy = { ...unitDetails, description: description };
+
+    console.log("copy baybeeeee", copy);
+
     console.log("Token: ", props.token);
     console.log("User Data: ", props.userData);
     try {
@@ -50,10 +44,10 @@ const TenantRepairsRequest = (props) => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/landlord/properties/1")
+    fetch(`http://localhost:3001/api/request/${props.token}`)
       .then((response) => response.json())
       .then((data) => {
-        setUnitAddressList(data);
+        setUnitDetails(data);
       })
       .catch((error) => {
         console.error("Error fetching Landlord's Unit Addresses data:", error);
@@ -68,25 +62,23 @@ const TenantRepairsRequest = (props) => {
     // });
   };
 
-  console.log(unitAddressList);
-
-  const arrayOfUnits = unitAddressList.map((unit, idx) => {
-    if (unit && unit.address) {
-      return (
-        <option key={idx} value={unit.id}>
-          {unit.address}
-        </option>
-      );
-    } else {
-      return null; // Skip rendering if unit or unit.address is undefined
-    }
-  });
+  // const arrayOfUnits = unitAddressList.map((unit, idx) => {
+  //   if (unit && unit.address) {
+  //     return (
+  //       <option key={idx} value={unit.id}>
+  //         {unit.address}
+  //       </option>
+  //     );
+  //   } else {
+  //     return null; // Skip rendering if unit or unit.address is undefined
+  //   }
+  // });
 
   return (
     <div className="repairs-container">
       <h2>Request Repair</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        {/* <div>
           <label htmlFor="unit_id">Unit ID:</label>
           <select
             id="unit_id"
@@ -99,7 +91,7 @@ const TenantRepairsRequest = (props) => {
 
             {arrayOfUnits}
           </select>
-        </div>
+        </div> */}
         <div>
           <label htmlFor="description">Description:</label>
           <textarea

@@ -46,10 +46,7 @@ function App() {
           path="/tenant"
           element={<Tenant token={token} userData={userData} />}
         />
-        <Route
-          path="/repairs"
-          element={<TenantRepairsRequest token={token} userData={userData} />}
-        />
+
         <Route
           path="/new"
           element={<NewProperty token={token} userData={userData} />}
@@ -84,6 +81,11 @@ function App() {
             element={<Stripe token={token} userData={userData} />}
           /> 
           <Route path="tenant/dash" element={<TenantDashboard token={token} userData={userData}/>} />
+
+          <Route
+          path="/repairs"
+          element={<TenantRepairsRequest token={token} userData={userData} />}
+        />
         </Routes>
       </Router>
     );
