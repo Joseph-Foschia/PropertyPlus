@@ -12,6 +12,7 @@ const loginRoute = require("./routes/loginRoute");
 const logoutRoute = require("./routes/logoutRoute");
 const landlordNewLeaseRoute = require("./routes/landlordNewLeaseRoute")
 const getTenantProperty = require("./routes/tenantDetailsRoute")
+const landlordMaintenanceRoute = require("./routes/landlordMaintenanceRoute")
 const {authenticateUser} = require("./db/queries/authenticateUserQuery")
 
 const app = express();
@@ -32,6 +33,7 @@ app.use("/api/logout", logoutRoute);
 app.use("/api/property", landlordIndivPropertyRoute);
 app.use("/api", landlordNewLeaseRoute);
 app.use("/api", getTenantProperty);
+app.use("/api", landlordMaintenanceRoute);
 
 
 const calculateOrderAmount = (items) => {

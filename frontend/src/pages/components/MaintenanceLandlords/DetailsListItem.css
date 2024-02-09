@@ -1,0 +1,6 @@
+.list-requests {
+  display: flex; 
+  flex-direction: column; 
+  width: 1200px;
+ margin-left: 300px;
+}

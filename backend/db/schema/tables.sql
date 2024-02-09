@@ -1,9 +1,11 @@
 -- Drop tables if they exist
-DROP TABLE IF EXISTS payments;
-DROP TABLE IF EXISTS leases;
-DROP TABLE IF EXISTS units;
-DROP TABLE IF EXISTS tenants;
-DROP TABLE IF EXISTS landlords;
+DROP TABLE IF EXISTS payments CASCADE;
+DROP TABLE IF EXISTS maintenance CASCADE;
+DROP TABLE IF EXISTS leases CASCADE;
+DROP TABLE IF EXISTS units CASCADE;
+DROP TABLE IF EXISTS tenants CASCADE;
+DROP TABLE IF EXISTS landlords CASCADE;
+
 
 -- Create landlords table
 CREATE TABLE landlords (

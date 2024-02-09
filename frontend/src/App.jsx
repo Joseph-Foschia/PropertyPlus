@@ -13,6 +13,7 @@ import NewLease from "./pages/lease";
 import TenantDashboard from "./pages/TenantDashboard";
 import TenantRepairsRequest from "./pages/tenantRepairsRequest";
 import Stripe from "./pages/stripe";
+import Maintenance from "./pages/maintenance";
 
 function App() {
  
@@ -60,6 +61,11 @@ function App() {
           path="/lease"
           element={<NewLease token={token} userData={userData} />}
         />
+
+        <Route 
+          path="/maintenance"
+          element={<Maintenance token={token} userData={userData} />}
+        /> 
 
         <Route 
           path="/pay"

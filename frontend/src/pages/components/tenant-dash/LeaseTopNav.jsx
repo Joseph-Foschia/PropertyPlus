@@ -2,7 +2,7 @@ import "./LeaseTopNav.css";
 
 export default function LeaseTopNav({tenantDetails}) {
 
-  console.log("in nav", tenantDetails)
+  
   return (
     <div className="top-p-nav">
       <div className="nav-container">
