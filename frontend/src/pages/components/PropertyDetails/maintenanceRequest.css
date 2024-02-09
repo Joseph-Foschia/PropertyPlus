@@ -6,6 +6,7 @@
   margin-top: 80px;
   margin-left: -40px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 1s;
 }
 .mr-title {
   position: absolute;
@@ -59,4 +60,23 @@
 }
 .hr2 {
   border-top: 1px solid black;
+}
+
+.some-component:hover{
+  transform: scale(1.05);
+  background-color: rgb(169, 168, 168);
+}
+
+
+/* If an item has this class it turns this colour */
+.red{
+  color: red;
+}
+
+.yellow{
+  color: #ffc300;
+}
+
+.green{
+  color: #32de84;
 }
