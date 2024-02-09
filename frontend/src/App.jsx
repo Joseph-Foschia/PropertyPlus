@@ -11,6 +11,7 @@ import LandlordProfile from "./pages/LandlordProfile";
 import useToken from "./CustomHooks/useToken";
 import NewLease from "./pages/lease";
 import TenantDashboard from "./pages/TenantDashboard";
+import TenantRepairsRequest from "./pages/tenantRepairsRequest";
 import Stripe from "./pages/stripe";
 import Maintenance from "./pages/maintenance";
 
@@ -46,6 +47,7 @@ function App() {
           path="/approved"
           element={<PaymentSuccess token={token} userData={userData} />}
         />
+
         <Route
           path="/new"
           element={<NewProperty token={token} userData={userData} />}
@@ -85,6 +87,11 @@ function App() {
             element={<Stripe token={token} userData={userData} />}
           /> 
           <Route path="tenant/dash" element={<TenantDashboard token={token} userData={userData}/>} />
+
+          <Route
+          path="/repairs"
+          element={<TenantRepairsRequest token={token} userData={userData} />}
+        />
         </Routes>
       </Router>
     );
