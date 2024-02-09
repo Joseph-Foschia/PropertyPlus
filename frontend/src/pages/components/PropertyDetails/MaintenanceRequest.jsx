@@ -1,36 +1,33 @@
 import "./maintenanceRequest.css";
-export default function MaintenanceRequest() {
+import React, { useState, useEffect } from "react";
+export default function MaintenanceRequest(props) {
+  const [maintenanceData, setMaintenanceData] = useState([]);
+  console.log("THIS IS THE TOKEN",props.id)
+  useEffect(() => {
+    fetch(`http://localhost:3001/api/margins/maintenance/${props.id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setMaintenanceData(data);
+      })
+      .catch((error) => console.error("Error fetching property data", error));
+  }, []);
 
-  
-  // useEffect(() => {
-  //   fetch(`http://localhost:3001/api/landlord/properties/${userData}`)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setProperties(data);
-  //     })
-  //     .catch((error) => console.error("Error fetching property data", error));
-  // }, []); 
-  
+  const arrayOfRequests = maintenanceData.map((request, idx) => {
+    return (
+      <div className="mr-item1">
+        <li>{request.service}</li>
+        <span className="mr-status1">{request.status}</span>
+      </div>
+    );
+  });
 
   return (
     <div>
       <div className="some-component">
         <h1 className="mr-title">Maintenance Request</h1>
         <div className="mr-list">
-          <div className="mr-item1">
-            <li>Electrical</li>
-            <span className="mr-status1">inprogress</span>
-          </div>
-          <hr className="hr2" />
-          <div className="mr-item2">
-            <li>Plumbing</li>
-            <span className="mr-status2">inprogress</span>
-          </div>
-          <hr className="hr2" />
-          <div className="mr-item2">
-            <li>Electrical</li>
-            <span className="mr-status3">Completed</span>
-          </div>
+          {arrayOfRequests}
           <hr className="hr2" />
         </div>
       </div>
