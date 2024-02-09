@@ -15,8 +15,8 @@ const TenantRepairsRequest = (props) => {
     const formData = new FormData(e.target);
     const payload = Object.fromEntries(formData);
 
-    console.log("payload", payload);
-    console.log("unitDetails", unitDetails);
+    // console.log("payload", payload);
+    // console.log("unitDetails", unitDetails);
 
     const copy = {
       ...unitDetails,
@@ -25,10 +25,10 @@ const TenantRepairsRequest = (props) => {
       status: "Requested",
     };
 
-    console.log("copy baybeeeee", copy);
+    // console.log("copy baybeeeee", copy);
 
-    console.log("Token: ", props.token);
-    console.log("User Data: ", props.userData);
+    // console.log("Token: ", props.token);
+    // console.log("User Data: ", props.userData);
     try {
       const response = await fetch("http://localhost:3001/api/new-repair", {
         method: "POST",

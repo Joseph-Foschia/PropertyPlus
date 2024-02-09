@@ -26,8 +26,10 @@ const getMaintenanceData = (id) => {
   u.address AS unit_address,
   m.description,
   m.cost,
+  m.service,
   m.date_started,
-  m.date_completed
+  m.date_completed,
+  m.status
 FROM 
   maintenance m
 JOIN 

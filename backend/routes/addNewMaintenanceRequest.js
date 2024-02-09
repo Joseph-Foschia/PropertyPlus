@@ -36,11 +36,4 @@ router.get('/',(req, res) => { //when trying to grabjson data make sure to put a
 
   });
 
-
-  /* Ok so this shit works the issue is the landlord receiving the request.  There are two options, we see how the 
-  maintenance page is doing add everything on there and they can complete/see the request along with a new table called requests.
-
-  Option two, honestly I don't fucking know lol, search up how to pass data to another login
-*/
-
 module.exports = router;

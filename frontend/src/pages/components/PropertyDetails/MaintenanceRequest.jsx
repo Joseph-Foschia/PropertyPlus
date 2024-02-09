@@ -1,5 +1,17 @@
 import "./maintenanceRequest.css";
 export default function MaintenanceRequest() {
+
+  
+  // useEffect(() => {
+  //   fetch(`http://localhost:3001/api/landlord/properties/${userData}`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setProperties(data);
+  //     })
+  //     .catch((error) => console.error("Error fetching property data", error));
+  // }, []); 
+  
+
   return (
     <div>
       <div className="some-component">
