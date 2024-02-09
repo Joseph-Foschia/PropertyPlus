@@ -1,11 +1,11 @@
 import "./DetailsItem.css"
+import { formatDate } from "../../../helpers/dateHelper"
 
 function DetailsItem(props) {
   const {description, status, service, id, dateStarted, dateCompleted, address, cost} = props
 
-  const dateString = dateStarted
-  const date = new Date(dateString)
-  const formattedDate = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+//Formats to readable date
+const formattedDate = formatDate(dateStarted)
 return (
  <div className="details-item-container">
 

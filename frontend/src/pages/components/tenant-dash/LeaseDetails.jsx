@@ -1,13 +1,15 @@
 import "./leaseDetails.css";
+import { formatDate } from "../../../helpers/dateHelper";
 
 export default function LeaseDetails({tenantDetails}) {
   
-
-
   //Turns PSQL date into readbale date
-  const dateString = tenantDetails?.start
-  const date = new Date(dateString)
-  const formattedDate = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+   const dateString = tenantDetails?.start
+  
+   //Formats readable date
+  const formattedDate = formatDate(dateString)
+
+  
   return (
     <div className="lease-details-box">
       <div className="t-lease-detail-box">

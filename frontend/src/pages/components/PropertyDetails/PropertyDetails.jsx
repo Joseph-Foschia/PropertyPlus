@@ -1,5 +1,6 @@
 import "./PropertyDetails.css";
 import { Link } from "react-router-dom";
+import { formatDate } from "../../../helpers/dateHelper";
 
 function PropertyDetails(props) {
 
@@ -7,12 +8,11 @@ function PropertyDetails(props) {
 
   //Turns PSQL date into readbale date
   const dateString = property?.start
-  const date = new Date(dateString)
-  const formattedDate = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  const formattedDate = formatDate(dateString)
   
   //Gets the unit number to pass down to add new lease
   const dataToPass = { unit: property && property.id };
-  
+ 
 
   return (
     <div className="address-details">

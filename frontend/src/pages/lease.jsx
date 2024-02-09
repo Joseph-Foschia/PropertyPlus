@@ -10,7 +10,7 @@ function NewLease(props) {
   //Gets the unit number
   const location = useLocation();
   const { unit } = location.state || {};
-  
+  //console.group("unit", unit)
   
   const submitForm = async (e) => {
     e.preventDefault();
