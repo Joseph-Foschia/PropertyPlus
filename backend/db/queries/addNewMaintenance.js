@@ -1,10 +1,10 @@
 const db = require('../connection');
 
-const addNewMaintenance =  (lease_id, unit_id, description) => {
+const addNewMaintenance =  (lease_id, unit_id, description, service, status) => {
  
   return db
-  .query( 'INSERT INTO maintenance (lease_id, unit_id, description, cost, date_started, date_completed) VALUES ($1, $2, $3, NULL, CURRENT_TIMESTAMP, NULL)',
-  [lease_id, unit_id, description])
+  .query( 'INSERT INTO maintenance (lease_id, unit_id, description, cost, service, date_started, date_completed, status) VALUES ($1, $2, $3, NULL, $4, CURRENT_TIMESTAMP, NULL, $5)',
+  [lease_id, unit_id, description, service, status])
   .then((res) => {
     return res.rows;
   })

@@ -4,6 +4,7 @@ import "./components/TenantRepairs/repairs.css";
 const TenantRepairsRequest = (props) => {
   const [unitDetails, setUnitDetails] = useState([]);
   const [description, setDescription] = useState("");
+  const [service, setService] = useState("");
 
   // Handles the submit
   const handleSubmit = async (e) => {
@@ -17,7 +18,12 @@ const TenantRepairsRequest = (props) => {
     console.log("payload", payload);
     console.log("unitDetails", unitDetails);
 
-    const copy = { ...unitDetails, description: description };
+    const copy = {
+      ...unitDetails,
+      description: description,
+      service: service,
+      status: "Requested",
+    };
 
     console.log("copy baybeeeee", copy);
 
@@ -92,6 +98,23 @@ const TenantRepairsRequest = (props) => {
             {arrayOfUnits}
           </select>
         </div> */}
+
+        <div>
+          <label htmlFor="service">Service Needed:</label>
+          <select
+            id="service"
+            name="service"
+            value={service} 
+            onChange={(e) => setService(e.target.value)} 
+            required
+          >
+            <option value="">Select Service</option>
+            <option value="Plumbing">Plumbing</option>
+            <option value="HVAC">HVAC</option>
+            <option value="Carpentry">Carpentry</option>
+            <option value="Electrical">Electrical</option>
+          </select>
+        </div>
         <div>
           <label htmlFor="description">Description:</label>
           <textarea

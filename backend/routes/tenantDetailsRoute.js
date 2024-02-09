@@ -21,9 +21,8 @@ router.get('/tenant/:id',(req, res) => { //when trying to grab json data make su
 
 });
 
-
-router.get('/request/:id',(req, res) => { //when trying to grab json data make sure to put an /api fist. Ex: http://localhost:3000/api/landlords/<route name>
-  
+// Gets the tenant info required to make a maintenance request
+router.get('/request/:id',(req, res) => { 
   const id = req.params.id
  
   getTenantMaintenanceInfo(id)

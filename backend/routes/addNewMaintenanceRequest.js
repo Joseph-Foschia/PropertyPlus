@@ -20,12 +20,11 @@ router.get('/',(req, res) => { //when trying to grabjson data make sure to put a
 
 
   router.post('/new-repair',(req, res) => { 
-    console.log("IT WORKED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-    console.log(req.body);
-    console.log("params: ", req.params);
-    const { lease_id, unit_id, description} = req.body;
-    console.log(lease_id);
-    addNewMaintenance(lease_id, unit_id, description )
+    // console.log(req.body);
+    // console.log("params: ", req.params);
+    const { lease_id, unit_id, description, service, status} = req.body;
+    // console.log(lease_id);
+    addNewMaintenance(lease_id, unit_id, description, service, status)
     .then((request) => {
       return res.json(request)
     })
