@@ -38,10 +38,9 @@ VALUES
 
 
 -- Test data for maintenance table
-INSERT INTO maintenance (lease_id, unit_id, description, cost, date_started, date_completed)
+INSERT INTO maintenance (lease_id, unit_id, description, cost, date_started, date_completed, service, status)
 VALUES
-  (1, 1, 'Repaired leaking faucet in the kitchen', 50, '2024-02-05 10:00:00', '2024-02-05 11:30:00'),
-  (2, 2, 'Fixed broken window latch in the living room', 30, '2024-03-02 14:30:00', '2024-03-02 15:15:00'),
-  (3, 3, 'Performed routine HVAC maintenance for unit', 100, '2024-02-28 09:00:00', '2024-02-28 11:00:00'),
-  (4, 4, 'Replaced faulty thermostat in the bedroom', 80, '2024-02-20 13:00:00', '2024-02-20 14:30:00'),
-  (5, 5, 'Fixed plumbing issue in the bathroom', 120, '2024-03-10 08:00:00', '2024-03-10 11:30:00');
+  (1, 1, 'Repaired leaking faucet in kitchen', 50, '2024-02-05 10:00:00', '2024-02-05 11:30:00', 'Plumbing', 'Completed'),
+  (1, 6, 'Unclogged kitchen sink', 30, '2024-01-05 08:00:00', '2024-01-05 09:00:00', 'Plumbing', 'In Progress'),
+  (2, 2, 'Fixed broken window latch in living room', 30, '2024-03-02 14:30:00', '2024-03-02 15:15:00', 'Carpentry', 'In Progress'),
+  (2, 7, 'Repaired HVAC system', 150, '2024-01-15 13:00:00', '2024-01-15 15:00:00', 'HVAC', 'Completed');
