@@ -64,16 +64,16 @@
   top: 206px;
   left: 70px;
 }
-.tools {
+.ma {
   z-index: 2;
   position: fixed;
   color: #fafafa;
   fill: #fafafa;
   font-size: 20px;
-  top: 260px;
+  top: 310px;
   left: 32px;
 }
-.m-span {
+.ma-span {
   z-index: 2;
   position: fixed;
   color: #fafafa;
@@ -81,7 +81,7 @@
   font-family: "Poppins";
   font-weight: 500;
   line-height: 24px;
-  top: 260px;
+  top: 310px;
   left: 70px;
 }
 .add {
