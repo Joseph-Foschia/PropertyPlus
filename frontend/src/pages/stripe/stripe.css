@@ -1,9 +1,15 @@
 .pay {
-  color: black;
-  margin-left: 270px;
-  font-size: 38px;
-  margin-top: 15px;
-  font-family: "Poppins";
+  
+    padding-top: 40px;
+    padding-bottom: 20px;
+   margin-left: 300px;
+   margin-bottom: 50px;
+   font-size: 34px;
+   font-weight: 700;
+   font-family: "Poppins";
+   border-bottom: 1px solid rgb(113, 113, 113);
+   width: 1300px
+  
 }
 .date {
   color: black;

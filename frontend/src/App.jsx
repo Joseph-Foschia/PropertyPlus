@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Landlords from "./pages/landlords";
-import Nav from "./pages/components/Navbar/nav";
+
 import Property from "./pages/property";
 import Login from "./pages/index";
 import PaymentSuccess from "./pages/payment";
@@ -15,21 +15,29 @@ import TenantRepairsRequest from "./pages/tenantRepairsRequest";
 import Stripe from "./pages/stripe";
 import Maintenance from "./pages/maintenance";
 
+
+
+
 function App() {
  
   const { token, setToken, getUser, getUserType } = useToken();
 
+  
   if (!token) {
     return <Login setToken={setToken} />;
   }
 
   const userData = getUser();
   const type = getUserType();
-  
+ 
+
+
   if(type === "landlord") {
   return (
     <Router>
+      
       <Routes>
+      
         {/* <Route path="/login" element={<Login setToken={setToken} />} /> */}
         <Route
           path="/landlord"
@@ -43,10 +51,7 @@ function App() {
           path="/"
           element={<LandlordProfile token={token} userData={userData} />}
         />
-        <Route
-          path="/approved"
-          element={<PaymentSuccess token={token} userData={userData} />}
-        />
+       
 
         <Route
           path="/new"
@@ -67,11 +72,6 @@ function App() {
           element={<Maintenance token={token} userData={userData} />}
         /> 
 
-        <Route 
-          path="/pay"
-          element={<Stripe token={token} userData={userData} />}
-        /> 
-        <Route path="tenant/dash" element={<TenantDashboard token={token} userData={userData} />} />
       </Routes>
     </Router>
   );
@@ -86,13 +86,21 @@ function App() {
             path="/pay"
             element={<Stripe token={token} userData={userData} />}
           /> 
-          <Route path="tenant/dash" element={<TenantDashboard token={token} userData={userData}/>} />
+          <Route 
+            path="/" 
+            element={<TenantDashboard token={token} userData={userData}/>} />
 
           <Route
-          path="/repairs"
-          element={<TenantRepairsRequest token={token} userData={userData} />}
-        />
+            path="/repairs"
+            element={<TenantRepairsRequest token={token} userData={userData} />}
+          />
+
+          <Route
+            path="/approved"
+            element={<PaymentSuccess token={token} userData={userData} />}
+          />
         </Routes>
+  
       </Router>
     );
   }

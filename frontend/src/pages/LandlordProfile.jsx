@@ -5,6 +5,8 @@ import React, { useState, useEffect } from 'react';
 import { getLandlordsProperties } from "../helpers/getLandlordsPropertiesHelper";
 
 
+
+
 export default function LandlordProfile({token, userData}) {
 
   //List of landlords properties
@@ -17,12 +19,14 @@ export default function LandlordProfile({token, userData}) {
   
   const name = properties.length > 0 ? properties[0].name : null;
   
-  
+
+
   return (
     <div className="landlord-profile">
       <Nav />
       <TopNav name={name}/>
       <PropertyList userData={userData} properties={properties}/>
+      
     </div>
   );
 }

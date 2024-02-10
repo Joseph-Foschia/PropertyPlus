@@ -40,7 +40,9 @@ export default function TenantDashboard({ token, userData }) {
         <LeaseDetails tenantDetails={tenantDetails} />
         <SomeBox tenantDetails={tenantDetails} maintenance={maintenance} />
         <div className="t-buttons">
+        <Link to="/repairs">
           <button className="t-m-req">Maintenace Request</button>
+          </Link>
           <Link to="/pay">
             <button className="t-p-rent">Pay Rent</button>
           </Link>

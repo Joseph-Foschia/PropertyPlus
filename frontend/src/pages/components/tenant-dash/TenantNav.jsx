@@ -20,15 +20,15 @@ function TenantNav() {
     <div>
       <div className="nav-bg"></div>
       <span className="logo">PropertyPro</span>
-      <Link to="/tenant/dash">
+      <Link to="/">
         <FontAwesomeIcon icon={faHouse} className="house-icon" />
         <span className="dash-span">Dashbaord</span>
       </Link>
-      <Link to="/">
+      <Link to="/repairs">
         <FontAwesomeIcon icon={faScrewdriverWrench} className="tools" />
         <span className="m-span">Maintenance</span>
       </Link>
-      <Link to="/profit">
+      <Link to="/pay">
         <FontAwesomeIcon icon={faMoneyBill} className="money" />
         <span className="pl-span">Pay Rent</span>
       </Link>
