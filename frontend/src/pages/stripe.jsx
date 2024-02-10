@@ -2,7 +2,7 @@ import React, {useState }from "react";
 import StripeCheckout from "./stripe/StripeCheckout";
 import './stripe/stripe.css'
 import Nav from "./components/Navbar/nav";
-
+import TenantNav from "./components/tenant-dash/TenantNav";
 const Stripe = () => {
   const [total, setTotal] = useState(0)
 
@@ -16,9 +16,10 @@ const Stripe = () => {
   }
   return (
     <div>
-      <Nav></Nav>
+      <TenantNav></TenantNav>
+      <div>
       <h1 className="pay">Pay Your Rent</h1>
-      
+      </div>
     <div className="payment-container font-mono text-white text-opacity-70 font-[700] text-opacity-90 h-screen flex justify-center items-center">
       
       <div className="payment-details">

@@ -8,7 +8,13 @@ const getTenantMaintenanceRequests =  (id) => {
   JOIN leases ON leases.id = maintenance.lease_id
   JOIN tenants ON leases.tenant_id = tenants.id
   WHERE tenants.id = $1
-  ORDER BY (status = 'In Progress') DESC;`, [id])
+  ORDER BY 
+  CASE 
+    WHEN status = 'Requested' THEN 1
+    WHEN status = 'In Progress' THEN 2
+    WHEN status = 'Completed' THEN 3
+    ELSE 4
+  END;`, [id])
   .then((res) => {
     return res.rows;
   })

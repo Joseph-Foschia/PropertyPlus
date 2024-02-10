@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./components/TenantRepairs/repairs.css";
+import TenantDashboard from "./TenantDashboard";
+import TenantNav from "./components/tenant-dash/TenantNav";
+import { useNavigate } from "react-router-dom";
 
 const TenantRepairsRequest = (props) => {
+  const [submitted, setSubmitted] = useState(false);
   const [unitDetails, setUnitDetails] = useState([]);
   const [description, setDescription] = useState("");
   const [service, setService] = useState("");
+  
 
   // Handles the submit
   const handleSubmit = async (e) => {
@@ -39,6 +44,7 @@ const TenantRepairsRequest = (props) => {
       });
       if (response.ok) {
         console.log("Form data submitted successfully!");
+        setSubmitted(true);
       } else {
         console.error("Failed to submit form data.");
       }
@@ -81,26 +87,24 @@ const TenantRepairsRequest = (props) => {
   // });
 
   return (
+    <div>
+      <TenantNav></TenantNav>
+      <h1 className="top-nav-header-repairs">Submit Your Repair Request</h1>
+      
     <div className="repairs-container">
-      <h2>Request Repair</h2>
+    {submitted ? (
+          <div className="thank-you-message">
+            <h2 className="thankyou-header">Thank you for submitting your repair request!</h2>
+            <p className="thankyou-msg">Your landlord should be in contact with you shortly. If this is an emergency please contact them directly.</p>
+          </div>
+        ) : (
+  
+      <div>
+      <h2 className="request-repair">Request Repair</h2>
       <form onSubmit={handleSubmit}>
-        {/* <div>
-          <label htmlFor="unit_id">Unit ID:</label>
-          <select
-            id="unit_id"
-            name="unit_id"
-            value={unitAddressList.unit_id}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select Unit ID</option>
-
-            {arrayOfUnits}
-          </select>
-        </div> */}
-
+    
         <div>
-          <label htmlFor="service">Service Needed:</label>
+          <label htmlFor="service" className="service" >Service Needed:</label>
           <select
             id="service"
             name="service"
@@ -116,7 +120,7 @@ const TenantRepairsRequest = (props) => {
           </select>
         </div>
         <div>
-          <label htmlFor="description">Description:</label>
+          <label htmlFor="description" className="description">Description:</label>
           <textarea
             id="description"
             value={description}
@@ -124,8 +128,14 @@ const TenantRepairsRequest = (props) => {
             required
           ></textarea>
         </div>
+        <div className="submit-btn">
         <button type="submit">Submit Request</button>
+        </div>
       </form>
+      </div>
+      )}
+    </div>
+    
     </div>
   );
 };

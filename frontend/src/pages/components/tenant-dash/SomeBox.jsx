@@ -10,7 +10,7 @@ export default function SomeBox({tenantDetails, maintenance}) {
       <div className="somebox">
         <h1 className="maintenance-title"> Your Maintence Requests</h1>
         <ul>
-          {maintenance.map((request, index) => {
+          {maintenance.slice(0, 3).map((request, index) => {
             const dateString = request.date_started;
             const formattedDate = formatDate(dateString)
 
@@ -18,7 +18,7 @@ export default function SomeBox({tenantDetails, maintenance}) {
               <li key={index}>
                 <div className="request-details">
                   <div>
-                    <p className="description">{request.description}</p>
+                    <p className="description-repair">{request.description}</p>
                     <p className="date-started">{formattedDate}</p>
                   </div>
                     <p className="status-request">{request.status}</p>
