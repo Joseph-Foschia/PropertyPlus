@@ -6,6 +6,7 @@ function DetailsItem(props) {
 
 //Formats to readable date
 const formattedDate = formatDate(dateStarted)
+
 return (
  <div className="details-item-container">
 
