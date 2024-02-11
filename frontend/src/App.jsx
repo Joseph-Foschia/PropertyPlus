@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import React, { useState, useEffect, useMemo } from "react";
 import Landlords from "./pages/landlords";
-
+import MaintenanceDetails from "./pages/MaintenanceDetails";
 import Property from "./pages/property";
 import Login from "./pages/index";
 import PaymentSuccess from "./pages/payment";
@@ -38,7 +38,6 @@ function App() {
       
       <Routes>
       
-        {/* <Route path="/login" element={<Login setToken={setToken} />} /> */}
         <Route
           path="/landlord"
           element={<Landlords token={token} userData={userData} />}
@@ -71,6 +70,11 @@ function App() {
           path="/maintenance"
           element={<Maintenance token={token} userData={userData} />}
         /> 
+
+        <Route
+          path="/maintenance/:id"
+          element={<MaintenanceDetails token={token} userData={userData} />}
+        />
 
       </Routes>
     </Router>

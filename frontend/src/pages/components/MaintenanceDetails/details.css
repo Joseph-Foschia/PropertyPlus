@@ -1,0 +1,205 @@
+
+.maint-header {
+  padding-top: 40px;
+  padding-bottom: 20px;
+ margin-left: 300px;
+ margin-bottom: 70px;
+ font-size: 34px;
+ font-weight: 700;
+ font-family: "Poppins";
+ border-bottom: 1px solid rgb(113, 113, 113);
+ width: 1200px;
+ display: flex;
+}
+
+.header-a {
+  margin-right: 20px;
+}
+.all-repair-requests-card {
+  width: 460px;
+  height: 415px;
+  background-color: #f0f0f0;
+  border-radius: 24px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  display: flex;
+  padding: 14px;
+  
+}
+
+.change-info-card {
+  width: 380px;
+  height: 420px;
+  background-color: #f0f0f0;
+  border-radius: 24px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  display: flex;
+  padding: 4px;
+ 
+}
+
+.general-info-card {
+  width: 420px;
+  height: 610px;
+  display: flex;
+  padding: 4px;
+  background-color: #f0f0f0;
+  border-radius: 24px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  
+}
+
+.tenant-info-card {
+  width: 460px;
+  height: 180px;
+  margin-top: 30px;
+  background-color: #f0f0f0;
+  border-radius: 24px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  display: flex;
+  padding: 4px;
+  flex-direction: column;
+}
+
+.general-info-list {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  margin-top: 25px;
+  
+}
+
+.all-details {
+  display: flex;
+  margin-left: 200px;
+  justify-content: space-evenly;
+  font-family: "Poppins";
+}
+
+.add-p-btn:hover {
+  color: white;
+  background-color: #17b890;
+  transition: 0.5s;
+}
+
+/* General Info*/
+
+
+
+.header-info h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 15px;
+  margin-left: 20px;
+  border-bottom: 1px solid rgb(113, 113, 113);;
+}
+
+.info-p {
+  font-weight: 600;
+  font-size: 20px;
+  
+}
+
+.more-detail {
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.req {
+  background-color: #e65131;
+  opacity: 70%;
+}
+
+.prog {
+  background-color: #50db15;
+  opacity: 70%;
+}
+
+.comp {
+  background-color: #343434;
+  opacity: 70%;
+}
+
+.stat {
+  margin-top: 5px;
+  padding: 1px 10px;
+  font-family: "Poppins";
+  color: white;
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: 500;
+  width: 135px;
+}
+
+.select-font {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.change-stat {
+  background-color: #50db15;
+  opacity: 70%;
+  margin-top: 5px;
+  padding: 1px 10px;
+  font-family: "Poppins";
+  color: white;
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: 500;
+  width: 150px;
+}
+
+
+.submit-button-container {
+  display: flex;
+  justify-content: center; 
+  margin-top: 20px; 
+}
+
+.change-stat:hover {
+  color: #17b890;
+  background-color: white;
+  transition: 0.5s;
+  border: 1px solid #17b890;
+}
+
+.info-item {
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.info-category {
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.det-container {
+  margin-bottom: 10px;
+  margin-left: 25px;
+}
+
+
+.email-tenant {
+  cursor: pointer;
+  top: 84px;
+  width: 380px;
+  height: 80px;
+  padding: 0px 8px;
+  border: 1px solid #17b890;
+  box-sizing: border-box;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #17b890;
+  font-size: 18px;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: 18px;
+  outline: none;
+  margin-top: 60px;
+}
+.email-tenant:hover {
+  color: white;
+  background-color: #17b890;
+  transition: 0.5s;
+}

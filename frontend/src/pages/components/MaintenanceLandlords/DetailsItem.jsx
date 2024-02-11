@@ -1,5 +1,6 @@
 import "./DetailsItem.css"
 import { formatDate } from "../../../helpers/dateHelper"
+import { Link } from "react-router-dom"
 
 function DetailsItem(props) {
   const {description, status, service, id, dateStarted, dateCompleted, address, cost} = props
@@ -21,7 +22,9 @@ return (
   </div>
 
   <div className="details-container">
+    <Link to={`/maintenance/${id}`}>
     <button className="detail-button"> View More Details</button>
+    </Link>
   </div>
 
   <div className={`status-container ${status === 'In Progress' ? 'in-progress' : status === 'Completed' ? 'completed' : ''}`}>
