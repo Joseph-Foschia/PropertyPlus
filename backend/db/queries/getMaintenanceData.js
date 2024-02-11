@@ -3,43 +3,43 @@ const db = require("../connection");
 const getMaintenanceData = (id) => {
   return db
     .query(
-  //     `SELECT 
-  //     TO_CHAR(DATE_TRUNC('month', m.date_completed), 'Month') AS month_name,
-  //     SUM(m.cost) AS total_maintenance_cost
-  // FROM 
-  //     maintenance m
-  // JOIN 
-  //     leases l ON m.lease_id = l.id
-  // JOIN 
-  //     units u ON l.unit_id = u.id
-  // WHERE 
-  //     u.landlord_id = $1
-  //     AND m.date_completed >= NOW() - INTERVAL '6 months'
-  // GROUP BY 
-  //     DATE_TRUNC('month', m.date_completed)
-  // ORDER BY 
-  //     DATE_TRUNC('month', m.date_completed);`,
-  `SELECT 
-  m.id AS maintenance_id,
-  m.lease_id,
-  m.unit_id,
-  u.address AS unit_address,
-  m.description,
-  m.cost,
-  m.service,
-  m.date_started,
-  m.date_completed,
-  m.status
-FROM 
-  maintenance m
-JOIN 
-  leases l ON m.lease_id = l.id
-JOIN 
-  units u ON m.unit_id = u.id
-WHERE 
-  u.landlord_id = $1;
-`,
+      `SELECT 
+      TO_CHAR(DATE_TRUNC('month', m.date_completed), 'Month') AS month_name,
+      SUM(m.cost) AS total_maintenance_cost
+  FROM 
+      maintenance m
+  JOIN 
+      leases l ON m.lease_id = l.id
+  JOIN 
+      units u ON l.unit_id = u.id
+  WHERE 
+      u.landlord_id = $1
+      AND m.date_completed >= NOW() - INTERVAL '5 months'
+  GROUP BY 
+      DATE_TRUNC('month', m.date_completed)
+  ORDER BY 
+      DATE_TRUNC('month', m.date_completed);`,
       [id]
+//   `SELECT 
+//   m.id AS maintenance_id,
+//   m.lease_id,
+//   m.unit_id,
+//   u.address AS unit_address,
+//   m.description,
+//   m.cost,
+//   m.service,
+//   m.date_started,
+//   m.date_completed,
+//   m.status
+// FROM 
+//   maintenance m
+// JOIN 
+//   leases l ON m.lease_id = l.id
+// JOIN 
+//   units u ON m.unit_id = u.id
+// WHERE 
+//   u.landlord_id = $1;
+// `,
     )
     .then((res) => {
       console.log(res.rows);
@@ -64,7 +64,7 @@ const getTotalMaintenanceCost = (id) => {
       units u ON l.unit_id = u.id
   WHERE 
       u.landlord_id = $1
-      AND m.date_completed >= NOW() - INTERVAL '6 months';`,
+      AND m.date_completed >= NOW() - INTERVAL '1 months';`,
       [id]
     )
     .then((res) => {

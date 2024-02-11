@@ -7,11 +7,11 @@ export default function ProfilePic({property}) {
   
   const propImage= property && property.image
 
-  const image = propImage && require(`../LandlordProfile/data/${propImage}`)
+  // const image = propImage && require(`../LandlordProfile/data/${propImage}`)
  
   return (
     <div>
-      <img className="pp-card" src={image} alt="" />
+      <img className="pp-card" /*src={image}*/ alt="" />
     </div>
   );
 }

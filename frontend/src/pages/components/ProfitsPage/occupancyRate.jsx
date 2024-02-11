@@ -3,7 +3,7 @@ function OccupancyRate(props) {
   return (
     <div className="occupancy-rate round">
       <h2>Occupancy Rate</h2>
-      <p>{parseFloat(props.occupancyRate)}%</p>
+      <p>{parseFloat(props.occupancyRate).toFixed(2)}%</p>
     </div>
   )
 };

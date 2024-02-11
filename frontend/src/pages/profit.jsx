@@ -16,7 +16,7 @@ function Profits() {
   const [totalRevenue, setTotalRevenue] = useState([]);
   const [averageRent, setAverageRent] = useState([]);
   const [occupancyRate, setOccupancyRate] = useState(0);
-  const [maintenanceCosts, setMaintenanceCosts] = useState([]);
+  const [maintenanceData, setMaintenanceData] = useState([]);
   const [totalMaintenanceCost, setTotalMaintenanceCost] = useState([]);
 
   // Total Revenue
@@ -48,7 +48,7 @@ function Profits() {
     fetch("http://localhost:3001/api/margins/occupancy/1")
       .then((response) => response.json())
       .then((data) => {
-        console.log("We are in profit.jsx: ", data[0].occupancy_rate)
+        console.log("We are in profit.jsx: ", data);
         setOccupancyRate(data.occupancy_rate);
       })
       .catch((error) => {
@@ -56,19 +56,34 @@ function Profits() {
       });
   }, []);
 
-    // Total Maintenance Costs
+  // Total Maintenance Costs
+  useEffect(() => {
+    fetch("http://localhost:3001/api/margins/maintenancetotal/1")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(
+          "We are in profit.jsx Total Maintenance Costs: ",
+          data.total_maintenance_cost
+        );
+        setTotalMaintenanceCost(data.total_maintenance_cost);
+      })
+      .catch((error) => {
+        console.error("Error fetching maintenance data:", error);
+      });
+  }, []);
+
+    // Maintenance Data
     useEffect(() => {
-      fetch("http://localhost:3001/api/margins/maintenancetotal/1")
+      fetch("http://localhost:3001/api/margins/maintenance/1")
         .then((response) => response.json())
         .then((data) => {
-          console.log("We are in profit.jsx Total Maintenance Costs: ", data.total_maintenance_cost);
-          setTotalMaintenanceCost(data.total_maintenance_cost);
+          console.log("MAINTENANCE DATA: ", data)
+          setMaintenanceData(data);
         })
         .catch((error) => {
           console.error("Error fetching maintenance data:", error);
         });
     }, []);
-
   return (
     <div>
       <Nav />
@@ -85,15 +100,17 @@ function Profits() {
           <AverageRent averageRent={averageRent} />
         </div>
         <div className="dashboard-right-side">
-        <div className="container">
+          <div className="container">
             <OccupancyRate occupancyRate={occupancyRate} />
             {/* <div className="rent-payment round">
               <p>Outstanding Rent</p>
               <h3>$220</h3>
             </div> */}
-            <TotalMaintenanceCost totalMaintenanceCost={totalMaintenanceCost}/>
+            <TotalMaintenanceCost totalMaintenanceCost={totalMaintenanceCost} />
           </div>
-          <MaintenanceCosts />
+          {maintenanceData.length > 0 && (
+          <MaintenanceCosts maintenanceData={maintenanceData}/>
+          )}
         </div>
       </div>
     </div>

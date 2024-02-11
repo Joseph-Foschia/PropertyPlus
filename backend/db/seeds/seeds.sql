@@ -44,3 +44,37 @@ VALUES
   (1, 6, 'Unclogged kitchen sink', 30, '2024-01-05 08:00:00', '2024-01-05 09:00:00', 'Plumbing', 'In Progress'),
   (2, 2, 'Fixed broken window latch in living room', 30, '2024-03-02 14:30:00', '2024-03-02 15:15:00', 'Carpentry', 'In Progress'),
   (2, 7, 'Repaired HVAC system', 150, '2024-01-15 13:00:00', '2024-01-15 15:00:00', 'HVAC', 'Completed');
+
+
+-- Monthly test data below
+
+  -- September 2023
+INSERT INTO maintenance (lease_id, unit_id, description, cost, date_started, date_completed, status)
+VALUES
+  (1, 1, 'Fixed leaky faucet', 50, '2023-09-05 10:00:00', '2023-09-05 11:30:00', 'Completed'),
+  (2, 2, 'Replaced broken window', 80, '2023-09-15 14:00:00', '2023-09-15 15:30:00', 'Completed');
+
+-- October 2023
+INSERT INTO maintenance (lease_id, unit_id, description, cost, date_started, date_completed, status)
+VALUES
+  (1, 2, 'Unclogged drain', 30, '2023-10-05 09:00:00', '2023-10-05 10:30:00', 'Completed'),
+  (2, 1, 'Fixed light fixture', 60, '2023-10-20 11:00:00', '2023-10-20 12:30:00', 'Completed');
+
+-- November 2023
+INSERT INTO maintenance (lease_id, unit_id, description, cost, date_started, date_completed, status)
+VALUES
+  (1, 1, 'Repaired HVAC system', 150, '2023-11-05 13:00:00', '2023-11-05 15:30:00', 'Completed'),
+  (2, 2, 'Fixed kitchen sink', 40, '2023-11-20 10:00:00', '2023-11-20 11:30:00', 'Completed');
+
+-- December 2023
+INSERT INTO maintenance (lease_id, unit_id, description, cost, date_started, date_completed, status)
+VALUES
+  (1, 2, 'Replaced air filter', 20, '2023-12-10 09:00:00', '2023-12-10 10:30:00', 'Completed'),
+  (2, 1, 'Fixed door lock', 30, '2023-12-25 14:00:00', '2023-12-25 15:30:00', 'Completed');
+
+-- January 2024
+INSERT INTO maintenance (lease_id, unit_id, description, cost, date_started, date_completed, status)
+VALUES
+  (1, 1, 'Unclogged toilet', 40, '2024-01-05 10:00:00', '2024-01-05 11:30:00', 'Completed'),
+  (2, 2, 'Fixed shower head', 25, '2024-01-20 11:00:00', '2024-01-20 12:30:00', 'Completed');
+
