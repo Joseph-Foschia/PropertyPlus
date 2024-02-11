@@ -78,3 +78,26 @@ VALUES
   (1, 1, 'Unclogged toilet', 40, '2024-01-05 10:00:00', '2024-01-05 11:30:00', 'Completed'),
   (2, 2, 'Fixed shower head', 25, '2024-01-20 11:00:00', '2024-01-20 12:30:00', 'Completed');
 
+
+--Extra data below for the profits and loss page
+
+-- Insert new tenants
+INSERT INTO tenants (name, email, password, phone_number, profile_img)
+VALUES
+  ('Emily Johnson', 'emily.j@example.com', 'pass987', '333-444-5555', 'emily_profile.jpg'),
+  ('Michael Brown', 'michael.b@example.com', 'pass123', '777-888-9999', 'michael_profile.jpg'),
+  ('Jessica Miller', 'jessica.m@example.com', 'pass456', '555-666-7777', 'jessica_profile.jpg');
+
+-- Insert new units
+INSERT INTO units (landlord_id, address, status, image, unit_cost)
+VALUES
+  (1, '567 Pine Avenue, Anytown, AN 12345', 'Available', 'photos/5.png', 1600),
+  (1, '890 Maple Street, Sometown, SM 67890', 'Occupied', 'photos/6.png', 1500),
+  (1, '111 Elm Avenue, Newcity, NC 24680', 'Available', 'photos/7.png', 1700);
+
+-- Insert new leases
+INSERT INTO leases (unit_id, tenant_id, start_date, end_date, rent, lease_docs)
+VALUES
+  (8, (SELECT id FROM tenants WHERE name = 'Emily Johnson'), '2024-02-01', '2025-02-01', 1700, 'lease_doc8.pdf'),
+  (9, (SELECT id FROM tenants WHERE name = 'Michael Brown'), '2024-02-01', '2025-02-01', 1600, 'lease_doc9.docx'),
+  (10, (SELECT id FROM tenants WHERE name = 'Jessica Miller'), '2024-02-01', '2025-02-01', 1800, 'lease_doc10.pdf');
