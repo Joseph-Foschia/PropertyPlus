@@ -119,7 +119,7 @@ function MaintenanceCosts(props) {
           <XAxis dataKey="name" />
           <YAxis domain={[0, 'dataMax + 100']}/>
           <Tooltip />
-          <Area type="monotone" dataKey="cost" stroke="#8884d8" fill="#8884d8" />
+          <Area type="monotone" dataKey="cost" stroke="#8884d8" fill="#82da9d" />
         </AreaChart>
     </div>
   );
