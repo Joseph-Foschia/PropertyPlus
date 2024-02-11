@@ -1,6 +1,7 @@
 import "./PaymentDetails.css";
 
 export default function PaymentDetails() {
+  
   return (
     <div className="payment-history-card">
       <p className="payment-history">Payment History</p>

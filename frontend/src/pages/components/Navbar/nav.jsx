@@ -31,9 +31,9 @@ function Nav() {
         <FontAwesomeIcon icon={faMoneyBill} className="money" />
         <span className="pl-span">Profit & Loss</span>
       </Link>
-      <Link to="/">
-        <FontAwesomeIcon icon={faScrewdriverWrench} className="tools" />
-        <span className="m-span">Maintenance</span>
+      <Link to="/maintenance">
+        <FontAwesomeIcon icon={faScrewdriverWrench} className="ma" />
+        <span className="ma-span">Maintenance</span>
       </Link>
       <Link to="/new">
         <FontAwesomeIcon icon={faHouseMedical} className="add" />

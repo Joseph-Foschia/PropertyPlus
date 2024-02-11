@@ -37,6 +37,8 @@ const NewProperty = ({ userData }) => {
     }
   };
 
+  
+
   return (
     <div className="add-property-item">
       <Nav />

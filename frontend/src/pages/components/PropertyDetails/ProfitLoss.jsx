@@ -20,7 +20,6 @@ function ProfitLoss(props) {
       <h4>Mortgage: ${property?.unit_cost}</h4>
       <h4>Rent: ${property?.rent}</h4>
       <h4>Over/Under: ${margin}</h4>
-      {/* <Graph data={data}/> */}
     </div>
   );
 }

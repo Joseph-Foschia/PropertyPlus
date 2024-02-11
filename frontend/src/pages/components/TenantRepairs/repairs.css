@@ -1,12 +1,14 @@
 /* repairs.css */
 
 .repairs-container {
-  max-width: 400px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  font-family: "Poppins";
+  font-size: 20px;
 }
 
 .repairs-container h2 {
@@ -20,33 +22,99 @@
 
 .repairs-container label {
   display: block;
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom: 5px;
 }
 
 .repairs-container input[type="text"],
 .repairs-container textarea {
-  width: 100%;
+  width: 650px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 .repairs-container textarea {
-  height: 100px; /* Adjust height as needed */
+  height: 130px;
+  margin: 10px;
 }
 
 .repairs-container button[type="submit"] {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  top: 84px;
+  left: 628px;
+  width: 300px;
+  height: 80px;
+  padding: 0px 8px;
+  border: 1px solid #17b890;
+  box-sizing: border-box;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #17b890;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: 18px;
+  outline: none;
+  margin-left: 15px;
 }
 
 .repairs-container button[type="submit"]:hover {
-  background-color: #0056b3;
+  color: white;
+  background-color: #17b890;
+  transition: 0.5s;
+}
+
+.top-nav-header-repairs {
+  padding-top: 40px;
+  padding-bottom: 20px;
+ margin-left: 300px;
+ margin-bottom: 90px;
+ font-size: 34px;
+ font-weight: 700;
+ font-family: "Poppins";
+ border-bottom: 1px solid rgb(113, 113, 113);
+ width: 1200px
+}
+
+.request-repair {
+  font-size: 29px;
+}
+
+.service {
+  font-size: 26px;
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+.description {
+  font-size: 26px;
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.thank-you-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+.thankyou-msg {
+  font-size: 26px;
+  margin: 38px;
+}
+
+.thankyou-header {
+  font-size: 28px;
+  margin: 15px;
 }
