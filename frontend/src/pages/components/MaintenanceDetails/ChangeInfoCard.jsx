@@ -1,5 +1,5 @@
 import changeMaintenanceValues from "../../../helpers/changeMaintenanceValuesHelper"
-import React, { useState, useEffect } from "react";
+
 
 
 function ChangeInfoCard({detail}) {

@@ -1,5 +1,4 @@
 
-
 import { formatDate } from "../../../helpers/dateHelper"
 
 function GeneralInfoCard({detail}) {

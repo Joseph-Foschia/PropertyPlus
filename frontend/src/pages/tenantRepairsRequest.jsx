@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./components/TenantRepairs/repairs.css";
-import TenantDashboard from "./TenantDashboard";
 import TenantNav from "./components/tenant-dash/TenantNav";
-import { useNavigate } from "react-router-dom";
 
 const TenantRepairsRequest = (props) => {
   const [submitted, setSubmitted] = useState(false);

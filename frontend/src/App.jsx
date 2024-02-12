@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import React, { useState, useEffect, useMemo } from "react";
+import React from "react";
 import Landlords from "./pages/landlords";
 import MaintenanceDetails from "./pages/MaintenanceDetails";
 import Property from "./pages/property";

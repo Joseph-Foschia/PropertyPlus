@@ -1,7 +1,6 @@
 import React, {useState }from "react";
 import StripeCheckout from "./stripe/StripeCheckout";
 import './stripe/stripe.css'
-import Nav from "./components/Navbar/nav";
 import TenantNav from "./components/tenant-dash/TenantNav";
 const Stripe = () => {
   const [total, setTotal] = useState(0)

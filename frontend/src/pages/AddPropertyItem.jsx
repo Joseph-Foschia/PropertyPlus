@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import addNewPropertyItem from "../helpers/addNewPropertyHelper";
 import "./components/NewProperty/LandLords.css";
 import Nav from "./components/Navbar/nav";

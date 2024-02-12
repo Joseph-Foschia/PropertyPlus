@@ -1,7 +1,7 @@
 import "./propertyList.css";
 import PropertyListItem from "./PropertyListItem";
-import React, { useState, useEffect } from 'react';
-import { Routes, Route, useParams } from "react-router-dom";
+import React from 'react';
+
 
 
 

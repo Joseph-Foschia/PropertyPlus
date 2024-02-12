@@ -7,7 +7,11 @@
 .head {
   margin-top: 20px;
   margin-bottom: 50px;
-  font-size: 45px;
+  font-size: 40px;
+  font-weight: 600;
+  font-family: "Poppins";
+  border-bottom: 1px solid rgb(113, 113, 113);
+  width: 1200px;
 }
 
 

@@ -10,7 +10,6 @@ import {
   Tooltip,
   Legend,
   ReferenceLine,
-  ResponsiveContainer,
 } from "recharts";
 
 export default class Graph extends PureComponent {

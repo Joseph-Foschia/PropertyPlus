@@ -1,5 +1,4 @@
 import "./topnav.css";
-import landlord from "./data/landlord";
 import image from "./data/photos/profilePic.png"
 import { Link } from 'react-router-dom';
 

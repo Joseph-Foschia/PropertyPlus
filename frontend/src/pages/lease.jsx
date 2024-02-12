@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import { findTenant, addNewLease, changeUnitStatus } from "../helpers/addNewLease";
 import { useLocation, useNavigate } from "react-router-dom";
 import Nav from "./components/Navbar/nav";

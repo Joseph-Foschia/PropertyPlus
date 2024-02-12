@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import "./components/MaintenanceDetails/details.css"
-import { formatDate } from "../helpers/dateHelper";
 import GeneralInfoCard from "./components/MaintenanceDetails/GeneralInfoCard";
 import TenantInfoCard from "./components/MaintenanceDetails/TenantInfoCard";
 import ChangeInfoCard from "./components/MaintenanceDetails/ChangeInfoCard";
 import AllMaintenanceRequestsCard from "./components/MaintenanceDetails/AllMaintenanceRequetsCard";
+
+
 
 function MaintenanceDetails() {
   const [details, setDetails] = useState([])
@@ -25,7 +26,7 @@ function MaintenanceDetails() {
   }, [])
 
 
-  const handleEmail = (tenantDetails) => {
+  const handleEmail = () => {
     const landlordEmail = detail && detail.email;
     const body = `Hi ${detail && detail.name}`;
     const subject = detail && detail.address;
@@ -35,13 +36,9 @@ function MaintenanceDetails() {
     window.location.href = `mailto:${landlordEmail}?subject=${encodedSubject}&body=${encodedBody}`;
   };
 
+
+
   const detail = details && details[0]
-
-  const dateString = detail?.date_started
-  const formattedDateStarted = formatDate(dateString)
-
-  const dateStringFinished = detail?.date_completed
-  const formattedDateFinished = formatDate(dateStringFinished)
 
   const ID = detail && detail.unit_id
  
