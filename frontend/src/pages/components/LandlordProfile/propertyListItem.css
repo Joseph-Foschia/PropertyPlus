@@ -1,3 +1,7 @@
+html,
+body {
+  overflow: hidden;
+}
 .propertyListItem {
   display: flex;
   margin-bottom: 30px;

@@ -9,13 +9,20 @@ import React, { PureComponent } from "react";
 //   Legend,
 //   ResponsiveContainer,
 // } from "recharts";
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 
-import graphDataSetter from '../../../helpers/graphHelper';
+import graphDataSetter from "../../../helpers/graphHelper";
 
 function MaintenanceCosts(props) {
   console.log("HELLOOOOOOOOOOO", props.maintenanceData);
-  
 
   // const data = [
   //   {
@@ -42,7 +49,7 @@ function MaintenanceCosts(props) {
 
   const data = props.maintenanceData.slice(0, 5).map((data, index) => ({
     name: data.month_name,
-    cost: data.total_maintenance_cost
+    cost: data.total_maintenance_cost,
   }));
 
   // const arrayOfLines = props.maintenanceCosts.map((maintenanceData, idx) => {
@@ -50,7 +57,6 @@ function MaintenanceCosts(props) {
   //     <Line key={idx} type="monotone" dataKey={"yo"} stroke="#8884d8"/>
   //   );
   // });
-
 
   const test = [
     // <Line type="monotone" dataKey="pv test" stroke="#8884d8" />,
@@ -75,16 +81,15 @@ function MaintenanceCosts(props) {
         <YAxis />
         <Tooltip />
         <Legend /> */}
-        {/* What do we need from this?:  cost, address */}
-        {/* <Line type="monotone" dataKey="Plumbing" stroke="#8884d8" />
+      {/* What do we need from this?:  cost, address */}
+      {/* <Line type="monotone" dataKey="Plumbing" stroke="#8884d8" />
         <Line type="monotone" dataKey="HVAC" stroke="#82ca9d" />
         <Line type="monotone" dataKey="Carpentry" stroke="#82da9d" />
         <Line type="monotone" dataKey="Electrical" stroke="#82ba9d" /> */}
-        {/* If the maintenance data is not empty it will fill the LineChart with the parameters from the maintenance table */}
-        {/* {props.maintenanceCosts &&
+      {/* If the maintenance data is not empty it will fill the LineChart with the parameters from the maintenance table */}
+      {/* {props.maintenanceCosts &&
           props.maintenanceCosts.length > 0 && test } */}
       {/* </LineChart> */}
-
       {/* <BarChart
           width={500}
           height={300}
@@ -104,23 +109,23 @@ function MaintenanceCosts(props) {
           <CartesianGrid strokeDasharray="3 3" />
           <Bar dataKey="cost" fill="#8884d8" background={{ fill: '#eee' }} />
         </BarChart> */}
-        <AreaChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 0,
-            bottom: 0,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis domain={[0, 'dataMax + 100']}/>
-          <Tooltip />
-          <Area type="monotone" dataKey="cost" stroke="#8884d8" fill="#82da9d" />
-        </AreaChart>
+      <AreaChart
+        width={500}
+        height={300}
+        data={data}
+        margin={{
+          top: 10,
+          right: 30,
+          left: 0,
+          bottom: 0,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis domain={[0, "dataMax + 100"]} />
+        <Tooltip />
+        <Area type="monotone" dataKey="cost" stroke="#8884d8" fill="#82da9d" />
+      </AreaChart>
     </div>
   );
 }

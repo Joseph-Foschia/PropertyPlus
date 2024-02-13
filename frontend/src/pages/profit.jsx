@@ -72,18 +72,18 @@ function Profits() {
       });
   }, []);
 
-    // Maintenance Data
-    useEffect(() => {
-      fetch("http://localhost:3001/api/margins/maintenance/1")
-        .then((response) => response.json())
-        .then((data) => {
-          console.log("MAINTENANCE DATA: ", data)
-          setMaintenanceData(data);
-        })
-        .catch((error) => {
-          console.error("Error fetching maintenance data:", error);
-        });
-    }, []);
+  // Maintenance Data
+  useEffect(() => {
+    fetch("http://localhost:3001/api/margins/maintenance/1")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("MAINTENANCE DATA: ", data);
+        setMaintenanceData(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching maintenance data:", error);
+      });
+  }, []);
   return (
     <div>
       <Nav />
@@ -109,7 +109,7 @@ function Profits() {
             <TotalMaintenanceCost totalMaintenanceCost={totalMaintenanceCost} />
           </div>
           {maintenanceData.length > 0 && (
-          <MaintenanceCosts maintenanceData={maintenanceData}/>
+            <MaintenanceCosts maintenanceData={maintenanceData} />
           )}
         </div>
       </div>
