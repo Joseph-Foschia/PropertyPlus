@@ -18,10 +18,15 @@ function Profits(props) {
   const [totalMaintenanceCost, setTotalMaintenanceCost] = useState([]);
 
   // Fetches the data for all of the state variables
-  useFetchAllProfitAndLossData(props.token, setTotalRevenue, setAverageRent, setOccupancyRate, setMaintenanceData, setTotalMaintenanceCost);
+  useFetchAllProfitAndLossData(
+    props.token,
+    setTotalRevenue,
+    setAverageRent,
+    setOccupancyRate,
+    setMaintenanceData,
+    setTotalMaintenanceCost
+  );
 
-<<<<<<< HEAD
-=======
   // Average Rent
   useEffect(() => {
     fetch("http://localhost:3001/api/margins/rent/1")
@@ -75,7 +80,6 @@ function Profits(props) {
         console.error("Error fetching maintenance data:", error);
       });
   }, []);
->>>>>>> style/everything
   return (
     <div>
       <Nav />
