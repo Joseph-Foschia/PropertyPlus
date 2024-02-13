@@ -28,7 +28,7 @@ INSERT INTO leases (unit_id, tenant_id, start_date, end_date, rent, lease_docs)
 VALUES
   (1, 1, '2024-02-01', '2024-08-01', 1500, 'lease_doc1.pdf'),
   (6, 1, '2024-01-01', '2024-08-01', 2000, 'lease_doc1.pdf'),
-  (2, 2, '2024-03-01', '2024-09-01', 1200, 'lease_doc2.docx');
+  (2, 2, '2024-03-01', '2024-09-01', 1400, 'lease_doc2.docx');
 
 -- Test data for payments table
 INSERT INTO payments (lease_id, amount, date_paid, status)
@@ -43,7 +43,7 @@ VALUES
   (1, 1, 'Kithcen faucet is leaking', 50, '2024-02-05 10:00:00', '2024-02-05 11:30:00', 'Plumbing', 'Completed'),
   (1, 6, 'Kitchen sink is clogged', 30, '2024-01-05 08:00:00', '2024-02-05 11:30:00', 'Plumbing', 'In Progress'),
   (2, 2, 'Broken window latch in living room', 30, '2023-09-15 14:00:00', '2024-03-02 15:15:00', 'Carpentry', 'Completed'),
-  (2, 7, 'Broken light fixture in living room', 150, '2024-01-15 13:00:00', '2024-01-15 15:00:00', 'HVAC', 'Completed');
+  (3, 7, 'Broken light fixture in living room', 150, '2024-01-15 13:00:00', '2024-01-15 15:00:00', 'HVAC', 'Completed');
 
 
 

@@ -25,7 +25,7 @@ export default function TenantDashboard({ token, userData}) {
 
   //ensures lease is true and sets lease detaisl to the first value of lease
   const tenantDetails = lease && lease[0];
-
+ 
   return (
     <div>
       <TenantNav />
