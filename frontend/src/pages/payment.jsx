@@ -1,6 +1,6 @@
 import TenantNav from "./components/tenant-dash/TenantNav";
 import "./stripe/payment.css"
-function PaymentSuccess() {
+function PaymentSuccess({}) {
   return (
     <div >
       <TenantNav></TenantNav>

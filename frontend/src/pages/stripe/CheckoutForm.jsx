@@ -7,7 +7,7 @@ export default function CheckoutForm() {
 
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
+  
   useEffect(() => {
     if (!stripe) {
       return;
@@ -32,7 +32,7 @@ export default function CheckoutForm() {
     if (!stripe || !elements) {
       return;
     }
-
+    
     setIsLoading(true);
 
     const { error } = await stripe.confirmPayment({

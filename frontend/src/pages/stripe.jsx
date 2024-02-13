@@ -2,6 +2,7 @@ import React, {useState }from "react";
 import StripeCheckout from "./stripe/StripeCheckout";
 import './stripe/stripe.css'
 import TenantNav from "./components/tenant-dash/TenantNav";
+
 const Stripe = () => {
   const [total, setTotal] = useState(0)
 
@@ -49,7 +50,7 @@ const Stripe = () => {
       </div>
          <div className='stripe-checkout-container bg-white rounded-md p-12 bg-opacity-70'>
           
-          <StripeCheckout/>
+          <StripeCheckout />
           </div>  
         </div>
         </div>

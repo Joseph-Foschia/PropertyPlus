@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
+import React, {useState} from "react";
 import Landlords from "./pages/landlords";
 import MaintenanceDetails from "./pages/MaintenanceDetails";
 import Property from "./pages/property";
@@ -22,14 +22,13 @@ function App() {
  
   const { token, setToken, getUser, getUserType } = useToken();
 
-  
   if (!token) {
     return <Login setToken={setToken} />;
   }
 
   const userData = getUser();
   const type = getUserType();
- 
+
 
 
   if(type === "landlord") {
@@ -76,6 +75,8 @@ function App() {
           element={<MaintenanceDetails token={token} userData={userData} />}
         />
 
+        <Route path="*" element={<Navigate to="/" />} />
+
       </Routes>
     </Router>
   );
@@ -92,7 +93,7 @@ function App() {
           /> 
           <Route 
             path="/" 
-            element={<TenantDashboard token={token} userData={userData}/>} />
+            element={<TenantDashboard token={token} userData={userData} />} />
 
           <Route
             path="/repairs"
@@ -103,6 +104,8 @@ function App() {
             path="/approved"
             element={<PaymentSuccess token={token} userData={userData} />}
           />
+
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
   
       </Router>

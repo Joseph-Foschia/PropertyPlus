@@ -11,6 +11,7 @@ import {
 import { Link } from "react-router-dom";
 
 function TenantNav() {
+ 
   const handleLogout = () => {
     localStorage.removeItem("token");
     window.location.reload();
@@ -36,10 +37,10 @@ function TenantNav() {
         <FontAwesomeIcon icon={faFolder} className="folder" />
         <span className="d-span">Documents</span>
       </Link>
-      <Link onClick={handleLogout} to="/">
-        <FontAwesomeIcon icon={faPersonThroughWindow} className="quit" />
-        <span className="logout-span">Logout</span>
-      </Link>
+      <button onClick={handleLogout}>
+  <FontAwesomeIcon icon={faPersonThroughWindow} className="quit" />
+  <span className="logout-span">Logout</span>
+</button>
     </div>
   );
 }

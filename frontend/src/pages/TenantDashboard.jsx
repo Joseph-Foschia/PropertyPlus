@@ -12,7 +12,7 @@ import {
 } from "../helpers/tenantDashHelper";
 import { handleEmailLandlord } from "../helpers/emailHelper";
 
-export default function TenantDashboard({ token, userData }) {
+export default function TenantDashboard({ token, userData}) {
   //Details for tenants lease
   const [lease, setLease] = useState([]);
   const [maintenance, setMaintenance] = useState([]);
@@ -34,7 +34,7 @@ export default function TenantDashboard({ token, userData }) {
       </div>
       <div className="history-pic">
         <PropertyPic tenantDetails={tenantDetails} />
-        <PaymentDetails />
+        <PaymentDetails  />
       </div>
       <div className="bottom-ten-dash">
         <LeaseDetails tenantDetails={tenantDetails} />

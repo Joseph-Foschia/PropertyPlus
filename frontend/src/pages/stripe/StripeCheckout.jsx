@@ -6,7 +6,7 @@ import CheckoutForm from "./CheckoutForm";
 
 const stripePromise = loadStripe("pk_test_51OcFDwJu6dUjGvIMUDzT3gx3hPUDCU6tLtbbmSInqIRbl3igCaf8Z3q77U5Kayk2laVzZxiRJOr2VQ283X960xGl00XtmfjjUK");
 
-export default function StripeCheckout() {
+export default function StripeCheckout({handlePaymentConfirmed}) {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
