@@ -31,8 +31,12 @@
 .mr-item1 {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  font-weight: 600;
   margin-bottom: 20px;
   margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom:1px solid black;
 }
 .mr-item2 {
   display: flex;

@@ -12,7 +12,7 @@ import TotalRevenue from "./components/ProfitsPage/totalRevenue";
 import Nav from "./components/Navbar/nav";
 import PropertyTopNav from "./components/PropertyDetails/PropertyTopNav";
 
-function Profits() {
+function Profits(props) {
   const [totalRevenue, setTotalRevenue] = useState([]);
   const [averageRent, setAverageRent] = useState([]);
   const [occupancyRate, setOccupancyRate] = useState(0);
@@ -21,7 +21,7 @@ function Profits() {
 
   // Total Revenue
   useEffect(() => {
-    fetch("http://localhost:3001/api/margins/details/1")
+    fetch(`http://localhost:3001/api/margins/details/${props.token}`)
       .then((response) => response.json())
       .then((data) => {
         setTotalRevenue(data.total_revenue);
@@ -33,7 +33,7 @@ function Profits() {
 
   // Average Rent
   useEffect(() => {
-    fetch("http://localhost:3001/api/margins/rent/1")
+    fetch(`http://localhost:3001/api/margins/rent/${props.token}`)
       .then((response) => response.json())
       .then((data) => {
         setAverageRent(data);
@@ -45,7 +45,7 @@ function Profits() {
 
   // Occupancy Rate
   useEffect(() => {
-    fetch("http://localhost:3001/api/margins/occupancy/1")
+    fetch(`http://localhost:3001/api/margins/occupancy/${props.token}`)
       .then((response) => response.json())
       .then((data) => {
         console.log("We are in profit.jsx: ", data);
@@ -58,7 +58,7 @@ function Profits() {
 
   // Total Maintenance Costs
   useEffect(() => {
-    fetch("http://localhost:3001/api/margins/maintenancetotal/1")
+    fetch(`http://localhost:3001/api/margins/maintenancetotal/${props.token}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(
@@ -74,7 +74,7 @@ function Profits() {
 
     // Maintenance Data
     useEffect(() => {
-      fetch("http://localhost:3001/api/margins/maintenance/1")
+      fetch(`http://localhost:3001/api/margins/maintenance/1`)
         .then((response) => response.json())
         .then((data) => {
           console.log("MAINTENANCE DATA: ", data)

@@ -47,7 +47,7 @@ function Property() {
       <div className="details-graph">
         <PropertyDetials property={property} />
         <Graph data={data} />
-        <MaintenanceRequest id={id}/>
+        <MaintenanceRequest property={prop} id={id}/>
       </div>
     </div>
   );
