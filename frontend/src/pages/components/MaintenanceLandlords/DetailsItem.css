@@ -2,6 +2,8 @@
   display: flex;
   margin-bottom: 30px;
   align-items: center;
+  width: 1100px;
+  height: 180px;
   justify-content: space-between;
   background-color: rgb(239, 246, 244);
   border-radius: 20px;
@@ -23,7 +25,6 @@
   margin: 20px;
   margin-left: 20px;
   font-size: 19px;
-  
 }
 
 .details-container {
@@ -42,7 +43,6 @@
   transition: 0.5s;
 }
 
-
 .detail-button {
   cursor: pointer;
   width: 230px;
@@ -60,12 +60,12 @@
   outline: none;
 }
 
-.in-progress{
+.in-progress {
   color: #ffc300;
   font-weight: 700;
 }
 
-.completed{
+.completed {
   color: #32de84;
   font-weight: 700;
 }

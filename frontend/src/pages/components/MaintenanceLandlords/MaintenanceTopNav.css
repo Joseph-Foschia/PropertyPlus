@@ -1,12 +1,12 @@
 .main-top-nav-container {
   padding-top: 40px;
- margin-left: 300px;
- margin-bottom: 40px;
- font-size: 34px;
- font-weight: 700;
- font-family: "Poppins";
- border-bottom: 1px solid rgb(113, 113, 113);
- width: 1200px
+  margin-left: 300px;
+  margin-bottom: 40px;
+  font-size: 34px;
+  font-weight: 700;
+  font-family: "Poppins";
+  border-bottom: 1px solid rgb(113, 113, 113);
+  width: 1100px;
 }
 
 .landlord-name {

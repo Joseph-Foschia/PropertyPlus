@@ -15,14 +15,14 @@ function AverageRent(props) {
   // creates an object (limit of 4) of addresses from the data from the database
   const data = props.averageRent.slice(0, 4).map((data, index) => ({
     name: data.address.substring(0, 12),
-    average_rent_per_unit: data.average_rent_per_unit
+    average_rent_per_unit: data.average_rent_per_unit,
   }));
 
   return (
     <div className="tenants-by-property round">
       <h3>Average Rent per Unit</h3>
       <BarChart
-        width={500}
+        width={450}
         height={300}
         data={data}
         margin={{
@@ -38,7 +38,11 @@ function AverageRent(props) {
         <Tooltip />
         <Legend />
         <CartesianGrid strokeDasharray="3 3" />
-        <Bar dataKey="average_rent_per_unit" fill="#8884d8" background={{ fill: "#eee" }} />
+        <Bar
+          dataKey="average_rent_per_unit"
+          fill="#8884d8"
+          background={{ fill: "#eee" }}
+        />
       </BarChart>
     </div>
   );

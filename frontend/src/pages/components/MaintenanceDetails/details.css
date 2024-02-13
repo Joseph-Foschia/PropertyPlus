@@ -1,55 +1,58 @@
-
 .maint-header {
   padding-top: 40px;
   padding-bottom: 20px;
- margin-left: 300px;
- margin-bottom: 70px;
- font-size: 34px;
- font-weight: 700;
- font-family: "Poppins";
- border-bottom: 1px solid rgb(113, 113, 113);
- width: 1200px;
- display: flex;
+  margin-left: 300px;
+  margin-bottom: 70px;
+  font-size: 34px;
+  font-weight: 700;
+  font-family: "Poppins";
+  border-bottom: 1px solid rgb(113, 113, 113);
+  width: 1100px;
+  display: flex;
 }
 
 .header-a {
   margin-right: 20px;
 }
 .all-repair-requests-card {
-  width: 460px;
+  width: 400px;
   height: 415px;
   background-color: #f0f0f0;
   border-radius: 24px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   display: flex;
   padding: 14px;
-  
+  margin-left: 1000px;
+  top: 190px;
+  position: absolute;
 }
 
 .change-info-card {
-  width: 380px;
+  width: 350px;
+  position: absolute;
   height: 420px;
   background-color: #f0f0f0;
   border-radius: 24px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   display: flex;
-  padding: 4px;
- 
+  margin-left: 620px;
+  top: 190px;
 }
 
 .general-info-card {
-  width: 420px;
+  position: absolute;
+  width: 300px;
   height: 610px;
   display: flex;
   padding: 4px;
+  margin-left: 290px;
   background-color: #f0f0f0;
   border-radius: 24px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  
 }
 
 .tenant-info-card {
-  width: 460px;
+  width: 400px;
   height: 180px;
   margin-top: 30px;
   background-color: #f0f0f0;
@@ -58,6 +61,9 @@
   display: flex;
   padding: 4px;
   flex-direction: column;
+  margin-left: 1000px;
+  top: 590px;
+  position: absolute;
 }
 
 .general-info-list {
@@ -65,7 +71,6 @@
   flex-direction: column;
   margin: 15px;
   margin-top: 25px;
-  
 }
 
 .all-details {
@@ -83,20 +88,17 @@
 
 /* General Info*/
 
-
-
 .header-info h3 {
   font-size: 24px;
   font-weight: 700;
   margin: 15px;
   margin-left: 20px;
-  border-bottom: 1px solid rgb(113, 113, 113);;
+  border-bottom: 1px solid rgb(113, 113, 113);
 }
 
 .info-p {
   font-weight: 600;
   font-size: 20px;
-  
 }
 
 .more-detail {
@@ -148,11 +150,10 @@
   width: 150px;
 }
 
-
 .submit-button-container {
   display: flex;
-  justify-content: center; 
-  margin-top: 20px; 
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .change-stat:hover {
@@ -179,11 +180,10 @@
   margin-left: 25px;
 }
 
-
 .email-tenant {
   cursor: pointer;
   top: 84px;
-  width: 380px;
+  width: 350px;
   height: 80px;
   padding: 0px 8px;
   border: 1px solid #17b890;
@@ -197,6 +197,9 @@
   line-height: 18px;
   outline: none;
   margin-top: 60px;
+  position: absolute;
+  margin-left: 620px;
+  top: 600px;
 }
 .email-tenant:hover {
   color: white;

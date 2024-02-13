@@ -11,8 +11,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
- align-items: center;
-  
+  align-items: center;
 }
 .t-buttons {
   width: 300px;
@@ -82,7 +81,6 @@
   font-size: 24px;
 }
 
-
 .some-text {
   cursor: pointer;
   width: 200px;
@@ -109,16 +107,17 @@
 .maintenance-title {
   font-weight: 700;
   font-size: 22px;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
   margin-top: 10px;
   font-family: "Poppins";
 }
 
 .request-details {
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid black;
+  margin-left: 20px;
   margin-top: 15px;
 }
 
