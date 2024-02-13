@@ -22,6 +22,7 @@ import {
 import graphDataSetter from "../../../helpers/graphHelper";
 
 function MaintenanceCosts(props) {
+
   const data = props.maintenanceData.slice(0, 5).map((data, index) => ({
     name: data.month_name,
     cost: data.total_maintenance_cost,
