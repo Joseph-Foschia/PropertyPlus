@@ -17,6 +17,7 @@ function Profits(props) {
   const [maintenanceData, setMaintenanceData] = useState([]);
   const [totalMaintenanceCost, setTotalMaintenanceCost] = useState([]);
 
+  // Fetches the data for all of the state variables
   useFetchAllProfitAndLossData(props.token, setTotalRevenue, setAverageRent, setOccupancyRate, setMaintenanceData, setTotalMaintenanceCost);
 
   return (

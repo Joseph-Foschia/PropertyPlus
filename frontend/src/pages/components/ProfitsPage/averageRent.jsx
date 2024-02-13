@@ -11,14 +11,13 @@ import {
 } from "recharts";
 
 function AverageRent(props) {
-  console.log("Average Rent: ", props.averageRent);
 
+  // creates an object (limit of 4) of addresses from the data from the database
   const data = props.averageRent.slice(0, 4).map((data, index) => ({
     name: data.address.substring(0, 12),
     average_rent_per_unit: data.average_rent_per_unit
   }));
 
-  console.log("Data rent: ", data);
   return (
     <div className="tenants-by-property round">
       <h3>Average Rent per Unit</h3>
