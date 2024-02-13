@@ -20,62 +20,6 @@ function Profits(props) {
   // Fetches the data for all of the state variables
   useFetchAllProfitAndLossData(props.token, setTotalRevenue, setAverageRent, setOccupancyRate, setMaintenanceData, setTotalMaintenanceCost);
 
-<<<<<<< HEAD
-=======
-  // Average Rent
-  useEffect(() => {
-    fetch("http://localhost:3001/api/margins/rent/1")
-      .then((response) => response.json())
-      .then((data) => {
-        setAverageRent(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching average rent data:", error);
-      });
-  }, []);
-
-  // Occupancy Rate
-  useEffect(() => {
-    fetch("http://localhost:3001/api/margins/occupancy/1")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("We are in profit.jsx: ", data);
-        setOccupancyRate(data.occupancy_rate);
-      })
-      .catch((error) => {
-        console.error("Error fetching maintenance data:", error);
-      });
-  }, []);
-
-  // Total Maintenance Costs
-  useEffect(() => {
-    fetch("http://localhost:3001/api/margins/maintenancetotal/1")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(
-          "We are in profit.jsx Total Maintenance Costs: ",
-          data.total_maintenance_cost
-        );
-        setTotalMaintenanceCost(data.total_maintenance_cost);
-      })
-      .catch((error) => {
-        console.error("Error fetching maintenance data:", error);
-      });
-  }, []);
-
-  // Maintenance Data
-  useEffect(() => {
-    fetch("http://localhost:3001/api/margins/maintenance/1")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("MAINTENANCE DATA: ", data);
-        setMaintenanceData(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching maintenance data:", error);
-      });
-  }, []);
->>>>>>> style/everything
   return (
     <div>
       <Nav />
