@@ -1,10 +1,26 @@
+# PropertyPlus
+
 Welcome to PropertyPlus, an app that makes payments and property management easy!  
 
 
+## Add Properties
 
+!["Add Properties"](https://github.com/jszady/PropertyPlus/blob/main/frontend/src/Assets/Add%20Property.png)
 
+## Manage Properties
 
+!["List of Properties"](https://github.com/jszady/PropertyPlus/blob/main/frontend/src/Assets/Properties.png)
+!["Page that allows you to manage a specific property"](https://github.com/jszady/PropertyPlus/blob/main/frontend/src/Assets/Properties.png)
 
+## Manage Maintenance Requests
+!["List of Maintenance Requests"](https://github.com/jszady/PropertyPlus/blob/main/frontend/src/Assets/Requests.png)
+!["Page that allows you to manage a specific maintenance request"](https://github.com/jszady/PropertyPlus/blob/main/frontend/src/Assets/Manage%20Request.png)
+
+## Automated Statistics For All Properties
+!["Shows graphs and costs for all properties"](https://github.com/jszady/PropertyPlus/blob/main/frontend/src/Assets/Profit.png)
+
+## Logged in Tenants Can Request Repairs
+!["Page that allows you to add a maintenance request"](https://github.com/jszady/PropertyPlus/blob/main/frontend/src/Assets/Repair.png)
 
 # Getting Started with Create React App
 
