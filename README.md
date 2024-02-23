@@ -10,7 +10,7 @@ Welcome to PropertyPlus, an app that makes payments and property management easy
 ## Manage Properties
 
 !["List of Properties"](https://github.com/jszady/PropertyPlus/blob/main/frontend/src/Assets/Properties.png)
-!["Page that allows you to manage a specific property"](https://github.com/jszady/PropertyPlus/blob/main/frontend/src/Assets/Properties.png)
+!["Page that allows you to manage a specific property"](https://github.com/jszady/PropertyPlus/blob/main/frontend/src/Assets/Property%20Details.png)
 
 ## Manage Maintenance Requests
 !["List of Maintenance Requests"](https://github.com/jszady/PropertyPlus/blob/main/frontend/src/Assets/Requests.png)
