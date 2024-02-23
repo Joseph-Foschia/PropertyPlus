@@ -1,3 +1,11 @@
+Welcome to PropertyPlus, an app that makes payments and property management easy!  
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

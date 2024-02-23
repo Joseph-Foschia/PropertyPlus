@@ -1,14 +1,5 @@
 import React, { PureComponent } from "react";
-// import {
-//   BarChart,
-//   Bar,
-//   XAxis,
-//   YAxis,
-//   CartesianGrid,
-//   Tooltip,
-//   Legend,
-//   ResponsiveContainer,
-// } from "recharts";
+
 import {
   AreaChart,
   Area,
@@ -45,7 +36,7 @@ function MaintenanceCosts(props) {
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
-          <YAxis domain={[0, 'dataMax + 100']}/>
+          <YAxis domain={[0, 'dataMax + 500']}/>
           <Tooltip />
           <Area type="monotone" dataKey="cost" stroke="#8884d8" fill="#82da9d" />
         </AreaChart>
