@@ -21,7 +21,7 @@ const port = 3001;
 app.use(cors());
 app.use(bodyParser.json()); 
 
-const stripe = require("stripe")("sk_test_51OcFDwJu6dUjGvIMRxb3QQynAstkDqeIVlG7wCDIIwTsSyiZ4lP6GEvfKahhrs8AP5t4oBWUWdxzk3O4pb1EkvZU008uQf56UG");
+const stripe = require("stripe")("sk_test_5");
 
 
 app.use(loginRoute);
